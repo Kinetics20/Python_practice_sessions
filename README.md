@@ -1,4 +1,2 @@
 # Python_practice_sessions
-This is my python practice sessions
-
-### Why did I decide to learn python ?
+This repository is a commitment to regularly practicing programming in Python
