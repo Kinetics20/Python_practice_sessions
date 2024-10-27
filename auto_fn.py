@@ -3,7 +3,6 @@
 # start_engine, stop_engine, speed_up, slow_down
 
 
-
 def construct_auto(brand, max_speed):
     return {
     'brand:': brand,
@@ -11,6 +10,7 @@ def construct_auto(brand, max_speed):
     'max_speed': max_speed,
     'engine': False
     }
+
 
 bmw = construct_auto('E46', 180)
 fiat = construct_auto('Uno', 240)
@@ -36,12 +36,14 @@ def start_engine(car):
     else:
         print('The engine was already launched')
 
+
 def stop_engine(car):
     if car['speed'] == 0:
         car['engine'] = False
         print('You stopped the engine')
     else:
         print('Stop the car at first')
+
 
 def speed_up(car, amount):
     if car['engine']:
@@ -58,6 +60,7 @@ def speed_up(car, amount):
 def slow_down(car, amount):
     car['speed'] = max(car['speed'] - amount, 0)
     print(f'you are driving with speed {car["speed"]}')
+
 
 # speed_up(bmw, amount=50)
 start_engine(bmw)
