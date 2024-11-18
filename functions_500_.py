@@ -268,6 +268,37 @@ def pyramid_volume_square_based(a, h):
 
 assert pyramid_volume_square_based(4, 4) == 341.3333333333333
 
+#030 , 031 , 032
+#_______________________________________________
+# using list comprehension return new list with only even numbers
+
+list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+def create_new_list_even_num(array):
+    return [ num for num in array if not num % 2]
+    # return [ num for num in array if not num & 1]
+
+assert create_new_list_even_num(list_1) == [2, 4, 6, 8, 10]
+
+#033 , 034 , 035
+#_______________________________________________
+# using list comprehension flat list of lists
+
+list_2 = [[1, 3], [2, 4], [3, 5]]
+
+def create_new_flat_list(array):
+    return [x for y in array for x in y]
+
+assert create_new_flat_list(list_2) == [1, 3, 2, 4, 3, 5]
+
+#036 , 037 , 038
+#_______________________________________________
+# using list comprehension multiply each element list by n
+
+def create_new_list_mul_by_n(n, array):
+    return [item * n for item in array]
+
+assert create_new_list_mul_by_n(10, list_1) == [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
 
 
