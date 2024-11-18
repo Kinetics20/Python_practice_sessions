@@ -2,398 +2,463 @@
 
 from math import pi
 
-#001
-#_______________________________________________
+
+# 001
+# _______________________________________________
 # adding two numbers
 
 def add_num(a, b):
     return a + b
 
-assert add_num(2,5) == 7
 
-#002
-#_______________________________________________
+assert add_num(2, 5) == 7
+
+
+# 002
+# _______________________________________________
 # subtracting two numbers
 
 def subtract_num(a, b):
     return a - b
 
-assert subtract_num(2,5) == -3
 
-#003
-#_______________________________________________
+assert subtract_num(2, 5) == -3
+
+
+# 003
+# _______________________________________________
 # multiplying two numbers
 
 def multiply_num(a, b):
     return a * b
 
-assert multiply_num(2,5) == 10
 
-#004
-#_______________________________________________
+assert multiply_num(2, 5) == 10
+
+
+# 004
+# _______________________________________________
 # dividing two numbers
 
 def divide_num(a, b):
     return a / b
 
-assert divide_num(2,5) == 0.4
 
-#005
-#_______________________________________________
+assert divide_num(2, 5) == 0.4
+
+
+# 005
+# _______________________________________________
 # subtracting two numbers without the rest
 
 def divide_num_without_rest(a, b):
     return a // b
 
-assert divide_num_without_rest(2,5) == 0
 
-#006
-#_______________________________________________
+assert divide_num_without_rest(2, 5) == 0
+
+
+# 006
+# _______________________________________________
 # exponentiation of two numbers
 
 def exponentiation_num(a, b):
     return a ** b
 
-assert exponentiation_num(5,2) == 25
 
-#007
-#_______________________________________________
+assert exponentiation_num(5, 2) == 25
+
+
+# 007
+# _______________________________________________
 # square root
 
 def count_square_root(a):
     return a ** 0.5
 
+
 assert count_square_root(4) == 2
 
-#008
-#_______________________________________________
+
+# 008
+# _______________________________________________
 # BMI calculator
 
 def bmi(mass, height):
     return mass / height ** 2
 
+
 assert bmi(89, 1.8) == 27.469135802469133
 
-#009
-#_______________________________________________
+
+# 009
+# _______________________________________________
 # check word is palindrome
 
 def check_palindrome(word):
     return word == word[::-1]
 
+
 assert check_palindrome("hello") == False
 
-#010
-#_______________________________________________
+
+# 010
+# _______________________________________________
 # count square area
 
 def square_area(a):
-    return a*a
+    return a * a
+
 
 assert square_area(4) == 16
 
-#011
-#_______________________________________________
+
+# 011
+# _______________________________________________
 # count rectangle area
 
 def rectangle_area(a, b):
     return a * b
 
-assert rectangle_area(2,3) == 6
 
-#012
-#_______________________________________________
+assert rectangle_area(2, 3) == 6
+
+
+# 012
+# _______________________________________________
 # count triangle area
 
 def triangle_area(a, b, h):
     return 0.5 * (a + b) * h
 
-assert triangle_area(2,3,4) == 10
 
-#013
-#_______________________________________________
+assert triangle_area(2, 3, 4) == 10
+
+
+# 013
+# _______________________________________________
 # count perimeter of a square
 
 def square_perimeter(a):
     return a * 4
 
+
 assert square_perimeter(4) == 16
 
-#014
-#_______________________________________________
+
+# 014
+# _______________________________________________
 # count perimeter of a rectangle
 
 def perimeter_rectangle(a, b):
     return 2 * (a + b)
 
+
 assert perimeter_rectangle(4, 4) == 16
 
-#015
-#_______________________________________________
+
+# 015
+# _______________________________________________
 # count perimeter of a triangle
 
 def perimeter_triangle(a, b, c):
     return a + b + c
 
-#016
-#_______________________________________________
+
+# 016
+# _______________________________________________
 # count circumference of a circle
 
 def circumference_circle(r):
     return 2 * pi * r
 
+
 assert circumference_circle(4) == 25.132741228718345
 
-#017
-#_______________________________________________
+
+# 017
+# _______________________________________________
 # count circle area
 
 def circle_area(r):
     return pi * r * r
 
+
 assert circle_area(2) == 12.566370614359172
 
-#018
-#_______________________________________________
+
+# 018
+# _______________________________________________
 # count trapezoid area
 
 def trapezoid_area(a, b, h):
     return 0.5 * (a + b) * h
 
+
 assert trapezoid_area(4, 4, 4) == 16
 
-#019
-#_______________________________________________
+
+# 019
+# _______________________________________________
 # count trapezoid perimeter
 
 def trapezoid_perimeter(a, b, c, d):
     return a + b + c + d
 
+
 assert trapezoid_perimeter(4, 4, 4, 4) == 16
 
-#020
-#_______________________________________________
+
+# 020
+# _______________________________________________
 # count cube volume
 
 def cube_volume(a):
     return a ** 3
 
+
 assert cube_volume(4) == 64
 
-#021
-#_______________________________________________
+
+# 021
+# _______________________________________________
 # count cube total surface area
 
 def cube_total_surface_area(a):
     return 6 * a * a
 
+
 assert cube_total_surface_area(2) == 24
 
-#022
-#_______________________________________________
+
+# 022
+# _______________________________________________
 # count cuboid volume
 
 def cuboid_volume(a, b, c):
     return a * b * c
 
+
 assert cuboid_volume(4, 4, 4) == 64
 
-#023
-#_______________________________________________
+
+# 023
+# _______________________________________________
 # count cuboid total surface area
 
 def cuboid_total_surface_area(a, b, c):
     return 2 * (a * b + a * c + b * c)
 
+
 assert cuboid_total_surface_area(4, 4, 4) == 96
 
-#024
-#_______________________________________________
+
+# 024
+# _______________________________________________
 # count sphere area
 
 def sphere_area(r):
-    return 4/3 * pi * r ** 3
+    return 4 / 3 * pi * r ** 3
+
 
 assert sphere_area(4) == 268.082573106329
 
-#025
-#_______________________________________________
+
+# 025
+# _______________________________________________
 # count sphere volume
 
 def sphere_volume(r):
     return 4 * pi * r ** 2
 
+
 assert sphere_volume(4) == 201.06192982974676
 
-#026
-#_______________________________________________
+
+# 026
+# _______________________________________________
 # count cone volume
 
 def cone_volume(r, h):
-    return 1/3 * pi * r ** 2 * h
+    return 1 / 3 * pi * r ** 2 * h
+
 
 assert cone_volume(4, 4) == 67.02064327658225
 
-#027
-#_______________________________________________
+
+# 027
+# _______________________________________________
 # count cone total area
 
 def cone_total_surface_area(r, l):
     return pi * r * (r + l)
 
+
 assert cone_total_surface_area(4, 4) == 100.53096491487338
 
-#028
-#_______________________________________________
+
+# 028
+# _______________________________________________
 # count cylinder total area
 
 def cylinder_area(r, h):
-    return 2 * pi * r * ( r + h) == 201.06192982974676
+    return 2 * pi * r * (r + h) == 201.06192982974676
 
-#029
-#_______________________________________________
+
+# 029
+# _______________________________________________
 # count cylinder volume
 
 def cylinder_volume(r, h):
     return pi * r ** 2 * h
 
+
 assert cylinder_volume(4, 5) == cylinder_volume(4, 5)
 
-#030
-#_______________________________________________
+
+# 030
+# _______________________________________________
 # count pyramid volume square based
 
 def pyramid_volume_square_based(a, h):
-    return 1/3 * a ** a * h
+    return 1 / 3 * a ** a * h
+
 
 assert pyramid_volume_square_based(4, 4) == 341.3333333333333
 
-#030 , 031 , 032
-#_______________________________________________
+# 030 , 031 , 032
+# _______________________________________________
 # using list comprehension return new list with only even numbers
 
 list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+
 def create_new_list_even_num(array):
-    return [ num for num in array if not num % 2]
+    return [num for num in array if not num % 2]
     # return [ num for num in array if not num & 1]
+
 
 assert create_new_list_even_num(list_1) == [2, 4, 6, 8, 10]
 
-#033 , 034 , 035
-#_______________________________________________
+# 033 , 034 , 035
+# _______________________________________________
 # using list comprehension flat list of lists
 
 list_2 = [[1, 3], [2, 4], [3, 5]]
 
+
 def create_new_flat_list(array):
     return [x for y in array for x in y]
 
+
 assert create_new_flat_list(list_2) == [1, 3, 2, 4, 3, 5]
 
-#036 , 037 , 038
-#_______________________________________________
+
+# 036 , 037 , 038
+# _______________________________________________
 # using list comprehension multiply each element list by n
 
 def create_new_list_mul_by_n(n, array):
     return [item * n for item in array]
 
+
 assert create_new_list_mul_by_n(10, list_1) == [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-#039 , 040 , 041
-#_______________________________________________
+# 039 , 040 , 041
+# _______________________________________________
 # using list comprehension filter list and keep only str value
 
 list_3 = [1, 'home', 3, 'John', 5, 'funeral', 'infinity', 'compulsive', 9, 10]
 
+
 def create_new_str_list(array):
-    return [item for item in array if  isinstance(item, str)]
+    return [item for item in array if isinstance(item, str)]
+
 
 assert create_new_str_list(list_3) == ['home', 'John', 'funeral', 'infinity', 'compulsive']
 
-#042 , 043 , 044
-#_______________________________________________
+# 042 , 043 , 044
+# _______________________________________________
 # using dict comprehension create dict from the list
 
 list_4 = ['home', 'John', 'funeral', 'infinity', 'compulsive']
+
+
 def create_dict_from_list(array):
     return {key: value for key, value in enumerate(array)}
 
+
 assert create_dict_from_list(list_4) == {0: 'home', 1: 'John', 2: 'funeral', 3: 'infinity', 4: 'compulsive'}
 
-#045 , 046 , 047
-#_______________________________________________
+# 045 , 046 , 047
+# _______________________________________________
 # using list comprehension create list from dictionary
 
 dict_1 = {0: 'home', 1: 'John', 2: 'funeral', 3: 'infinity', 4: 'compulsive'}
 
+
 def create_list_from_dict(any_dict):
     return [item for item in any_dict.values()]
 
+
 assert create_list_from_dict(dict_1) == ['home', 'John', 'funeral', 'infinity', 'compulsive']
 
-#048 , 049 , 050
-#_______________________________________________
+
+# 048 , 049 , 050
+# _______________________________________________
 # using list comprehension create list of tuples from dictionary
 
 def create_list_tuples_from_dict(any_dict):
     return [(key, value) for key, value in any_dict.items()]
 
-assert create_list_tuples_from_dict(dict_1) == [(0, 'home'), (1, 'John'), (2, 'funeral'), (3, 'infinity'), (4, 'compulsive')]
 
+assert create_list_tuples_from_dict(dict_1) == [(0, 'home'), (1, 'John'), (2, 'funeral'), (3, 'infinity'),
+                                                (4, 'compulsive')]
 
-#051 , 052 , 053
-#_______________________________________________
+# 051 , 052 , 053
+# _______________________________________________
 # using list comprehension create flat list from list of tuples
 
 list_5 = [(0, 'home'), (1, 'John'), (2, 'funeral'), (3, 'infinity'), (4, 'compulsive')]
 
+
 def create_flat_list_from_list_of_tuples(array):
     return [x for y in array for x in y]
 
-assert create_flat_list_from_list_of_tuples(list_5) == [0, 'home', 1, 'John', 2, 'funeral', 3, 'infinity', 4, 'compulsive']
 
-#054 , 055 , 056
-#_______________________________________________
+assert create_flat_list_from_list_of_tuples(list_5) == [0, 'home', 1, 'John', 2, 'funeral', 3, 'infinity', 4,
+                                                        'compulsive']
+
+
+# 054 , 055 , 056
+# _______________________________________________
 # using list comprehension create list from dictionary using keys
 
 def create_list_from_dict_key(any_dict):
     return [key for key in any_dict]
     # return [key for key, value in any_dict.items()]
 
+
 assert create_list_from_dict_key(dict_1) == [0, 1, 2, 3, 4]
 
-#057 , 058 , 059
-#_______________________________________________
+
+# 057 , 058 , 059
+# _______________________________________________
 # using list comprehension create list from dictionary using values with len condition of value
 
 def create_list_from_dict_value_condition(any_dict):
     return [item for item in any_dict.values() if len(item) > 5]
 
+
 assert create_list_from_dict_value_condition(dict_1) == ['funeral', 'infinity', 'compulsive']
 
-#060 , 061 , 062
-#_______________________________________________
+
+# 060 , 061 , 062
+# _______________________________________________
 # using list comprehension create list from dictionary using keys and values like a string
 
 def create_list_from_dict_k_v_str(any_dict):
-    return [f'{key}: {value}' for key , value in any_dict.items()]
+    return [f'{key}: {value}' for key, value in any_dict.items()]
+
 
 assert create_list_from_dict_k_v_str(dict_1) == ['0: home', '1: John', '2: funeral', '3: infinity', '4: compulsive']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
