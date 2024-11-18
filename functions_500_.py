@@ -300,6 +300,87 @@ def create_new_list_mul_by_n(n, array):
 
 assert create_new_list_mul_by_n(10, list_1) == [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
+#039 , 040 , 041
+#_______________________________________________
+# using list comprehension filter list and keep only str value
+
+list_3 = [1, 'home', 3, 'John', 5, 'funeral', 'infinity', 'compulsive', 9, 10]
+
+def create_new_str_list(array):
+    return [item for item in array if  isinstance(item, str)]
+
+assert create_new_str_list(list_3) == ['home', 'John', 'funeral', 'infinity', 'compulsive']
+
+#042 , 043 , 044
+#_______________________________________________
+# using dict comprehension create dict from the list
+
+list_4 = ['home', 'John', 'funeral', 'infinity', 'compulsive']
+def create_dict_from_list(array):
+    return {key: value for key, value in enumerate(array)}
+
+assert create_dict_from_list(list_4) == {0: 'home', 1: 'John', 2: 'funeral', 3: 'infinity', 4: 'compulsive'}
+
+#045 , 046 , 047
+#_______________________________________________
+# using list comprehension create list from dictionary
+
+dict_1 = {0: 'home', 1: 'John', 2: 'funeral', 3: 'infinity', 4: 'compulsive'}
+
+def create_list_from_dict(any_dict):
+    return [item for item in any_dict.values()]
+
+assert create_list_from_dict(dict_1) == ['home', 'John', 'funeral', 'infinity', 'compulsive']
+
+#048 , 049 , 050
+#_______________________________________________
+# using list comprehension create list of tuples from dictionary
+
+def create_list_tuples_from_dict(any_dict):
+    return [(key, value) for key, value in any_dict.items()]
+
+assert create_list_tuples_from_dict(dict_1) == [(0, 'home'), (1, 'John'), (2, 'funeral'), (3, 'infinity'), (4, 'compulsive')]
+
+
+#051 , 052 , 053
+#_______________________________________________
+# using list comprehension create flat list from list of tuples
+
+list_5 = [(0, 'home'), (1, 'John'), (2, 'funeral'), (3, 'infinity'), (4, 'compulsive')]
+
+def create_flat_list_from_list_of_tuples(array):
+    return [x for y in array for x in y]
+
+assert create_flat_list_from_list_of_tuples(list_5) == [0, 'home', 1, 'John', 2, 'funeral', 3, 'infinity', 4, 'compulsive']
+
+#054 , 055 , 056
+#_______________________________________________
+# using list comprehension create list from dictionary using keys
+
+def create_list_from_dict_key(any_dict):
+    return [key for key in any_dict]
+    # return [key for key, value in any_dict.items()]
+
+assert create_list_from_dict_key(dict_1) == [0, 1, 2, 3, 4]
+
+#057 , 058 , 059
+#_______________________________________________
+# using list comprehension create list from dictionary using values with len condition of value
+
+def create_list_from_dict_value_condition(any_dict):
+    return [item for item in any_dict.values() if len(item) > 5]
+
+assert create_list_from_dict_value_condition(dict_1) == ['funeral', 'infinity', 'compulsive']
+
+#060 , 061 , 062
+#_______________________________________________
+# using list comprehension create list from dictionary using keys and values like a string
+
+def create_list_from_dict_k_v_str(any_dict):
+    return [f'{key}: {value}' for key , value in any_dict.items()]
+
+assert create_list_from_dict_k_v_str(dict_1) == ['0: home', '1: John', '2: funeral', '3: infinity', '4: compulsive']
+
 
 
 
