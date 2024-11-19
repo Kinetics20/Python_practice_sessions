@@ -462,3 +462,228 @@ def create_list_from_dict_k_v_str(any_dict):
 
 
 assert create_list_from_dict_k_v_str(dict_1) == ['0: home', '1: John', '2: funeral', '3: infinity', '4: compulsive']
+
+
+# 063 , 064 , 065
+# _______________________________________________
+# using list comprehension create sliced list
+
+def create_sliced_list(array):
+    return [item[:3] for item in array]
+
+assert create_sliced_list(list_4) == ['hom', 'Joh', 'fun', 'inf', 'com']
+
+# 066 , 067 , 068
+# _______________________________________________
+# using list comprehension create new list with item[1]
+
+def create_list_item_one_index(array):
+    return [item[1] for item in array]
+
+assert create_list_item_one_index(list_4) == ['o', 'o', 'u', 'n', 'o']
+
+# 069 , 070 , 071
+# _______________________________________________
+# using list comprehension create new list if letter in item
+
+letter = 'n'
+
+def create_list_letter_in_item(array, n):
+    return [item for item in array if n in item]
+
+assert create_list_letter_in_item(list_4, letter) == ['John', 'funeral', 'infinity']
+
+# 072 , 073 , 074
+# _______________________________________________
+# using list comprehension create new list if not item % n
+
+def create_list_from_range_modulo_n(n):
+    return [item for item in range(101) if not item % n]
+
+assert create_list_from_range_modulo_n(18) == [0, 18, 36, 54, 72, 90]
+
+# 075 , 076 , 077
+# _______________________________________________
+# using list comprehension create new list if not item % n and in the specific scope
+
+def create_list_from_range_modulo_n_and_cond(n, a, b):
+    return [ item for item in range(101) if not item % n and a < item <= b]
+
+assert create_list_from_range_modulo_n_and_cond(20, 40, 80) == [60, 80]
+
+# 078 , 079 , 080
+# _______________________________________________
+# using list comprehension create new list with dictionary's values capitalized
+
+dict_2 = {0: 'home_AS_a_Hall', 1: ' John2    ', 2: 'funeral123   ', 3: '88infinity', 4: 'compulsive is a bad character treat'}
+
+def create_list_from_dict(any_dict):
+    return [item.capitalize() for item in any_dict.values()]
+
+assert create_list_from_dict(dict_2) == ['Home_as_a_hall',
+ ' john2    ',
+ 'Funeral123   ',
+ '88infinity',
+ 'Compulsive is a bad character treat']
+
+# 081
+# _______________________________________________
+# string capitalize method
+
+sentence_1 = ' Better now than NEVER      '
+
+def str_capitalize(any_str):
+    return any_str.capitalize()
+
+assert str_capitalize(sentence_1) == ' better now than never      '
+
+# 082 , 083 , 084
+# _______________________________________________
+# using list comprehension create new list with dictionary's values lowered
+
+def create_list_from_dict_lowered(any_dict):
+    return [item.lower() for item in any_dict.values()]
+
+assert create_list_from_dict_lowered(dict_2) == ['home_as_a_hall',
+ ' john2    ',
+ 'funeral123   ',
+ '88infinity',
+ 'compulsive is a bad character treat']
+
+# 085
+# _______________________________________________
+# string lower method
+
+def str_lower(any_str):
+    return any_str.lower()
+
+assert str_lower(sentence_1) == ' better now than never      '
+
+
+# 086 , 087 , 088
+# _______________________________________________
+# using list comprehension create new list with dictionary's values upper
+
+def create_list_from_dict_upper(any_dict):
+    return [item.upper() for item in any_dict.values()]
+
+assert create_list_from_dict_upper(dict_2) == ['HOME_AS_A_HALL',
+ ' JOHN2    ',
+ 'FUNERAL123   ',
+ '88INFINITY',
+ 'COMPULSIVE IS A BAD CHARACTER TREAT']
+
+# 089
+# _______________________________________________
+# string lower method
+
+def str_upper(any_str):
+    return any_str.upper()
+
+assert str_upper(sentence_1) == ' BETTER NOW THAN NEVER      '
+
+# 090 , 091 , 092
+# _______________________________________________
+# using list comprehension create new list with dictionary's values titled
+
+def create_list_from_dict_titled(any_dict):
+    return [item.title() for item in any_dict.values()]
+
+assert create_list_from_dict_titled(dict_2) == create_list_from_dict_titled(dict_2)
+
+# 093
+# _______________________________________________
+# string lower method
+
+def str_title(any_str):
+    return any_str.title()
+
+assert str_title(sentence_1) == ' Better Now Than Never      '
+
+# 094
+# _______________________________________________
+# string swapcase method
+
+def str_swapcase(any_str):
+    return any_str.swapcase()
+
+assert str_swapcase(sentence_1) == ' bETTER NOW THAN never      '
+
+# 095
+# _______________________________________________
+# string strip method
+
+def str_strip(any_str):
+    return any_str.strip()
+
+assert str_strip(sentence_1) == 'Better now than NEVER'
+
+# 096
+# _______________________________________________
+# string strip and title methods
+
+def str_strip_and_title(any_str):
+    return any_str.strip().title()
+
+assert str_strip_and_title(sentence_1) == 'Better Now Than Never'
+
+# 097
+# _______________________________________________
+# string replace method
+
+def str_replace(any_str):
+    return any_str.replace(' ', '_$_$_')
+
+assert str_replace(sentence_1) == '_$_$_Better_$_$_now_$_$_than_$_$_NEVER_$_$__$_$__$_$__$_$__$_$__$_$_'
+
+# 098
+# _______________________________________________
+# string replace method
+
+def str_replace_and_count(any_str):
+    return any_str.replace(' ', '_$_$_', 4)
+
+assert str_replace_and_count(sentence_1) == '_$_$_Better_$_$_now_$_$_than_$_$_NEVER      '
+
+# 099, 100, 101
+# _______________________________________________
+# using list comprehension convert list to string
+
+def create_list_to_str():
+    return ''.join([str(item) for item in range(11)])
+
+assert create_list_to_str() == '012345678910'
+
+# 102, 103, 104
+# _______________________________________________
+# using list comprehension convert list to string and next to int
+
+def create_list_to_str_to_int():
+    return int(''.join([str(item) for item in range(11)]))
+
+assert create_list_to_str_to_int() == 12345678910
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
