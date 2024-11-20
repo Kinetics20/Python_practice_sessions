@@ -778,6 +778,25 @@ def list_join(any_list_str):
 
 assert list_join(['ab', 'cd', 'ef']) == 'ab, cd, ef'
 
+# 121
+# _______________________________________________
+# Write a function that given a floor in the american system returns the floor in the european system.
+
+# Examples
+#
+# 1  =>  0
+# 0  =>  0
+# 5  =>  4
+# 15  =>  13
+# -3  =>  -3
+
+def get_real_floor(n):
+    return n if n < 1 else n -1 if n < 13 else n -2
+
+assert get_real_floor(5) == 4
+
+
+
 
 
 
