@@ -663,22 +663,120 @@ def create_list_to_str_to_int():
 
 assert create_list_to_str_to_int() == 12345678910
 
+# 105, 106, 107
+# _______________________________________________
+# using list comprehension achieve two list from dictionary
 
+def create_lists_from_dict(any_dict):
+    l_1 = [item for item in any_dict.values()]
+    l_2 = [item for item in any_dict.keys()]
 
+    return l_1, l_2
 
+assert create_lists_from_dict(dict_2) == (['home_AS_a_Hall', ' John2    ', 'funeral123   ', '88infinity', 'compulsive is a bad character treat'], [0, 1, 2, 3, 4])
 
+# 108, 109, 110
+# _______________________________________________
+# using dict comprehension create dict from tuple
 
+my_tuple = ("home", "apple", "tower")
 
+def create_dict_from_tuple(any_tuple):
+    return {key: value for key, value in enumerate(any_tuple)}
 
+assert create_dict_from_tuple(my_tuple) == {0: 'home', 1: 'apple', 2: 'tower'}
 
+sentence_2 = 'New York 76st'
 
+# 111
+# _______________________________________________
+# string isalnum method , are there only letters and digits in the str
 
+def str_isalnum(any_str):
+    return any_str.isalnum()
 
+assert str_isalnum(sentence_2) == False
 
+# 112
+# _______________________________________________
+# string isalpha method , are there only letters in the str
 
+def str_isalpha(any_str):
+    return any_str.isalpha()
 
+assert str_isalpha(sentence_2) == False
 
+# 113
+# _______________________________________________
+# string isalpha method , are there only digits in the str
 
+def str_isdigit(any_str):
+    return any_str.isdigit()
+
+assert str_isdigit('1234') == True
+
+# 114
+# _______________________________________________
+# string isdecimal method , are there only decimal digits in the str
+
+def str_isdecimal(any_str):
+    return any_str.isdecimal()
+
+assert str_isdecimal('1234') == True
+
+# 115
+# _______________________________________________
+# string isnumeric method , are there only numbers in the str
+
+def str_isnumeric(any_str):
+    return any_str.isnumeric()
+
+assert str_isnumeric('12 34') == False
+
+# 116
+# _______________________________________________
+# string islower method , are there only lower letters in the str
+
+def str_islower(any_str):
+    return any_str.islower()
+
+assert str_islower('where is the bus stop') == True
+
+# 117
+# _______________________________________________
+# string isupper method , are there only upper letters in the str
+
+def str_isupper(any_str):
+    return any_str.isupper()
+
+assert str_isupper('where is the bus stop') == False
+
+# 118
+# _______________________________________________
+# string isspace method , are there only white signs in the str
+
+def str_isspace(any_str):
+    return any_str.isspace()
+
+assert str_isspace('      ') == True
+
+# 119
+# _______________________________________________
+# string split method , create list from str using split
+
+def str_split(any_str):
+    return any_str.split(',')
+
+assert str_split('ab,cd,ef') == ['ab', 'cd', 'ef']
+
+# 120
+# _______________________________________________
+# using join method , create str from list of str
+
+def list_join(any_list_str):
+    return ', '.join(any_list_str)
+
+assert list_join(['ab', 'cd', 'ef']) == 'ab, cd, ef'
 
 
 
