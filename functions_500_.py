@@ -796,8 +796,266 @@ def get_real_floor(n):
 assert get_real_floor(5) == 4
 
 
+handball_elite = [
+    {
+        "name": "FC Barcelona",
+        "country": "Spain",
+        "city": "Barcelona",
+        "founded": 1942,
+        "arena": "Palau Blaugrana",
+        "capacity": 7500,
+        "colors": ["burgundy", "navy blue"],
+        "successes_in_cl": {"1st": 12, "2nd": 5, "3rd": 3},
+    },
+    {
+        "name": "SC Magdeburg",
+        "country": "Germany",
+        "city": "Magdeburg",
+        "founded": 1955,
+        "arena": "GETEC Arena",
+        "capacity": 8000,
+        "colors": ["green", "red"],
+        "successes_in_cl": {"1st": 4, "2nd": 0, "3rd": 0},
+    },
+    {
+        "name": "THW Kiel",
+        "country": "Germany",
+        "city": "Kiel",
+        "founded": 1904,
+        "arena": "Sparkassen",
+        "capacity": 10250,
+        "colors": ["white", "black"],
+        "successes_in_cl": {"1st": 4, "2nd": 4, "3rd": 3},
+    },
+    {
+        "name": "AaB Handbold",
+        "country": "Denmark",
+        "city": "Aalborg",
+        "founded": 2000,
+        "arena": "Jutlander",
+        "capacity": 5020,
+        "colors": ["red", "white"],
+        "successes_in_cl": {"1st": 0, "2nd": 2, "3rd": 0},
+    },
+    {
+        "name": "Paris SG Handball",
+        "country": "France",
+        "city": "Paris",
+        "founded": 1941,
+        "arena": "Stade Pierre",
+        "capacity": 4500,
+        "colors": ["blue", "red", "white"],
+        "successes_in_cl": {"1st": 0, "2nd": 1, "3rd": 4},
+    },
+    {
+        "name": "KS Iskra Kielce",
+        "country": "Poland",
+        "city": "Kielce",
+        "founded": 1965,
+        "arena": "Hala Legionów",
+        "capacity": 4200,
+        "colors": ["yellow", "blue", "white"],
+        "successes_in_cl": {"1st": 1, "2nd": 2, "3rd": 2},
+    },
+    {
+        "name": "MKB Veszprem KC",
+        "country": "Hungary",
+        "city": "Veszprem",
+        "founded": 1977,
+        "arena": "Veszprém",
+        "capacity": 5096,
+        "colors": ["red", "white"],
+        "successes_in_cl": {"1st": 0, "2nd": 4, "3rd": 1},
+    },
+    {
+        "name": "Fuechse Berlin",
+        "country": "Germany",
+        "city": "Berlin",
+        "founded": 1891,
+        "arena": "Max Schmeling",
+        "capacity": 8500,
+        "colors": ["green", "black", "white"],
+        "successes_in_cl": {"1st": 0, "2nd": 0, "3rd": 0},
+    },
+    {
+        "name": "SG Flensburg-Handewitt",
+        "country": "Germany",
+        "city": "Flensburg-Handewitt",
+        "founded": 1990,
+        "arena": "Flens Arena",
+        "capacity": 6300,
+        "colors": ["blue", "red", "white"],
+        "successes_in_cl": {"1st": 1, "2nd": 2, "3rd": 0},
+    },
+    {
+        "name": "Sporting Clube de Portugal",
+        "country": "Portugal",
+        "city": "Lisbon",
+        "founded": 1932,
+        "arena": "Pavilhão",
+        "capacity": 3000,
+        "colors": ["green", "white"],
+        "successes_in_cl": {"1st": 0, "2nd": 0, "3rd": 0},
+    },
+    {
+        "name": "Montpellier HB",
+        "country": "France",
+        "city": "Montpellier",
+        "founded": 1982,
+        "arena": "FDI Stadium",
+        "capacity": 9000,
+        "colors": ["blue", "white"],
+        "successes_in_cl": {"1st": 2, "2nd": 0, "3rd": 0},
+    },
+    {
+        "name": "Wisla Plock",
+        "country": "Poland",
+        "city": "Płock",
+        "founded": 1964,
+        "arena": "Orlen Arena",
+        "capacity": 5492,
+        "colors": ["blue", "white"],
+        "successes_in_cl": {"1st": 0, "2nd": 0, "3rd": 0},
+    },
+    {
+        "name": "SC Pick Szeged",
+        "country": "Hungary",
+        "city": "Szeged",
+        "founded": 1961,
+        "arena": "Pick Aréna",
+        "capacity": 8143,
+        "colors": ["blue", "white"],
+        "successes_in_cl": {"1st": 0, "2nd": 0, "3rd": 0},
+    },
+    {
+        "name": "HBC Nantes",
+        "country": "France",
+        "city": "Nantes",
+        "founded": 1953,
+        "arena": "Palais des",
+        "capacity": 10750,
+        "colors": ["pink", "yellow"],
+        "successes_in_cl": {"1st": 0, "2nd": 1, "3rd": 0},
+    },
+    {
+        "name": "GOG Svendborg TGI",
+        "country": "Denmark",
+        "city": "Gudme",
+        "founded": 1973,
+        "arena": "Phønix Tag",
+        "capacity": 2265,
+        "colors": ["yellow", "red"],
+        "successes_in_cl": {"1st": 0, "2nd": 0, "3rd": 0},
+    },
+    {
+        "name": "Dinamo Bucarest",
+        "country": "Romania",
+        "city": "Bucarest",
+        "founded": 1953,
+        "arena": "Sala Polivalentă",
+        "capacity": 5300,
+        "colors": ["red", "white"],
+        "successes_in_cl": {"1st": 1, "2nd": 1, "3rd": 0},
+    },
+    {
+        "name": "RK Nexe Nasice",
+        "country": "Croatia",
+        "city": "Nasice",
+        "founded": 1959,
+        "arena": "Sportska",
+        "capacity": 2500,
+        "colors": ["green", "black"],
+        "successes_in_cl": {"1st": 0, "2nd": 0, "3rd": 0},
+    },
+    {
+        "name": "RK Croatia Zagreb",
+        "country": "Croatia",
+        "city": "Zagreb",
+        "founded": 1922,
+        "arena": "Arena Zagreb",
+        "capacity": 15200,
+        "colors": ["blue", "white", "red"],
+        "successes_in_cl": {"1st": 2, "2nd": 4, "3rd": 0},
+    },
+    {
+        "name": "Rhein Neckar Löwen",
+        "country": "Germany",
+        "city": "Lowen",
+        "founded": 2002,
+        "arena": "SAP Arena",
+        "capacity": 14500,
+        "colors": ["yellow", "navy blue"],
+        "successes_in_cl": {"1st": 0, "2nd": 0, "3rd": 1},
+    },
+    {
+        "name": "Valur",
+        "country": "Iceland",
+        "city": "Reykjavík",
+        "founded": 1911,
+        "arena": "N höllin",
+        "capacity": 1300,
+        "colors": ["red", "white"],
+        "successes_in_cl": {"1st": 0, "2nd": 0, "3rd": 0},
+    }
+]
 
+# 122, 123, 124
+# _______________________________________________
+# Write a function that return list of tuples and takes list of dictionaries
+# question : What are the 3 oldest clubs (among those mentioned) and how many years ago were they founded ?
 
+def three_oldest_club(data):
+    sorted_clubs = sorted(data, key=lambda x: x['founded'])
+
+    oldest_clubs = sorted_clubs[:3]
+
+    current_year = 2024
+
+    result = [(club['name'], current_year - club['founded']) for club in oldest_clubs]
+
+    return result
+
+assert three_oldest_club(handball_elite) == [('Fuechse Berlin', 133), ('THW Kiel', 120), ('Valur', 113)]
+
+# 125, 126, 127
+# _______________________________________________
+# Write a function that return list of dictionary
+# question : Has any club from Poland achieved success in the Champions League (successes_in_cl), if so, display information about it.
+
+def check_polish_clubs(data):
+    return [club for club in data if club['country']=='Poland' and
+            (club['successes_in_cl']['1st'] > 0 or club['successes_in_cl']['2nd'] > 0 or
+             club['successes_in_cl']['3rd'] > 0 ) ]
+
+assert check_polish_clubs(handball_elite) == [{'name': 'KS Iskra Kielce',
+  'country': 'Poland',
+  'city': 'Kielce',
+  'founded': 1965,
+  'arena': 'Hala Legionów',
+  'capacity': 4200,
+  'colors': ['yellow', 'blue', 'white'],
+  'successes_in_cl': {'1st': 1, '2nd': 2, '3rd': 2}}]
+
+# 128, 129, 130
+# _______________________________________________
+# Write a function that return list of tuples and takes list of dictionaries
+# question : Which countries (name the top 3) are most represented by the clubs mentioned in the ranking?
+
+def check_amount_country(data):
+    country_counts = {}
+
+    for club in data:
+        country = club['country']
+        if country in country_counts:
+            country_counts[country] += 1
+        else:
+            country_counts[country] = 1
+
+    sorted_country_counts = sorted(country_counts.items(), key=lambda x: x[1], reverse=True)
+
+    return sorted_country_counts[:3]
+
+assert check_amount_country(handball_elite) == [('Germany', 5), ('France', 3), ('Denmark', 2)]
 
 
 
