@@ -471,7 +471,9 @@ assert create_list_from_dict_k_v_str(dict_1) == ['0: home', '1: John', '2: funer
 def create_sliced_list(array):
     return [item[:3] for item in array]
 
+
 assert create_sliced_list(list_4) == ['hom', 'Joh', 'fun', 'inf', 'com']
+
 
 # 066 , 067 , 068
 # _______________________________________________
@@ -479,6 +481,7 @@ assert create_sliced_list(list_4) == ['hom', 'Joh', 'fun', 'inf', 'com']
 
 def create_list_item_one_index(array):
     return [item[1] for item in array]
+
 
 assert create_list_item_one_index(list_4) == ['o', 'o', 'u', 'n', 'o']
 
@@ -488,10 +491,13 @@ assert create_list_item_one_index(list_4) == ['o', 'o', 'u', 'n', 'o']
 
 letter = 'n'
 
+
 def create_list_letter_in_item(array, n):
     return [item for item in array if n in item]
 
+
 assert create_list_letter_in_item(list_4, letter) == ['John', 'funeral', 'infinity']
+
 
 # 072 , 073 , 074
 # _______________________________________________
@@ -500,14 +506,17 @@ assert create_list_letter_in_item(list_4, letter) == ['John', 'funeral', 'infini
 def create_list_from_range_modulo_n(n):
     return [item for item in range(101) if not item % n]
 
+
 assert create_list_from_range_modulo_n(18) == [0, 18, 36, 54, 72, 90]
+
 
 # 075 , 076 , 077
 # _______________________________________________
 # using list comprehension create new list if not item % n and in the specific scope
 
 def create_list_from_range_modulo_n_and_cond(n, a, b):
-    return [ item for item in range(101) if not item % n and a < item <= b]
+    return [item for item in range(101) if not item % n and a < item <= b]
+
 
 assert create_list_from_range_modulo_n_and_cond(20, 40, 80) == [60, 80]
 
@@ -515,16 +524,19 @@ assert create_list_from_range_modulo_n_and_cond(20, 40, 80) == [60, 80]
 # _______________________________________________
 # using list comprehension create new list with dictionary's values capitalized
 
-dict_2 = {0: 'home_AS_a_Hall', 1: ' John2    ', 2: 'funeral123   ', 3: '88infinity', 4: 'compulsive is a bad character treat'}
+dict_2 = {0: 'home_AS_a_Hall', 1: ' John2    ', 2: 'funeral123   ', 3: '88infinity',
+          4: 'compulsive is a bad character treat'}
+
 
 def create_list_from_dict(any_dict):
     return [item.capitalize() for item in any_dict.values()]
 
+
 assert create_list_from_dict(dict_2) == ['Home_as_a_hall',
- ' john2    ',
- 'Funeral123   ',
- '88infinity',
- 'Compulsive is a bad character treat']
+                                         ' john2    ',
+                                         'Funeral123   ',
+                                         '88infinity',
+                                         'Compulsive is a bad character treat']
 
 # 081
 # _______________________________________________
@@ -532,10 +544,13 @@ assert create_list_from_dict(dict_2) == ['Home_as_a_hall',
 
 sentence_1 = ' Better now than NEVER      '
 
+
 def str_capitalize(any_str):
     return any_str.capitalize()
 
+
 assert str_capitalize(sentence_1) == ' better now than never      '
+
 
 # 082 , 083 , 084
 # _______________________________________________
@@ -544,11 +559,13 @@ assert str_capitalize(sentence_1) == ' better now than never      '
 def create_list_from_dict_lowered(any_dict):
     return [item.lower() for item in any_dict.values()]
 
+
 assert create_list_from_dict_lowered(dict_2) == ['home_as_a_hall',
- ' john2    ',
- 'funeral123   ',
- '88infinity',
- 'compulsive is a bad character treat']
+                                                 ' john2    ',
+                                                 'funeral123   ',
+                                                 '88infinity',
+                                                 'compulsive is a bad character treat']
+
 
 # 085
 # _______________________________________________
@@ -556,6 +573,7 @@ assert create_list_from_dict_lowered(dict_2) == ['home_as_a_hall',
 
 def str_lower(any_str):
     return any_str.lower()
+
 
 assert str_lower(sentence_1) == ' better now than never      '
 
@@ -567,11 +585,13 @@ assert str_lower(sentence_1) == ' better now than never      '
 def create_list_from_dict_upper(any_dict):
     return [item.upper() for item in any_dict.values()]
 
+
 assert create_list_from_dict_upper(dict_2) == ['HOME_AS_A_HALL',
- ' JOHN2    ',
- 'FUNERAL123   ',
- '88INFINITY',
- 'COMPULSIVE IS A BAD CHARACTER TREAT']
+                                               ' JOHN2    ',
+                                               'FUNERAL123   ',
+                                               '88INFINITY',
+                                               'COMPULSIVE IS A BAD CHARACTER TREAT']
+
 
 # 089
 # _______________________________________________
@@ -580,7 +600,9 @@ assert create_list_from_dict_upper(dict_2) == ['HOME_AS_A_HALL',
 def str_upper(any_str):
     return any_str.upper()
 
+
 assert str_upper(sentence_1) == ' BETTER NOW THAN NEVER      '
+
 
 # 090 , 091 , 092
 # _______________________________________________
@@ -589,7 +611,9 @@ assert str_upper(sentence_1) == ' BETTER NOW THAN NEVER      '
 def create_list_from_dict_titled(any_dict):
     return [item.title() for item in any_dict.values()]
 
+
 assert create_list_from_dict_titled(dict_2) == create_list_from_dict_titled(dict_2)
+
 
 # 093
 # _______________________________________________
@@ -598,7 +622,9 @@ assert create_list_from_dict_titled(dict_2) == create_list_from_dict_titled(dict
 def str_title(any_str):
     return any_str.title()
 
+
 assert str_title(sentence_1) == ' Better Now Than Never      '
+
 
 # 094
 # _______________________________________________
@@ -607,7 +633,9 @@ assert str_title(sentence_1) == ' Better Now Than Never      '
 def str_swapcase(any_str):
     return any_str.swapcase()
 
+
 assert str_swapcase(sentence_1) == ' bETTER NOW THAN never      '
+
 
 # 095
 # _______________________________________________
@@ -616,7 +644,9 @@ assert str_swapcase(sentence_1) == ' bETTER NOW THAN never      '
 def str_strip(any_str):
     return any_str.strip()
 
+
 assert str_strip(sentence_1) == 'Better now than NEVER'
+
 
 # 096
 # _______________________________________________
@@ -625,7 +655,9 @@ assert str_strip(sentence_1) == 'Better now than NEVER'
 def str_strip_and_title(any_str):
     return any_str.strip().title()
 
+
 assert str_strip_and_title(sentence_1) == 'Better Now Than Never'
+
 
 # 097
 # _______________________________________________
@@ -634,7 +666,9 @@ assert str_strip_and_title(sentence_1) == 'Better Now Than Never'
 def str_replace(any_str):
     return any_str.replace(' ', '_$_$_')
 
+
 assert str_replace(sentence_1) == '_$_$_Better_$_$_now_$_$_than_$_$_NEVER_$_$__$_$__$_$__$_$__$_$__$_$_'
+
 
 # 098
 # _______________________________________________
@@ -643,7 +677,9 @@ assert str_replace(sentence_1) == '_$_$_Better_$_$_now_$_$_than_$_$_NEVER_$_$__$
 def str_replace_and_count(any_str):
     return any_str.replace(' ', '_$_$_', 4)
 
+
 assert str_replace_and_count(sentence_1) == '_$_$_Better_$_$_now_$_$_than_$_$_NEVER      '
+
 
 # 099, 100, 101
 # _______________________________________________
@@ -652,7 +688,9 @@ assert str_replace_and_count(sentence_1) == '_$_$_Better_$_$_now_$_$_than_$_$_NE
 def create_list_to_str():
     return ''.join([str(item) for item in range(11)])
 
+
 assert create_list_to_str() == '012345678910'
+
 
 # 102, 103, 104
 # _______________________________________________
@@ -661,7 +699,9 @@ assert create_list_to_str() == '012345678910'
 def create_list_to_str_to_int():
     return int(''.join([str(item) for item in range(11)]))
 
+
 assert create_list_to_str_to_int() == 12345678910
+
 
 # 105, 106, 107
 # _______________________________________________
@@ -673,7 +713,9 @@ def create_lists_from_dict(any_dict):
 
     return l_1, l_2
 
-assert create_lists_from_dict(dict_2) == (['home_AS_a_Hall', ' John2    ', 'funeral123   ', '88infinity', 'compulsive is a bad character treat'], [0, 1, 2, 3, 4])
+
+assert create_lists_from_dict(dict_2) == (
+['home_AS_a_Hall', ' John2    ', 'funeral123   ', '88infinity', 'compulsive is a bad character treat'], [0, 1, 2, 3, 4])
 
 # 108, 109, 110
 # _______________________________________________
@@ -681,12 +723,15 @@ assert create_lists_from_dict(dict_2) == (['home_AS_a_Hall', ' John2    ', 'fune
 
 my_tuple = ("home", "apple", "tower")
 
+
 def create_dict_from_tuple(any_tuple):
     return {key: value for key, value in enumerate(any_tuple)}
+
 
 assert create_dict_from_tuple(my_tuple) == {0: 'home', 1: 'apple', 2: 'tower'}
 
 sentence_2 = 'New York 76st'
+
 
 # 111
 # _______________________________________________
@@ -695,7 +740,9 @@ sentence_2 = 'New York 76st'
 def str_isalnum(any_str):
     return any_str.isalnum()
 
+
 assert str_isalnum(sentence_2) == False
+
 
 # 112
 # _______________________________________________
@@ -704,7 +751,9 @@ assert str_isalnum(sentence_2) == False
 def str_isalpha(any_str):
     return any_str.isalpha()
 
+
 assert str_isalpha(sentence_2) == False
+
 
 # 113
 # _______________________________________________
@@ -713,7 +762,9 @@ assert str_isalpha(sentence_2) == False
 def str_isdigit(any_str):
     return any_str.isdigit()
 
+
 assert str_isdigit('1234') == True
+
 
 # 114
 # _______________________________________________
@@ -722,7 +773,9 @@ assert str_isdigit('1234') == True
 def str_isdecimal(any_str):
     return any_str.isdecimal()
 
+
 assert str_isdecimal('1234') == True
+
 
 # 115
 # _______________________________________________
@@ -731,7 +784,9 @@ assert str_isdecimal('1234') == True
 def str_isnumeric(any_str):
     return any_str.isnumeric()
 
+
 assert str_isnumeric('12 34') == False
+
 
 # 116
 # _______________________________________________
@@ -740,7 +795,9 @@ assert str_isnumeric('12 34') == False
 def str_islower(any_str):
     return any_str.islower()
 
+
 assert str_islower('where is the bus stop') == True
+
 
 # 117
 # _______________________________________________
@@ -749,7 +806,9 @@ assert str_islower('where is the bus stop') == True
 def str_isupper(any_str):
     return any_str.isupper()
 
+
 assert str_isupper('where is the bus stop') == False
+
 
 # 118
 # _______________________________________________
@@ -758,7 +817,9 @@ assert str_isupper('where is the bus stop') == False
 def str_isspace(any_str):
     return any_str.isspace()
 
+
 assert str_isspace('      ') == True
+
 
 # 119
 # _______________________________________________
@@ -767,7 +828,9 @@ assert str_isspace('      ') == True
 def str_split(any_str):
     return any_str.split(',')
 
+
 assert str_split('ab,cd,ef') == ['ab', 'cd', 'ef']
+
 
 # 120
 # _______________________________________________
@@ -776,7 +839,9 @@ assert str_split('ab,cd,ef') == ['ab', 'cd', 'ef']
 def list_join(any_list_str):
     return ', '.join(any_list_str)
 
+
 assert list_join(['ab', 'cd', 'ef']) == 'ab, cd, ef'
+
 
 # 121
 # _______________________________________________
@@ -791,10 +856,10 @@ assert list_join(['ab', 'cd', 'ef']) == 'ab, cd, ef'
 # -3  =>  -3
 
 def get_real_floor(n):
-    return n if n < 1 else n -1 if n < 13 else n -2
+    return n if n < 1 else n - 1 if n < 13 else n - 2
+
 
 assert get_real_floor(5) == 4
-
 
 handball_elite = [
     {
@@ -999,6 +1064,7 @@ handball_elite = [
     }
 ]
 
+
 # 122, 123, 124
 # _______________________________________________
 # Write a function that return list of tuples and takes list of dictionaries
@@ -1015,7 +1081,9 @@ def three_oldest_club(data):
 
     return result
 
+
 assert three_oldest_club(handball_elite) == [('Fuechse Berlin', 133), ('THW Kiel', 120), ('Valur', 113)]
+
 
 # 125, 126, 127
 # _______________________________________________
@@ -1023,18 +1091,20 @@ assert three_oldest_club(handball_elite) == [('Fuechse Berlin', 133), ('THW Kiel
 # question : Has any club from Poland achieved success in the Champions League (successes_in_cl), if so, display information about it.
 
 def check_polish_clubs(data):
-    return [club for club in data if club['country']=='Poland' and
+    return [club for club in data if club['country'] == 'Poland' and
             (club['successes_in_cl']['1st'] > 0 or club['successes_in_cl']['2nd'] > 0 or
-             club['successes_in_cl']['3rd'] > 0 ) ]
+             club['successes_in_cl']['3rd'] > 0)]
+
 
 assert check_polish_clubs(handball_elite) == [{'name': 'KS Iskra Kielce',
-  'country': 'Poland',
-  'city': 'Kielce',
-  'founded': 1965,
-  'arena': 'Hala Legionów',
-  'capacity': 4200,
-  'colors': ['yellow', 'blue', 'white'],
-  'successes_in_cl': {'1st': 1, '2nd': 2, '3rd': 2}}]
+                                               'country': 'Poland',
+                                               'city': 'Kielce',
+                                               'founded': 1965,
+                                               'arena': 'Hala Legionów',
+                                               'capacity': 4200,
+                                               'colors': ['yellow', 'blue', 'white'],
+                                               'successes_in_cl': {'1st': 1, '2nd': 2, '3rd': 2}}]
+
 
 # 128, 129, 130
 # _______________________________________________
@@ -1055,9 +1125,296 @@ def check_amount_country(data):
 
     return sorted_country_counts[:3]
 
+
 assert check_amount_country(handball_elite) == [('Germany', 5), ('France', 3), ('Denmark', 2)]
 
+d = {
+    "Poland": "Warsaw",
+    "France": "Paris",
+    "Germany": "Berlin",
+    "Italy": "Rome",
+    "Spain": "Madrid",
+    "United Kingdom": "London",
+    "Canada": "Ottawa",
+    "United States": "Washington, D.C.",
+    "Japan": "Tokyo",
+    "Australia": "Canberra"
+}
 
+
+# 131, 132, 133
+# _______________________________________________
+# Write a function that takes dictionary and return list  key/s that starts with J letter
+
+
+def keys_start_with_j(any_dict):
+    return [key for key, value in any_dict.items() if key.startswith('J')]
+
+
+assert keys_start_with_j(d) == ['Japan']
+
+
+# 134, 135, 136
+# _______________________________________________
+# Write a function that takes dictionary and return list of value/s that ends with n letter
+
+def value_ends_with_n(any_dict):
+    return [value for key, value in any_dict.items() if value.endswith('n')]
+
+
+assert value_ends_with_n(d) == ['Berlin', 'London']
+
+
+# 137, 138, 139
+# _______________________________________________
+# Write a function that takes dictionary and return list of
+# keys when value/s starts with W and ends with w letter
+
+def value_start_w_ends_w(any_dict):
+    return [key for key, value in any_dict.items()
+            if value.startswith('W') and value.endswith('w')]
+
+
+assert value_start_w_ends_w(d) == ["Poland"]
+
+
+# 139, 140, 141
+# _______________________________________________
+# Write a function that takes dictionary and return list of
+# values when a letter or t letter exists 2 or more times
+
+def value_key_value_count_a_t(any_dict):
+    return [key for key, value in any_dict.items()
+            if value.count('a') >= 2 or value.count('t') >= 2]
+
+
+# print(value_key_value_count_a_t(d))
+assert value_key_value_count_a_t(d) == ['Poland', 'Canada', 'Australia']
+
+
+# 142, 143, 144
+# for the list named handball_elite return list of countries that
+# value of 'capacity' > 5000 nad value of 'country' <= 6
+
+def give_l(list_dict):
+    return [item['country'] for item in list_dict if item['capacity'] > 5000 and
+            len(item['country']) <= 6]
+
+
+assert give_l(handball_elite) == ['Spain', 'France', 'Poland', 'France']
+
+
+# 145
+# count method for str
+
+def str_count(any_str):
+    return any_str.count('a')
+
+
+# print(str_count('Alice has a cat'))
+assert str_count('Alice has a cat') == 3
+
+
+# 146
+# count method for str with lower
+
+def str_count_lower(any_str):
+    return any_str.lower().count('a')
+
+
+assert str_count_lower('Alice has a cat') == 4
+
+# 147
+# find method for str
+
+def str_find(any_str):
+    return any_str.find('cat')
+
+assert str_find('Alice has a cat') == 12
+
+# 148, 149, 150
+# for the list named handball_elite return list of cities that
+# value of 'capacity' is not an odd number nad value of 'country' <= 6
+
+def give_l_2(list_dict):
+    return [item['city'] for item in list_dict if not item['capacity'] & 1 and
+            len(item['country']) <= 6]
+
+# print(give_l_2(handball_elite))
+assert give_l_2(handball_elite) == ['Barcelona', 'Paris', 'Kielce', 'Montpellier', 'Płock', 'Nantes']
+
+# 151
+# index method for str
+
+def str_index(any_str):
+    return any_str.index('cat')
+
+assert str_index('Alice has a cat') == 12
+
+# 152
+# index method for str ( parameters )
+
+def str_index_par(any_str):
+    return any_str.index('as',1 ,10)
+
+assert str_index_par('Alice has a cat') == 7
+
+# 153
+# rfind method for str
+
+def str_rfind(any_str):
+    return any_str.find('cat')
+
+assert str_rfind('Alice has a cat') == 12
+
+data = [
+    {
+        "name": "pawel",
+        "city": "krakow",
+        "age": 39,
+        "hobbies": ["js", "python", "drugs"]
+    },
+    {
+        "name": "joanna",
+        "city": "krakow",
+        "age": 32,
+        "hobbies": ["movies", "books", "food"]
+    },
+    {
+        "name": "igor",
+        "city": "wroclaw",
+        "age": 31,
+        "hobbies": ["anime", "games", "movies"]
+    },
+    {
+        "name": "dawid",
+        "city": "wroclaw",
+        "age": 43,
+        "hobbies": ["film", "music", "bike"]
+    },
+    {
+        "name": "piotr",
+        "city": "warszawa",
+        "age": 35,
+        "hobbies": ['wspinaczka', 'komputery', 'anime']
+    },
+    {
+        "name": "tomek",
+        "city": "warszawa",
+        "age": 38,
+        "hobbies": ["shooting", "sailing", "martial arts"]
+    },
+    {
+        "name": "rafal",
+        "city": "warszawa",
+        "age": 28,
+        "hobbies": ["cars", "IT"]
+    },
+    {
+        "name": "mateusz",
+        "city": "wroclaw",
+        "age": 30,
+        "hobbies": ["bjj", "python", "java"]
+    },
+    {
+        "name": "adrian",
+        "city": "dabrowa gornicza",
+        "age": 33,
+        "hobbies": ["reading", "video games", "chemistry", "physics", "boardgames", "shooting"]
+    },
+    {
+        "name": "cezary",
+        "city": "kielce",
+        "age": 33,
+        "hobbies": ["programming", "sport shooting", "paper models", "and more"],
+    },
+    {
+        "name": "szymon",
+        "city": "wroclaw",
+        "age": 30,
+        "hobbies": ["crypto", "podcasts", "games"]
+    },
+    {
+        'name': 'piotr',
+        'city': 'warszawa',
+        'age': 50,
+        'hobbies': ['python', 'snorkeling', 'traveling']
+    },
+    {
+        "name": "igor",
+        "city": "warszawa",
+        "age": 34,
+        "hobbies": ["golf", "music", "art"]
+    },
+    {
+        "name": "marcin",
+        "city": "krakow",
+        "age": 40,
+        "hobbies": ["python", "ds", "sleep"]
+    },
+    {
+        "name": "kasia",
+        "city": "krakow",
+        "age": 35,
+        "hobbies": ["music"]
+    },
+    {
+        "name": "mateusz",
+        "city": "dabrowa gornicza",
+        "age": 31,
+        "hobbies": ["filmy"]
+    }
+]
+
+
+# 154
+# write function that return average age of course users
+
+def avg_age_01(data_):
+    number_users = 0
+    for user in data_:
+        number_users += user['age']
+    return number_users // len(data_)
+
+assert avg_age_01(data) == 35
+
+# 155, 156, 157
+# the same task what # 154 but use the list comprehension
+
+def avg_age_02(persons):
+    age_sum = [person['age'] for person in persons]
+    return sum(age_sum) // len(persons)
+
+assert avg_age_02(data) == 35
+
+# 158, 159, 160
+# the same task what # 155 but use the generator expression
+# with lambda and map functions
+
+def avg_age_03(persons):
+    return sum(list(map(lambda person: person['age'] , persons))) // len(persons)
+
+assert avg_age_03(data) == 35
+
+# 161, 162, 163
+# create function that takes list of dictionaries and return
+# dict with person and age for the people only from Warsaw , use dict comprehension
+
+def people_from_warsaw(persons):
+    return {person['name']: person['age'] for person in persons
+            if 'warszawa'.lower() in person['city']}
+
+assert people_from_warsaw(data) == {'piotr': 50, 'tomek': 38, 'rafal': 28, 'igor': 34}
+
+# 164, 165, 166
+# write function that return average age of course users only from warsaw
+
+def avg_age_people_from_warsaw_(persons):
+    r = {person['name']: person['age'] for person in persons
+            if 'warszawa'.lower() in person['city']}
+    return sum(r.values()) // len(r)
+
+assert avg_age_people_from_warsaw_(data) == 37
 
 
 
