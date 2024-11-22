@@ -1416,6 +1416,122 @@ def avg_age_people_from_warsaw_(persons):
 
 assert avg_age_people_from_warsaw_(data) == 37
 
+# 167, 168, 169
+# the same task what #164 but for the people from out of Warsaw
+def avg_age_people_out_warsaw_(persons):
+    r = {person['name']: person['age'] for person in persons
+            if 'warszawa'.lower() not in person['city']}
+    return sum(r.values()) // len(r)
+
+# print(avg_age_people_from_warsaw_(data))
+assert avg_age_people_out_warsaw_(data) == 34
+
+# 171, 172, 173
+# the same what #161 but for the people from out of Warsaw
+
+def people_out_warsaw(persons):
+    return {person['name']: person['age'] for person in persons
+            if 'warszawa'.lower() not in person['city']}
+
+# print(people_out_warsaw(data))
+
+assert people_out_warsaw(data) == {'pawel': 39, 'joanna': 32, 'igor': 31, 'dawid': 43, 'mateusz': 31, 'adrian': 33, 'cezary': 33, 'szymon': 30, 'marcin': 40, 'kasia': 35}
+
+# 174, 175, 176
+# the same what # 171 but only list of names
+
+def people_out_warsaw_names(persons):
+    return [person['name'] for person in persons
+            if 'warszawa'.lower() not in person['city']]
+
+# print(people_out_warsaw_names(data))
+assert people_out_warsaw_names(data) == ['pawel', 'joanna', 'igor', 'dawid', 'mateusz', 'adrian', 'cezary', 'szymon', 'marcin', 'kasia', 'mateusz']
+
+# 177
+# the same task what 167 but traditional method
+
+def avg_age_people_out_warsaw_2(dataset):
+    total_age = 0
+    counter = 0
+
+    for person in dataset:
+        if person['city'].lower() != 'warszawa':
+            total_age += person['age']
+            counter += 1
+    return total_age // counter
+
+assert avg_age_people_out_warsaw_2(data) == 34
+
+# 178, 179, 180
+# using tuple comprehension create function that return
+# people's names from warsaw
+
+def give_back_names_people_from_waw(dataset):
+    return tuple(names['name'] for names in dataset if names['city'].lower() == 'warszawa' )
+
+# print(give_back_names_people_from_waw(data))
+assert give_back_names_people_from_waw(data) == ('piotr', 'tomek', 'rafal', 'piotr', 'igor')
+
+# 181
+# the same what 180 but traditional method function has to return list
+
+def give_back_names_people_from_waw_2(dataset):
+    names = []
+    for person in dataset:
+        if person['city'].lower() == 'warszawa':
+            names.append(person['name'])
+    return names
+
+# print(give_back_names_people_from_waw_2(data))
+assert give_back_names_people_from_waw_2(data) == ['piotr', 'tomek', 'rafal', 'piotr', 'igor']
+
+# 182, 183, 184
+# the same what 181 but use lambda and map functions
+
+def give_back_names_people_from_waw_3(people):
+    return list(map(
+        lambda person: person['name'],
+        filter(lambda person: person['city'].lower() == 'warszawa', people)
+    ))
+
+# print(give_back_names_people_from_waw_3(data))
+assert give_back_names_people_from_waw_3(data) == ['piotr', 'tomek', 'rafal', 'piotr', 'igor']
+
+# 185, 186, 187
+# create function that return set of cities without repetition
+# use set comprehension
+
+def cities_without_repetition(dataset):
+    return set(city['city'] for city in dataset)
+
+# print(cities_without_repetition(data))
+assert cities_without_repetition(data) == {'krakow', 'dabrowa gornicza', 'wroclaw', 'kielce', 'warszawa'}
+
+# 188
+# the same task what # 185 but use traditional method and return list
+
+def cities_without_repetition_2(dataset):
+    cities = []
+    for city in dataset:
+        cities.append(city['city'])
+    return list(set(cities))
+
+print(cities_without_repetition_2(data))
+# assert cities_without_repetition_2(data) == ['krakow', 'dabrowa gornicza', 'warszawa', 'kielce', 'wroclaw']
+
+# 189, 190, 191
+# the same what 185 bud use the lambda and map functions
+
+def cities_without_repetition_3(dataset):
+    return set(map(lambda city: city['city'], dataset))
+
+assert cities_without_repetition_3(data) == {'wroclaw', 'krakow', 'warszawa', 'kielce', 'dabrowa gornicza'}
+
+
+
+
+
+
 
 
 
