@@ -1527,8 +1527,48 @@ def cities_without_repetition_3(dataset):
 
 assert cities_without_repetition_3(data) == {'wroclaw', 'krakow', 'warszawa', 'kielce', 'dabrowa gornicza'}
 
+# 192, 193, 194
+# write a function that check if someone is a geezer and return bool value True or False
+# geezer is a person above 35
 
+def check_age_people(dataset):
+    return bool(len([age['name'] for age in dataset if age['age'] > 35]) > 1)
 
+assert check_age_people(data) == True
+
+# 195, 196, 197
+# the same what # 192 but function has to return str with info about amount geezers in the group
+
+def check_age_people_2(dataset):
+    age_list = [age['name'] for age in dataset if age['age'] > 35]
+    return f'There are {len(age_list)} people who are older than 35 years' if len(age_list) >= 1 else f'There is no elderly people in the group'
+
+# print(check_age_people_2(data))
+assert check_age_people_2(data) == 'There are 5 people who are older than 35 years'
+
+# 198
+# the same what # 192 but in traditional method
+
+def check_age_people_3(dataset):
+    age_list = []
+    for age in dataset:
+        if age['age'] > 35:
+            age_list.append(age['name'])
+    return True if len(age_list) > 1 else False
+
+assert check_age_people_3(data) == True
+
+# 199, 200, 201
+# the same what # 192 but use map , lambda and filter
+
+def check_age_people_4(dataset):
+    ages = list(map
+                (lambda person: person['name'],
+                filter(lambda person_age: person_age['age'] > 35, dataset)
+                ))
+    return len(ages) > 1
+
+assert check_age_people_4(data) == True
 
 
 
