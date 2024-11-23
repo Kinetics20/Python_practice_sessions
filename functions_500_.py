@@ -1570,6 +1570,162 @@ def check_age_people_4(dataset):
 
 assert check_age_people_4(data) == True
 
+# 202, 203, 204
+# write a function that takes str and capitalize every second letter for that string
+
+def change_second_letter(any_str):
+    return ''.join(
+        char.upper() if index % 2 == 0 else char
+        for index, char in enumerate(any_str)
+    )
+
+# print(change_second_letter('ala ma kota'))
+assert change_second_letter('ala ma kota') == 'AlA Ma kOtA'
+
+# 205, 206, 207
+# write a function that takes list contains string and returns list of tuples
+
+def create_tuple_from_list_of_string(list_of_strings):
+    return [(index, item) for index, item in enumerate(list_of_strings)]
+
+# print(create_tuple_from_list_of_string(['home', 'dog', 'funeral', 'dental']))
+assert create_tuple_from_list_of_string(['home', 'dog', 'funeral', 'dental']) == [(0, 'home'), (1, 'dog'), (2, 'funeral'), (3, 'dental')]
+
+# 208, 209, 210
+# the same what # 205 but only for odd indexes
+
+def create_tuple_from_list_of_string_odd(list_of_strings):
+    return [(index, item) for index, item in enumerate(list_of_strings) if index & 1]
+
+# print(create_tuple_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental']))
+assert create_tuple_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental']) == [(1, 'dog'), (3, 'dental')]
+
+# 211, 212, 213
+# the same what # 205 but only for even indexes
+
+def create_tuple_from_list_of_string_even(list_of_strings):
+    return [(index, item) for index, item in enumerate(list_of_strings) if not index & 1]
+
+# print(create_tuple_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war']))
+assert create_tuple_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war']) == [(0, 'home'), (2, 'funeral'), (4, 'word')]
+
+# 214, 215, 216
+# the same what # 205 but every third index
+
+def create_tuple_from_list_of_string_every_3th(list_of_strings):
+    return [(index, item) for index, item in enumerate(list_of_strings) if index %3 == 0]
+
+# print(create_tuple_from_list_of_string_every_3th(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
+assert (create_tuple_from_list_of_string_every_3th(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9'])) == [(0, 'home'), (3, 'dental'), (6, '6'), (9, '9')]
+
+# 217, 218, 219
+# the same what # 214 all indexes except every third index
+
+def create_tuple_from_list_of_string_except_every_3th(list_of_strings):
+    return [(index, item) for index, item in enumerate(list_of_strings) if index %3 != 0]
+
+# print(create_tuple_from_list_of_string_except_every_3th(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
+assert (create_tuple_from_list_of_string_except_every_3th(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9'])) == [(1, 'dog'), (2, 'funeral'), (4, 'word'), (5, 'war'), (7, '7'), (8, '8')]
+
+# 220, 221, 222
+# write a function that takes list and return dictionary with odd keys
+
+def create_dict_from_list_of_string_odd(list_of_strings):
+    return {index: item for index, item in enumerate(list_of_strings) if index & 1}
+
+# print(create_dict_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
+assert create_dict_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {1: 'dog', 3: 'dental', 5: 'war', 7: '7', 9: '9'}
+
+# 223, 224, 225
+# the same what # 220 but for even keys
+
+def create_dict_from_list_of_string_even(list_of_strings):
+    return {index: item for index, item in enumerate(list_of_strings) if not index & 1}
+
+# print(create_dict_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
+assert create_dict_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {0: 'home', 2: 'funeral', 4: 'word', 6: '6', 8: '8'}
+
+# 226, 227, 228
+# the same what # 225 but for every 4th keys
+
+def create_dict_from_list_every_4th_key(list_of_strings):
+    return {index: item for index, item in enumerate(list_of_strings) if not index % 4 }
+
+# print(create_dict_from_list_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
+assert create_dict_from_list_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {0: 'home', 4: 'word', 8: '8'}
+
+# 229, 230, 231
+# the same what # 226 but not for every 4th keys
+
+def create_dict_from_list_not_every_4th_key(list_of_strings):
+    return {index: item for index, item in enumerate(list_of_strings) if index % 4 != 0 }
+
+# print(create_dict_from_list_not_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
+assert create_dict_from_list_not_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {1: 'dog', 2: 'funeral', 3: 'dental', 5: 'war', 6: '6', 7: '7', 9: '9'}
+
+# 232, 233, 234
+# create function that change every second letter in the sentence
+
+def every_second_letter(any_str):
+    return ''.join(letter.lower() if index % 2 else letter.upper() for index, letter in enumerate(any_str))
+
+# print(every_second_letter('home is roomy and i would like to buy it'))
+assert every_second_letter('home is roomy and i would like to buy it') == 'HoMe iS RoOmY AnD I WoUlD LiKe tO BuY It'
+
+# 235, 236, 237
+# the same what 232 but opposite action , means start from small letter
+
+def every_second_letter_first_small(any_str):
+    return ''.join(letter.lower() if not index % 2 else letter.upper() for index, letter in enumerate(any_str))
+
+# print(every_second_letter_first_small('home is roomy and i would like to buy it'))
+assert every_second_letter_first_small('home is roomy and i would like to buy it') == 'hOmE Is rOoMy aNd i wOuLd lIkE To bUy iT'
+
+# 238, 239, 240
+# write function uses closure that outer function takes str and number
+# inner function should apply title and after that swapcase method and multiply by number from outer function
+
+def hello(name, a):
+    def inner():
+        return f'Hello {(" " + name.title().swapcase()) * a}'
+    return inner
+
+x_fn = hello('Love is in the air', 3)
+# print(x_fn())
+
+assert x_fn() == 'Hello  lOVE iS iN tHE aIR lOVE iS iN tHE aIR lOVE iS iN tHE aIR'
+
+# 241, 242, 243
+# create a decorator that change str by swapcase method in decorated function
+
+def capitalize(fn):
+    def inner(name):
+        return fn(name.swapcase())
+    return inner
+
+@capitalize
+def hello(name):
+    return f'Hello {name}'
+
+# print(hello('JoHn'))
+assert hello('JoHn') == 'Hello jOhN'
+
+# 244, 245, 246
+# create a decorator that multiply result of decorated function by value
+
+def multiply(fn):
+    def inner(*args, c):
+        return fn(*args) * c
+    return inner
+
+@multiply
+def add(a, b):
+    return a + b
+result = add(1, 2, c=4)
+# print(result)
+assert result == 12
+
+
 
 
 

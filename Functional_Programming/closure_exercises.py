@@ -114,29 +114,56 @@ r2 = list(map(calculate(), [-1, 2, 3, 4]))
 # - fn has to be pure
 # - small amount of parameters combinations
 
-def memoize():
-    cache = {}
-    print('outer')
+# def memoize():
+#     cache = {}
+#     print('outer')
+#
+#     def inner(a, b):
+#         print('inner')
+#         key = f'{a},{b}'
+#         if key not in cache:
+#             # intensive CPU task
+#             sleep(3)
+#             cache[key] = a + b
+#         return cache[key]
+#
+#     return inner
 
-    def inner(a, b):
-        print('inner')
-        key = f'{a},{b}'
-        if key not in cache:
-            # intensive CPU task
-            sleep(3)
-            cache[key] = a + b
-        return cache[key]
+
+def memoize(cb):
+    cache = {}
+
+
+    def inner(*args):
+        if args not in cache:
+            cache[args] = cb(*args)
+        return cache[args]
 
     return inner
 
 
-# def calculate_magic(a, b):
-#     # intensive CPU task
-#     sleep(3)
-#     return a + b
-calculate_magic = memoize()
+def calculate_magic(a, b, /):
+    # intensive CPU task
+    sleep(3)
+    return a + b
 
-print(calculate_magic(1, 2))
-print(calculate_magic(2, 2))
-print(calculate_magic(1, 2))
-print(calculate_magic(2, 2))
+def calculate_tribonacci(a, b, c, /):
+    # intensive CPU task
+    sleep(3)
+    return a + b + c
+
+
+
+calculate_magic_cache = memoize(calculate_magic)
+calculate_tribonacci_cache = memoize(calculate_tribonacci)
+
+
+print(calculate_magic_cache(1, 2))
+print(calculate_magic_cache(2, 2))
+print(calculate_magic_cache(1, 2))
+print(calculate_magic_cache(2, 2))
+print(calculate_tribonacci_cache(2, 2, 2))
+
+
+
+
