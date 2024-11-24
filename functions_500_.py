@@ -1698,12 +1698,12 @@ assert x_fn() == 'Hello  lOVE iS iN tHE aIR lOVE iS iN tHE aIR lOVE iS iN tHE aI
 # 241, 242, 243
 # create a decorator that change str by swapcase method in decorated function
 
-def capitalize(fn):
+def swapcase(fn):
     def inner(name):
         return fn(name.swapcase())
     return inner
 
-@capitalize
+@swapcase
 def hello(name):
     return f'Hello {name}'
 
@@ -1725,9 +1725,206 @@ result = add(1, 2, c=4)
 # print(result)
 assert result == 12
 
+# 247, 248, 249
+# create a decorator that change str by title method in decorated function
+
+def title(fn):
+    def inner(sentence):
+        return fn(sentence.title())
+    return inner
+
+@title
+def i_would_have_said(sentence):
+    return f'I would have said : {sentence}'
+
+# print(i_would_have_said('My home is far from here'))
+assert i_would_have_said('My home is far from here') == 'I would have said : My Home Is Far From Here'
+
+# 251, 252, 253
+# create a decorator that change str by replace method in decorated function change 'e' on '$'
+
+def replace(fn):
+    def inner(sentence):
+        return fn(sentence.replace('e', '$'))
+    return inner
+
+@replace
+def i_would_have_said(sentence):
+    return f'I would have said : {sentence}'
+
+# print(i_would_have_said('My home is far from here'))
+assert i_would_have_said('My home is far from here') == 'I would have said : My hom$ is far from h$r$'
+
+# 254, 255, 256
+# create a decorator that change every second letter in str by upper method in decorated function
+
+def replace_sec_letter(fn):
+    def inner(sentence):
+        return fn(''.join(char.upper() if index % 2 == 0 else char for index, char in enumerate(sentence)))
+    return inner
+
+@replace_sec_letter
+def i_would_have_said(sentence):
+    return f'I would have said : {sentence}'
+
+# print(i_would_have_said('My home is far from here'))
+assert i_would_have_said('My home is far from here') == 'I would have said : My hOmE Is fAr fRoM HeRe'
+
+# 257, 258, 259
+# create a decorator that change every 4th letter in str by upper method in decorated function
+
+def replace_4th_letter(fn):
+    def inner(sentence):
+        return fn(''.join(letter.upper() if index % 4 == 0 else letter for index, letter in enumerate(sentence)))
+    return inner
+
+@replace_4th_letter
+def i_would_have_said(sentence):
+    return f'I would have said : {sentence}'
+
+# print(i_would_have_said('My home is far from here'))
+assert i_would_have_said('My home is far from here') == 'I would have said : My hOme Is fAr fRom Here'
+
+# 260, 261, 262
+# the same what # 257 byt opposite action
+
+def replace_4th_letter_2(fn):
+    def inner(sentence):
+        return fn(''.join(letter.upper() if index % 4 != 0 else letter for index, letter in enumerate(sentence)))
+    return inner
+
+@replace_4th_letter_2
+def i_would_have_said(sentence):
+    return f'I would have said : {sentence}'
+
+# print(i_would_have_said('My home is far from here'))
+assert i_would_have_said('My home is far from here') == 'I would have said : MY HoME iS FaR FrOM hERE'
+
+# 263, 264, 265
+# create a decorator that count exponentiation result of decorated function
+
+def exponentiation(fn):
+    def inner(*args, c):
+        return fn(*args) ** c
+    return inner
+
+@exponentiation
+def add(a, b):
+    return a // b
+
+result = add(2, 1, c=4)
+# print(result)
+assert result == 16
+
+# 266, 267, 268
+# Write a decorator that replace white spaces from the str and count all len of that str and change
+# 'I would have said' on 'The len of str is'
+
+def count_len(fn):
+    def inner(sentence):
+        _ = fn(sentence)
+        return f'The len of str is : {len(sentence.replace(' ', ''))}'
+    return inner
 
 
+@count_len
+def i_would_have_said(sentence):
+    return f'I would have said : {sentence}'
+
+# print(i_would_have_said('My home is far from here'))
+assert i_would_have_said('My home is far from here') == 'The len of str is : 19'
+
+# 269, 270, 271
+# create a decorator that count len of the returned list from decorated function
+
+def len_list(fn):
+    def inner(a):
+        result = fn(a)
+        return len(result[:6])
+    return inner
+
+@len_list
+def create_list(a):
+    l = list(range(a))
+    return l
+
+result = create_list(10)
+# print(result)
+assert result == 6
+
+# 272, 273, 274
+# write a function that add number to returned list from decorated function
+
+def add_number_to_list(number):
+    def decorator(fn):
+        def inner(a):
+            result = fn(a)
+            result.append(number)
+            return result
+        return inner
+    return decorator
+
+@add_number_to_list(200)
+def create_list(a):
+    l = list(range(a))
+    return l
+
+result = create_list(10)
+# print(result)
+assert result == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 200]
+
+# 275, 276, 277
+# write a function that remove last number of list from decorated function
+
+def remove_number_from_list(fn):
+    def inner(a):
+        result = fn(a)
+        result.pop()
+        return result
+    return inner
 
 
+@remove_number_from_list
+def create_list(a):
+    l = list(range(a))
+    return l
 
+result = create_list(10)
+# print(result)
+assert result == [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
+# 278, 279, 280
+# create a decorator that count len of the returned list from decorated function
+
+def sum_list(fn):
+    def inner(a):
+        result = fn(a)
+        return sum(result)
+    return inner
+
+@sum_list
+def create_list(a):
+    l = list(range(a))
+    return l
+
+result = create_list(10)
+# print(result)
+assert result == 45
+
+# 281, 282, 283
+# create a decorator that count average of list
+
+def avg_list(fn):
+    def inner(a):
+        result = fn(a)
+        return sum(result) / len(result)
+    return inner
+
+@avg_list
+def create_list(a):
+    l = list(range(a))
+    return l
+
+result = create_list(10)
+# print(result)
+assert result == 4.5
