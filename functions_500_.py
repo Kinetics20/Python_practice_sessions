@@ -1928,3 +1928,52 @@ def create_list(a):
 result = create_list(10)
 # print(result)
 assert result == 4.5
+
+# 284, 285, 286
+# create a decorator that multiply return any_funct by number
+
+def multi_num(c):
+    def decorator(fn):
+        def inner(*args, **kwargs):
+            result = fn(*args, **kwargs)
+            return result * c
+        return inner
+    return decorator
+
+@multi_num(5)
+def any_funct(a, b):
+    return a * b
+
+d = any_funct(10, 20)
+# print(d)
+assert any_funct(10, 20) == 1000
+
+# 287, 288, 289
+# create a decorator that gives possibility to create basic mathematical operation on the return any_funct
+# using number and operation like a parameter of decorator
+
+def multi_num(c, operation):
+    def decorator(fn):
+        def inner(*args, **kwargs):
+            result = fn(*args, **kwargs)
+            if operation == 'multiply':
+                return result * c
+            elif operation == 'add':
+                return result + c
+            elif operation == 'subtract':
+                return result - c
+            elif operation == 'divide' and c != 0:
+                return result / c
+            else:
+                return result
+        return inner
+    return decorator
+
+@multi_num(50, operation='multiply')
+def any_funct(a, b):
+    return a + b
+
+d_1 = any_funct(10, 20)
+# print(d_1)
+
+assert any_funct(10, 20) == 1500
