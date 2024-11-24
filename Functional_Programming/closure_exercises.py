@@ -158,11 +158,43 @@ calculate_magic_cache = memoize(calculate_magic)
 calculate_tribonacci_cache = memoize(calculate_tribonacci)
 
 
-print(calculate_magic_cache(1, 2))
-print(calculate_magic_cache(2, 2))
-print(calculate_magic_cache(1, 2))
-print(calculate_magic_cache(2, 2))
-print(calculate_tribonacci_cache(2, 2, 2))
+# print(calculate_magic_cache(1, 2))
+# print(calculate_magic_cache(2, 2))
+# print(calculate_magic_cache(1, 2))
+# print(calculate_magic_cache(2, 2))
+# print(calculate_tribonacci_cache(2, 2, 2))
+
+### 10 ** 2
+def power10(base):
+    return base ** 10
+
+# def power_n(base, exponent):
+#     return base ** exponent
+
+# print(power10(2))
+# factory function (factory design pattern)
+
+def power_n(exponent):
+    def inner(base):
+        return base ** exponent
+
+    return inner
+
+
+power_2 = power_n(2)
+power_3 = power_n(3)
+power_4 = power_n(4)
+# t = power_2(2)
+# print(t)
+# t1 = power_2(4)
+# print(t1)
+print(power_2(2)) # 4
+print(power_2(4)) # 16
+print(power_3(2)) # 8
+print(power_3(4)) # 64
+print(power_4(2)) # 16
+print(power_4(4)) # 256
+
 
 
 
