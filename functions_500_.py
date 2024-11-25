@@ -715,7 +715,8 @@ def create_lists_from_dict(any_dict):
 
 
 assert create_lists_from_dict(dict_2) == (
-['home_AS_a_Hall', ' John2    ', 'funeral123   ', '88infinity', 'compulsive is a bad character treat'], [0, 1, 2, 3, 4])
+    ['home_AS_a_Hall', ' John2    ', 'funeral123   ', '88infinity', 'compulsive is a bad character treat'],
+    [0, 1, 2, 3, 4])
 
 # 108, 109, 110
 # _______________________________________________
@@ -1224,13 +1225,16 @@ def str_count_lower(any_str):
 
 assert str_count_lower('Alice has a cat') == 4
 
+
 # 147
 # find method for str
 
 def str_find(any_str):
     return any_str.find('cat')
 
+
 assert str_find('Alice has a cat') == 12
+
 
 # 148, 149, 150
 # for the list named handball_elite return list of cities that
@@ -1240,8 +1244,10 @@ def give_l_2(list_dict):
     return [item['city'] for item in list_dict if not item['capacity'] & 1 and
             len(item['country']) <= 6]
 
+
 # print(give_l_2(handball_elite))
 assert give_l_2(handball_elite) == ['Barcelona', 'Paris', 'Kielce', 'Montpellier', 'Płock', 'Nantes']
+
 
 # 151
 # index method for str
@@ -1249,21 +1255,26 @@ assert give_l_2(handball_elite) == ['Barcelona', 'Paris', 'Kielce', 'Montpellier
 def str_index(any_str):
     return any_str.index('cat')
 
+
 assert str_index('Alice has a cat') == 12
+
 
 # 152
 # index method for str ( parameters )
 
 def str_index_par(any_str):
-    return any_str.index('as',1 ,10)
+    return any_str.index('as', 1, 10)
+
 
 assert str_index_par('Alice has a cat') == 7
+
 
 # 153
 # rfind method for str
 
 def str_rfind(any_str):
     return any_str.find('cat')
+
 
 assert str_rfind('Alice has a cat') == 12
 
@@ -1376,7 +1387,9 @@ def avg_age_01(data_):
         number_users += user['age']
     return number_users // len(data_)
 
+
 assert avg_age_01(data) == 35
+
 
 # 155, 156, 157
 # the same task what # 154 but use the list comprehension
@@ -1385,16 +1398,20 @@ def avg_age_02(persons):
     age_sum = [person['age'] for person in persons]
     return sum(age_sum) // len(persons)
 
+
 assert avg_age_02(data) == 35
+
 
 # 158, 159, 160
 # the same task what # 155 but use the generator expression
 # with lambda and map functions
 
 def avg_age_03(persons):
-    return sum(list(map(lambda person: person['age'] , persons))) // len(persons)
+    return sum(list(map(lambda person: person['age'], persons))) // len(persons)
+
 
 assert avg_age_03(data) == 35
+
 
 # 161, 162, 163
 # create function that takes list of dictionaries and return
@@ -1404,27 +1421,33 @@ def people_from_warsaw(persons):
     return {person['name']: person['age'] for person in persons
             if 'warszawa'.lower() in person['city']}
 
+
 assert people_from_warsaw(data) == {'piotr': 50, 'tomek': 38, 'rafal': 28, 'igor': 34}
+
 
 # 164, 165, 166
 # write function that return average age of course users only from warsaw
 
 def avg_age_people_from_warsaw_(persons):
     r = {person['name']: person['age'] for person in persons
-            if 'warszawa'.lower() in person['city']}
+         if 'warszawa'.lower() in person['city']}
     return sum(r.values()) // len(r)
 
+
 assert avg_age_people_from_warsaw_(data) == 37
+
 
 # 167, 168, 169
 # the same task what #164 but for the people from out of Warsaw
 def avg_age_people_out_warsaw_(persons):
     r = {person['name']: person['age'] for person in persons
-            if 'warszawa'.lower() not in person['city']}
+         if 'warszawa'.lower() not in person['city']}
     return sum(r.values()) // len(r)
+
 
 # print(avg_age_people_from_warsaw_(data))
 assert avg_age_people_out_warsaw_(data) == 34
+
 
 # 171, 172, 173
 # the same what #161 but for the people from out of Warsaw
@@ -1433,9 +1456,12 @@ def people_out_warsaw(persons):
     return {person['name']: person['age'] for person in persons
             if 'warszawa'.lower() not in person['city']}
 
+
 # print(people_out_warsaw(data))
 
-assert people_out_warsaw(data) == {'pawel': 39, 'joanna': 32, 'igor': 31, 'dawid': 43, 'mateusz': 31, 'adrian': 33, 'cezary': 33, 'szymon': 30, 'marcin': 40, 'kasia': 35}
+assert people_out_warsaw(data) == {'pawel': 39, 'joanna': 32, 'igor': 31, 'dawid': 43, 'mateusz': 31, 'adrian': 33,
+                                   'cezary': 33, 'szymon': 30, 'marcin': 40, 'kasia': 35}
+
 
 # 174, 175, 176
 # the same what # 171 but only list of names
@@ -1444,8 +1470,11 @@ def people_out_warsaw_names(persons):
     return [person['name'] for person in persons
             if 'warszawa'.lower() not in person['city']]
 
+
 # print(people_out_warsaw_names(data))
-assert people_out_warsaw_names(data) == ['pawel', 'joanna', 'igor', 'dawid', 'mateusz', 'adrian', 'cezary', 'szymon', 'marcin', 'kasia', 'mateusz']
+assert people_out_warsaw_names(data) == ['pawel', 'joanna', 'igor', 'dawid', 'mateusz', 'adrian', 'cezary', 'szymon',
+                                         'marcin', 'kasia', 'mateusz']
+
 
 # 177
 # the same task what 167 but traditional method
@@ -1460,17 +1489,21 @@ def avg_age_people_out_warsaw_2(dataset):
             counter += 1
     return total_age // counter
 
+
 assert avg_age_people_out_warsaw_2(data) == 34
+
 
 # 178, 179, 180
 # using tuple comprehension create function that return
 # people's names from warsaw
 
 def give_back_names_people_from_waw(dataset):
-    return tuple(names['name'] for names in dataset if names['city'].lower() == 'warszawa' )
+    return tuple(names['name'] for names in dataset if names['city'].lower() == 'warszawa')
+
 
 # print(give_back_names_people_from_waw(data))
 assert give_back_names_people_from_waw(data) == ('piotr', 'tomek', 'rafal', 'piotr', 'igor')
+
 
 # 181
 # the same what 180 but traditional method function has to return list
@@ -1482,8 +1515,10 @@ def give_back_names_people_from_waw_2(dataset):
             names.append(person['name'])
     return names
 
+
 # print(give_back_names_people_from_waw_2(data))
 assert give_back_names_people_from_waw_2(data) == ['piotr', 'tomek', 'rafal', 'piotr', 'igor']
+
 
 # 182, 183, 184
 # the same what 181 but use lambda and map functions
@@ -1494,8 +1529,10 @@ def give_back_names_people_from_waw_3(people):
         filter(lambda person: person['city'].lower() == 'warszawa', people)
     ))
 
+
 # print(give_back_names_people_from_waw_3(data))
 assert give_back_names_people_from_waw_3(data) == ['piotr', 'tomek', 'rafal', 'piotr', 'igor']
+
 
 # 185, 186, 187
 # create function that return set of cities without repetition
@@ -1504,8 +1541,10 @@ assert give_back_names_people_from_waw_3(data) == ['piotr', 'tomek', 'rafal', 'p
 def cities_without_repetition(dataset):
     return set(city['city'] for city in dataset)
 
+
 # print(cities_without_repetition(data))
 assert cities_without_repetition(data) == {'krakow', 'dabrowa gornicza', 'wroclaw', 'kielce', 'warszawa'}
+
 
 # 188
 # the same task what # 185 but use traditional method and return list
@@ -1516,7 +1555,10 @@ def cities_without_repetition_2(dataset):
         cities.append(city['city'])
     return list(set(cities))
 
+
 print(cities_without_repetition_2(data))
+
+
 # assert cities_without_repetition_2(data) == ['krakow', 'dabrowa gornicza', 'warszawa', 'kielce', 'wroclaw']
 
 # 189, 190, 191
@@ -1525,7 +1567,9 @@ print(cities_without_repetition_2(data))
 def cities_without_repetition_3(dataset):
     return set(map(lambda city: city['city'], dataset))
 
+
 assert cities_without_repetition_3(data) == {'wroclaw', 'krakow', 'warszawa', 'kielce', 'dabrowa gornicza'}
+
 
 # 192, 193, 194
 # write a function that check if someone is a geezer and return bool value True or False
@@ -1534,17 +1578,22 @@ assert cities_without_repetition_3(data) == {'wroclaw', 'krakow', 'warszawa', 'k
 def check_age_people(dataset):
     return bool(len([age['name'] for age in dataset if age['age'] > 35]) > 1)
 
+
 assert check_age_people(data) == True
+
 
 # 195, 196, 197
 # the same what # 192 but function has to return str with info about amount geezers in the group
 
 def check_age_people_2(dataset):
     age_list = [age['name'] for age in dataset if age['age'] > 35]
-    return f'There are {len(age_list)} people who are older than 35 years' if len(age_list) >= 1 else f'There is no elderly people in the group'
+    return f'There are {len(age_list)} people who are older than 35 years' if len(
+        age_list) >= 1 else f'There is no elderly people in the group'
+
 
 # print(check_age_people_2(data))
 assert check_age_people_2(data) == 'There are 5 people who are older than 35 years'
+
 
 # 198
 # the same what # 192 but in traditional method
@@ -1556,7 +1605,9 @@ def check_age_people_3(dataset):
             age_list.append(age['name'])
     return True if len(age_list) > 1 else False
 
+
 assert check_age_people_3(data) == True
+
 
 # 199, 200, 201
 # the same what # 192 but use map , lambda and filter
@@ -1564,11 +1615,13 @@ assert check_age_people_3(data) == True
 def check_age_people_4(dataset):
     ages = list(map
                 (lambda person: person['name'],
-                filter(lambda person_age: person_age['age'] > 35, dataset)
-                ))
+                 filter(lambda person_age: person_age['age'] > 35, dataset)
+                 ))
     return len(ages) > 1
 
+
 assert check_age_people_4(data) == True
+
 
 # 202, 203, 204
 # write a function that takes str and capitalize every second letter for that string
@@ -1579,8 +1632,10 @@ def change_second_letter(any_str):
         for index, char in enumerate(any_str)
     )
 
+
 # print(change_second_letter('ala ma kota'))
 assert change_second_letter('ala ma kota') == 'AlA Ma kOtA'
+
 
 # 205, 206, 207
 # write a function that takes list contains string and returns list of tuples
@@ -1588,8 +1643,11 @@ assert change_second_letter('ala ma kota') == 'AlA Ma kOtA'
 def create_tuple_from_list_of_string(list_of_strings):
     return [(index, item) for index, item in enumerate(list_of_strings)]
 
+
 # print(create_tuple_from_list_of_string(['home', 'dog', 'funeral', 'dental']))
-assert create_tuple_from_list_of_string(['home', 'dog', 'funeral', 'dental']) == [(0, 'home'), (1, 'dog'), (2, 'funeral'), (3, 'dental')]
+assert create_tuple_from_list_of_string(['home', 'dog', 'funeral', 'dental']) == [(0, 'home'), (1, 'dog'),
+                                                                                  (2, 'funeral'), (3, 'dental')]
+
 
 # 208, 209, 210
 # the same what # 205 but only for odd indexes
@@ -1597,8 +1655,10 @@ assert create_tuple_from_list_of_string(['home', 'dog', 'funeral', 'dental']) ==
 def create_tuple_from_list_of_string_odd(list_of_strings):
     return [(index, item) for index, item in enumerate(list_of_strings) if index & 1]
 
+
 # print(create_tuple_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental']))
 assert create_tuple_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental']) == [(1, 'dog'), (3, 'dental')]
+
 
 # 211, 212, 213
 # the same what # 205 but only for even indexes
@@ -1606,26 +1666,39 @@ assert create_tuple_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental']
 def create_tuple_from_list_of_string_even(list_of_strings):
     return [(index, item) for index, item in enumerate(list_of_strings) if not index & 1]
 
+
 # print(create_tuple_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war']))
-assert create_tuple_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war']) == [(0, 'home'), (2, 'funeral'), (4, 'word')]
+assert create_tuple_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war']) == [(0, 'home'),
+                                                                                                      (2, 'funeral'),
+                                                                                                      (4, 'word')]
+
 
 # 214, 215, 216
 # the same what # 205 but every third index
 
 def create_tuple_from_list_of_string_every_3th(list_of_strings):
-    return [(index, item) for index, item in enumerate(list_of_strings) if index %3 == 0]
+    return [(index, item) for index, item in enumerate(list_of_strings) if index % 3 == 0]
+
 
 # print(create_tuple_from_list_of_string_every_3th(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
-assert (create_tuple_from_list_of_string_every_3th(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9'])) == [(0, 'home'), (3, 'dental'), (6, '6'), (9, '9')]
+assert (create_tuple_from_list_of_string_every_3th(
+    ['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9'])) == [(0, 'home'), (3, 'dental'), (6, '6'),
+                                                                                  (9, '9')]
+
 
 # 217, 218, 219
 # the same what # 214 all indexes except every third index
 
 def create_tuple_from_list_of_string_except_every_3th(list_of_strings):
-    return [(index, item) for index, item in enumerate(list_of_strings) if index %3 != 0]
+    return [(index, item) for index, item in enumerate(list_of_strings) if index % 3 != 0]
+
 
 # print(create_tuple_from_list_of_string_except_every_3th(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
-assert (create_tuple_from_list_of_string_except_every_3th(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9'])) == [(1, 'dog'), (2, 'funeral'), (4, 'word'), (5, 'war'), (7, '7'), (8, '8')]
+assert (create_tuple_from_list_of_string_except_every_3th(
+    ['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9'])) == [(1, 'dog'), (2, 'funeral'),
+                                                                                  (4, 'word'), (5, 'war'), (7, '7'),
+                                                                                  (8, '8')]
+
 
 # 220, 221, 222
 # write a function that takes list and return dictionary with odd keys
@@ -1633,8 +1706,11 @@ assert (create_tuple_from_list_of_string_except_every_3th(['home', 'dog', 'funer
 def create_dict_from_list_of_string_odd(list_of_strings):
     return {index: item for index, item in enumerate(list_of_strings) if index & 1}
 
+
 # print(create_dict_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
-assert create_dict_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {1: 'dog', 3: 'dental', 5: 'war', 7: '7', 9: '9'}
+assert create_dict_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {
+    1: 'dog', 3: 'dental', 5: 'war', 7: '7', 9: '9'}
+
 
 # 223, 224, 225
 # the same what # 220 but for even keys
@@ -1642,26 +1718,37 @@ assert create_dict_from_list_of_string_odd(['home', 'dog', 'funeral', 'dental', 
 def create_dict_from_list_of_string_even(list_of_strings):
     return {index: item for index, item in enumerate(list_of_strings) if not index & 1}
 
+
 # print(create_dict_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
-assert create_dict_from_list_of_string_even(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {0: 'home', 2: 'funeral', 4: 'word', 6: '6', 8: '8'}
+assert create_dict_from_list_of_string_even(
+    ['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {0: 'home', 2: 'funeral', 4: 'word',
+                                                                                 6: '6', 8: '8'}
+
 
 # 226, 227, 228
 # the same what # 225 but for every 4th keys
 
 def create_dict_from_list_every_4th_key(list_of_strings):
-    return {index: item for index, item in enumerate(list_of_strings) if not index % 4 }
+    return {index: item for index, item in enumerate(list_of_strings) if not index % 4}
+
 
 # print(create_dict_from_list_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
-assert create_dict_from_list_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {0: 'home', 4: 'word', 8: '8'}
+assert create_dict_from_list_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {
+    0: 'home', 4: 'word', 8: '8'}
+
 
 # 229, 230, 231
 # the same what # 226 but not for every 4th keys
 
 def create_dict_from_list_not_every_4th_key(list_of_strings):
-    return {index: item for index, item in enumerate(list_of_strings) if index % 4 != 0 }
+    return {index: item for index, item in enumerate(list_of_strings) if index % 4 != 0}
+
 
 # print(create_dict_from_list_not_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']))
-assert create_dict_from_list_not_every_4th_key(['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {1: 'dog', 2: 'funeral', 3: 'dental', 5: 'war', 6: '6', 7: '7', 9: '9'}
+assert create_dict_from_list_not_every_4th_key(
+    ['home', 'dog', 'funeral', 'dental', 'word', 'war', '6', '7', '8', '9']) == {1: 'dog', 2: 'funeral', 3: 'dental',
+                                                                                 5: 'war', 6: '6', 7: '7', 9: '9'}
+
 
 # 232, 233, 234
 # create function that change every second letter in the sentence
@@ -1669,8 +1756,10 @@ assert create_dict_from_list_not_every_4th_key(['home', 'dog', 'funeral', 'denta
 def every_second_letter(any_str):
     return ''.join(letter.lower() if index % 2 else letter.upper() for index, letter in enumerate(any_str))
 
+
 # print(every_second_letter('home is roomy and i would like to buy it'))
 assert every_second_letter('home is roomy and i would like to buy it') == 'HoMe iS RoOmY AnD I WoUlD LiKe tO BuY It'
+
 
 # 235, 236, 237
 # the same what 232 but opposite action , means start from small letter
@@ -1678,8 +1767,11 @@ assert every_second_letter('home is roomy and i would like to buy it') == 'HoMe 
 def every_second_letter_first_small(any_str):
     return ''.join(letter.lower() if not index % 2 else letter.upper() for index, letter in enumerate(any_str))
 
+
 # print(every_second_letter_first_small('home is roomy and i would like to buy it'))
-assert every_second_letter_first_small('home is roomy and i would like to buy it') == 'hOmE Is rOoMy aNd i wOuLd lIkE To bUy iT'
+assert every_second_letter_first_small(
+    'home is roomy and i would like to buy it') == 'hOmE Is rOoMy aNd i wOuLd lIkE To bUy iT'
+
 
 # 238, 239, 240
 # write function uses closure that outer function takes str and number
@@ -1688,12 +1780,15 @@ assert every_second_letter_first_small('home is roomy and i would like to buy it
 def hello(name, a):
     def inner():
         return f'Hello {(" " + name.title().swapcase()) * a}'
+
     return inner
+
 
 x_fn = hello('Love is in the air', 3)
 # print(x_fn())
 
 assert x_fn() == 'Hello  lOVE iS iN tHE aIR lOVE iS iN tHE aIR lOVE iS iN tHE aIR'
+
 
 # 241, 242, 243
 # create a decorator that change str by swapcase method in decorated function
@@ -1701,14 +1796,18 @@ assert x_fn() == 'Hello  lOVE iS iN tHE aIR lOVE iS iN tHE aIR lOVE iS iN tHE aI
 def swapcase(fn):
     def inner(name):
         return fn(name.swapcase())
+
     return inner
+
 
 @swapcase
 def hello(name):
     return f'Hello {name}'
 
+
 # print(hello('JoHn'))
 assert hello('JoHn') == 'Hello jOhN'
+
 
 # 244, 245, 246
 # create a decorator that multiply result of decorated function by value
@@ -1716,14 +1815,19 @@ assert hello('JoHn') == 'Hello jOhN'
 def multiply(fn):
     def inner(*args, c):
         return fn(*args) * c
+
     return inner
+
 
 @multiply
 def add(a, b):
     return a + b
+
+
 result = add(1, 2, c=4)
 # print(result)
 assert result == 12
+
 
 # 247, 248, 249
 # create a decorator that change str by title method in decorated function
@@ -1731,14 +1835,18 @@ assert result == 12
 def title(fn):
     def inner(sentence):
         return fn(sentence.title())
+
     return inner
+
 
 @title
 def i_would_have_said(sentence):
     return f'I would have said : {sentence}'
 
+
 # print(i_would_have_said('My home is far from here'))
 assert i_would_have_said('My home is far from here') == 'I would have said : My Home Is Far From Here'
+
 
 # 251, 252, 253
 # create a decorator that change str by replace method in decorated function change 'e' on '$'
@@ -1746,14 +1854,18 @@ assert i_would_have_said('My home is far from here') == 'I would have said : My 
 def replace(fn):
     def inner(sentence):
         return fn(sentence.replace('e', '$'))
+
     return inner
+
 
 @replace
 def i_would_have_said(sentence):
     return f'I would have said : {sentence}'
 
+
 # print(i_would_have_said('My home is far from here'))
 assert i_would_have_said('My home is far from here') == 'I would have said : My hom$ is far from h$r$'
+
 
 # 254, 255, 256
 # create a decorator that change every second letter in str by upper method in decorated function
@@ -1761,14 +1873,18 @@ assert i_would_have_said('My home is far from here') == 'I would have said : My 
 def replace_sec_letter(fn):
     def inner(sentence):
         return fn(''.join(char.upper() if index % 2 == 0 else char for index, char in enumerate(sentence)))
+
     return inner
+
 
 @replace_sec_letter
 def i_would_have_said(sentence):
     return f'I would have said : {sentence}'
 
+
 # print(i_would_have_said('My home is far from here'))
 assert i_would_have_said('My home is far from here') == 'I would have said : My hOmE Is fAr fRoM HeRe'
+
 
 # 257, 258, 259
 # create a decorator that change every 4th letter in str by upper method in decorated function
@@ -1776,14 +1892,18 @@ assert i_would_have_said('My home is far from here') == 'I would have said : My 
 def replace_4th_letter(fn):
     def inner(sentence):
         return fn(''.join(letter.upper() if index % 4 == 0 else letter for index, letter in enumerate(sentence)))
+
     return inner
+
 
 @replace_4th_letter
 def i_would_have_said(sentence):
     return f'I would have said : {sentence}'
 
+
 # print(i_would_have_said('My home is far from here'))
 assert i_would_have_said('My home is far from here') == 'I would have said : My hOme Is fAr fRom Here'
+
 
 # 260, 261, 262
 # the same what # 257 byt opposite action
@@ -1791,14 +1911,18 @@ assert i_would_have_said('My home is far from here') == 'I would have said : My 
 def replace_4th_letter_2(fn):
     def inner(sentence):
         return fn(''.join(letter.upper() if index % 4 != 0 else letter for index, letter in enumerate(sentence)))
+
     return inner
+
 
 @replace_4th_letter_2
 def i_would_have_said(sentence):
     return f'I would have said : {sentence}'
 
+
 # print(i_would_have_said('My home is far from here'))
 assert i_would_have_said('My home is far from here') == 'I would have said : MY HoME iS FaR FrOM hERE'
+
 
 # 263, 264, 265
 # create a decorator that count exponentiation result of decorated function
@@ -1806,15 +1930,19 @@ assert i_would_have_said('My home is far from here') == 'I would have said : MY 
 def exponentiation(fn):
     def inner(*args, c):
         return fn(*args) ** c
+
     return inner
+
 
 @exponentiation
 def add(a, b):
     return a // b
 
+
 result = add(2, 1, c=4)
 # print(result)
 assert result == 16
+
 
 # 266, 267, 268
 # Write a decorator that replace white spaces from the str and count all len of that str and change
@@ -1824,6 +1952,7 @@ def count_len(fn):
     def inner(sentence):
         _ = fn(sentence)
         return f'The len of str is : {len(sentence.replace(' ', ''))}'
+
     return inner
 
 
@@ -1831,8 +1960,10 @@ def count_len(fn):
 def i_would_have_said(sentence):
     return f'I would have said : {sentence}'
 
+
 # print(i_would_have_said('My home is far from here'))
 assert i_would_have_said('My home is far from here') == 'The len of str is : 19'
+
 
 # 269, 270, 271
 # create a decorator that count len of the returned list from decorated function
@@ -1841,16 +1972,20 @@ def len_list(fn):
     def inner(a):
         result = fn(a)
         return len(result[:6])
+
     return inner
+
 
 @len_list
 def create_list(a):
     l = list(range(a))
     return l
 
+
 result = create_list(10)
 # print(result)
 assert result == 6
+
 
 # 272, 273, 274
 # write a function that add number to returned list from decorated function
@@ -1861,17 +1996,22 @@ def add_number_to_list(number):
             result = fn(a)
             result.append(number)
             return result
+
         return inner
+
     return decorator
+
 
 @add_number_to_list(200)
 def create_list(a):
     l = list(range(a))
     return l
 
+
 result = create_list(10)
 # print(result)
 assert result == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 200]
+
 
 # 275, 276, 277
 # write a function that remove last number of list from decorated function
@@ -1881,6 +2021,7 @@ def remove_number_from_list(fn):
         result = fn(a)
         result.pop()
         return result
+
     return inner
 
 
@@ -1889,9 +2030,11 @@ def create_list(a):
     l = list(range(a))
     return l
 
+
 result = create_list(10)
 # print(result)
 assert result == [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
 
 # 278, 279, 280
 # create a decorator that count len of the returned list from decorated function
@@ -1900,16 +2043,20 @@ def sum_list(fn):
     def inner(a):
         result = fn(a)
         return sum(result)
+
     return inner
+
 
 @sum_list
 def create_list(a):
     l = list(range(a))
     return l
 
+
 result = create_list(10)
 # print(result)
 assert result == 45
+
 
 # 281, 282, 283
 # create a decorator that count average of list
@@ -1918,16 +2065,20 @@ def avg_list(fn):
     def inner(a):
         result = fn(a)
         return sum(result) / len(result)
+
     return inner
+
 
 @avg_list
 def create_list(a):
     l = list(range(a))
     return l
 
+
 result = create_list(10)
 # print(result)
 assert result == 4.5
+
 
 # 284, 285, 286
 # create a decorator that multiply return any_funct by number
@@ -1937,16 +2088,21 @@ def multi_num(c):
         def inner(*args, **kwargs):
             result = fn(*args, **kwargs)
             return result * c
+
         return inner
+
     return decorator
+
 
 @multi_num(5)
 def any_funct(a, b):
     return a * b
 
+
 d = any_funct(10, 20)
 # print(d)
 assert any_funct(10, 20) == 1000
+
 
 # 287, 288, 289
 # create a decorator that gives possibility to create basic mathematical operation on the return any_funct
@@ -1966,14 +2122,34 @@ def multi_num(c, operation):
                 return result / c
             else:
                 return result
+
         return inner
+
     return decorator
+
 
 @multi_num(50, operation='multiply')
 def any_funct(a, b):
     return a + b
 
+
 d_1 = any_funct(10, 20)
 # print(d_1)
 
 assert any_funct(10, 20) == 1500
+
+
+# 290, 291, 292
+# create function that use closure outer fn takes exponent inner takes base of power
+# exponent and base of power will be the same number
+
+def power_n(exponent):
+    def inner(base):
+        return base ** exponent
+
+    return inner
+
+
+power_2 = power_n(2)
+# print(power_2(4))
+assert power_2(4) == 16

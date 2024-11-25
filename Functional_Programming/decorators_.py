@@ -8,6 +8,7 @@
 
 
 def capitalize(fn):
+    print('__capitalize__ outer')
     def inner(name):
         return fn(name.swapcase())
     return inner
@@ -18,7 +19,7 @@ def inverse(fn):
 
     return inner
 
-@inverse
+# @inverse
 @capitalize
 @inverse
 def hello(name):
@@ -28,6 +29,7 @@ def hello(name):
 def howdy(name):
     return f'howdy {name}'
 
+# print(capitalize(inverse)(inverse(hello)('JoHn')))
 print(hello('JoHn'))
 print(howdy('PiPi is a ....'))
 
