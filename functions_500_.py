@@ -2153,3 +2153,27 @@ def power_n(exponent):
 power_2 = power_n(2)
 # print(power_2(4))
 assert power_2(4) == 16
+
+# 293, 294, 295
+
+
+def capitalize(function):
+    def inner(name):
+        return function(name.capitalize())
+
+    return inner
+
+def gen_html(fn):
+    def inner(name):
+        result = fn(f'<b>{name}<b/>')
+        return f'<h1>{result}</h1>'
+
+
+    return inner
+@capitalize
+@gen_html
+def bye(name):
+    return f"Bye {name}"
+
+# print(bye("happy holidays"))
+assert bye("happy holidays") == '<h1>Bye <b>Happy holidays<b/></h1>'
