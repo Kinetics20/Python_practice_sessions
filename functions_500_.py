@@ -2402,3 +2402,226 @@ def kwh_to_joules(kwh):
 
 # print(kwh_to_joules(1000))
 assert kwh_to_joules(1000) == '1000 Kilowatt hours are 3600000000.00 joules'
+
+# 321
+# create function that use decimal from python library during adding two numbers
+
+from decimal import Decimal
+
+def add_decimal(num_1, num_2):
+    return Decimal(f'{num_1}') + Decimal(str(num_2))
+
+# print(add_decimal(0.25, 0.36))
+assert add_decimal(0.25, 0.36) == Decimal('0.61')
+
+# 322
+# create function that use decimal from python library during multiply two numbers
+
+def mult_decimal(num_1, num_2):
+    return Decimal(f'{num_1}') * Decimal(str(num_2))
+
+# print(mult_decimal(0.21, 0.42))
+assert mult_decimal(0.21, 0.42) == Decimal('0.0882')
+
+# 323, 324, 325
+# using list comprehension create function that takes list of list and n and return the same list multiply by n
+
+def mult_list_of_list_1(any_list, n):
+    return [[x * n, y * n] for x , y in any_list ]
+
+# print(mult_list_of_list_1([[1, 2], [3, 4], [5, 6]], 5))
+assert mult_list_of_list_1([[1, 2], [3, 4], [5, 6]], 5) == [[5, 10], [15, 20], [25, 30]]
+
+# 326, 327, 328
+# the same what # 323 but different way
+
+def mult_list_of_list_2(any_list, n):
+    return [[digit * n for digit in digits] for digits in any_list]
+
+# print(mult_list_of_list_2([[1, 2], [3, 4], [5, 6]], 5))
+assert mult_list_of_list_2([[1, 2], [3, 4], [5, 6]], 5) == [[5, 10], [15, 20], [25, 30]]
+
+# 329, 330, 331
+# create function that return seating plan in the plane in the set 25 rows and six seats in each row
+# zero row doesn't exist and should be display like a None
+
+def seating_plan(letters, rows):
+    return [None] + [{letter: None for letter in letters} for _ in rows]
+
+# print(seating_plan('ABCDEF', range(1, 25)))
+assert seating_plan('ABCDEF', range(1, 25)) == [None,
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None}]
+
+# 332, 333, 334
+# using list comprehension and range inside create function that takes any str and number and return list of indexes with that string
+# number of str in that list has to be the same what n
+
+def lst_range_str(any_str, n):
+    return [any_str for t in range(n)]
+
+# print(lst_range_str('I will not swearing',6))
+assert lst_range_str('I will not swearing',6) == ['I will not swearing', 'I will not swearing', 'I will not swearing', 'I will not swearing', 'I will not swearing', 'I will not swearing']
+
+# 335, 336, 337
+# using reduce from functools library count sum of list indexes created inside by generation expression
+# index should be the power of the index created from the list
+from functools import reduce
+
+def reduce_list(any_list):
+    return reduce (lambda acc, ce: acc + ce, (x ** x for x in any_list))
+
+# print(reduce_list([1, 2, 3, 4, 5]))
+assert reduce_list([1, 2, 3, 4, 5]) == 3413
+
+# 338
+# sum of list implementation
+
+def sum_implementation(any_list):
+    total = 0
+    for i in range(len(any_list)):
+        total += any_list[i]
+    return total
+
+# print(sum_implementation([1, 2, 3, 4, 5]))
+assert sum_implementation([1, 2, 3, 4, 5]) == 15
+
+# 339
+# the same what # 338 but differt way
+
+def sum_of_consecutive_elements(any_list):
+    total = 0
+    for element in any_list:
+        total += element
+    return total
+
+# print(sum_of_consecutive_elements([1, 2, 3, 4, 5]))
+assert sum_of_consecutive_elements([1, 2, 3, 4, 5]) == 15
+
+# 340
+# The cumulative_sum function computes the cumulative sum of
+# the elements of a list, i.e., at each position it creates the sum of all the elements from the beginning
+# of the list to the current element. The result is returned as a list with consecutive sums.
+
+def cumulative_sum(any_list):
+    total = 0
+    score = []
+    for element in any_list:
+        total += element
+        score.append(total)
+    return score
+
+# print(cumulative_sum([1, 2, 3, 4, 5]))
+assert cumulative_sum([1, 2, 3, 4, 5]) == [1, 3, 6, 10, 15]
+
+# 341, 342, 343
+# create function that count amount of unique hobbies from data collection
+
+def amount_unique_hobbies(collection):
+    return len({x for y in collection for x in y['hobbies']})
+
+# print(amount_unique_hobbies(data))
+assert amount_unique_hobbies(data) == 38
+
+# 344, 345, 346
+# the same what # 341 but use lambda and reduce
+
+def count_unique_hobbies_2(people):
+    return len(reduce(lambda acc, person: acc | set(person['hobbies']), people, set()))
+
+# print(count_unique_hobbies_2(data))
+assert count_unique_hobbies_2(data) == 38
+
+# 347, 348, 349
+# create function hash that return list with 2 first sign from values of data collection ( list of dictionaries )
+
+def create_hash(people):
+    hashes = []
+    for person in people:
+        text = ''
+
+        for value in person.values():
+            if isinstance(value, list):
+                for item in value:
+                    text += item[:2]
+
+            else:
+                text += str(value)[:2]
+
+        hashes.append(text.lower())
+    return hashes
+
+# print(create_hash(data))
+assert create_hash(data) == ['pakr39jspydr', 'jokr32mobofo', 'igwr31angamo', 'dawr43fimubi', 'piwa35wskoan', 'towa38shsama', 'rawa28cait',
+                             'mawr30bjpyja', 'adda33revichphbosh', 'ceki33prsppaan', 'szwr30crpoga', 'piwa50pysntr', 'igwa34gomuar',
+                             'makr40pydssl', 'kakr35mu', 'mada31fi']
+
+# 350, 351, 352
+# create function that takes data and check if there is one person under age 20 , return should be bool value
+
+def is_young_people(people):
+     return bool([person for person in people if person['age'] < 20])
+
+# print(is_young_people(data))
+assert is_young_people(data) == False
+
+# 353, 354, 355
+# the same what # but using map and lambda
+
+def is_young_people_2(people):
+    return any(map(lambda person: person['age'] < 20, people))
+
+assert is_young_people_2(data) == False
+
+# 356, 357, 358
+
+def set_unique_hobbies(any_data):
+    return {hobby for person in any_data for hobby in person['hobbies']}
+
+# print(set_unique_hobbies(data))
+assert set_unique_hobbies(data) == {'golf', 'video games', 'js', 'bjj', 'and more', 'wspinaczka', 'IT',
+                                    'boardgames', 'chemistry', 'sport shooting', 'python', 'food', 'art', 'filmy',
+                                    'bike', 'cars', 'music', 'shooting', 'physics', 'komputery', 'books', 'podcasts',
+                                    'drugs', 'games', 'paper models', 'sailing', 'traveling', 'programming',
+                                    'martial arts', 'ds', 'java', 'sleep', 'film', 'snorkeling', 'anime',
+                                    'reading', 'crypto', 'movies'}
+
+# 359, 360, 361
+# the same what # 356 but function has to use enumerate and return dictionary
+
+def dict_unique_hobbies(any_data):
+    set_h = {hobby for person in any_data for hobby in person['hobbies']}
+    sorted_hobbies = sorted(set_h)
+    return {key: value for key, value in enumerate(sorted_hobbies)}
+
+# print(dict_unique_hobbies(data))
+assert dict_unique_hobbies(data) == {0: 'IT', 1: 'and more', 2: 'anime', 3: 'art', 4: 'bike', 5: 'bjj', 6: 'boardgames',
+                                     7: 'books', 8: 'cars', 9: 'chemistry', 10: 'crypto', 11: 'drugs', 12: 'ds',
+                                     13: 'film', 14: 'filmy', 15: 'food', 16: 'games', 17: 'golf', 18: 'java',
+                                     19: 'js', 20: 'komputery', 21: 'martial arts', 22: 'movies',
+                                     23: 'music', 24: 'paper models', 25: 'physics', 26: 'podcasts',
+                                     27: 'programming', 28: 'python', 29: 'reading', 30: 'sailing',
+                                     31: 'shooting', 32: 'sleep', 33: 'snorkeling', 34: 'sport shooting',
+                                     35: 'traveling', 36: 'video games', 37: 'wspinaczka'}
