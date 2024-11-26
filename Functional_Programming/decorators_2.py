@@ -44,7 +44,7 @@ def gen_html(cb=None, *, tag='h1',tag_2='b'):
 
 
 @capitalize
-@gen_html(tag_2='H')
+@gen_html(tag_2='C')
 # @reverse
 # @capitalize
 def bye(name):
