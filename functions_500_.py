@@ -2154,8 +2154,9 @@ power_2 = power_n(2)
 # print(power_2(4))
 assert power_2(4) == 16
 
-# 293, 294, 295
 
+# 293, 294, 295
+# create a decorators that change return from bye function on html code like a str and capitalize first letter of name
 
 def capitalize(function):
     def inner(name):
@@ -2163,17 +2164,241 @@ def capitalize(function):
 
     return inner
 
+
 def gen_html(fn):
     def inner(name):
         result = fn(f'<b>{name}<b/>')
         return f'<h1>{result}</h1>'
 
-
     return inner
+
+
 @capitalize
 @gen_html
 def bye(name):
     return f"Bye {name}"
 
+
 # print(bye("happy holidays"))
 assert bye("happy holidays") == '<h1>Bye <b>Happy holidays<b/></h1>'
+
+
+# 296
+# write function that convert kilometers to miles
+
+def km_to_miles(km):
+    return f'{km} km is {km * 0.621371:.2f} miles'
+
+
+# print(km_to_miles(1000))
+assert km_to_miles(1000) == '1000 km is 621.37 miles'
+
+
+# 297
+# write function that convert miles to kilometers
+
+def miles_to_km(miles):
+    return f'{miles} miles are {miles * 1.60934:.2f} kilometers'
+
+
+# print(miles_to_km(1000))
+assert miles_to_km(1000) == '1000 miles are 1609.34 kilometers'
+
+
+# 298
+# write function that convert meters to centimeters
+
+def m_to_cm(m):
+    return f'{m} meters are {m * 100:.2f} centimeters'
+
+
+# print(m_to_cm(1000))
+assert m_to_cm(1000) == '1000 meters are 100000.00 centimeters'
+
+
+# 299
+# count centimeters to meters
+def cm_to_m(cm):
+    return f'{cm} centimeters are {cm / 100:.2f} meters'
+
+
+assert cm_to_m(1000) == '1000 centimeters are 10.00 meters'
+
+
+# 300
+# count meters to inches
+def m_to_inches(m):
+    return f'{m} meters are {m * 39.3701:.2f} inches'
+
+
+# print(m_to_inches(1000))
+assert m_to_inches(1000) == '1000 meters are 39370.10 inches'
+
+
+# 301
+# count inches to meters
+def inches_to_m(inches):
+    return f'{inches} inches are {inches / 39.3701:.2f} inches'
+
+
+# print(inches_to_m(1000))
+assert inches_to_m(1000) == '1000 inches are 25.40 inches'
+
+
+# 302
+# count inches to feet
+def inches_to_feet(inches):
+    return f'{inches} inches are {inches / 12:.2f} feet'
+
+
+# print(inches_to_feet(1000))
+assert inches_to_feet(1000) == '1000 inches are 83.33 feet'
+
+
+# 303
+# count Square kilometers to hectares
+def sq_km_to_hectares(sq_km):
+    return f'{sq_km} Square kilometers are {sq_km * 100:.2f} hectares'
+
+
+# print(sq_km_to_hectares(1000))
+assert sq_km_to_hectares(1000) == '1000 Square kilometers are 100000.00 hectares'
+
+
+# 304
+# count Square meters to square centimeters
+def sq_m_to_sq_cm(sq_m):
+    return f'{sq_m} Square meters are {sq_m * 10000:.2f} square centimeters'
+
+
+# print(sq_m_to_sq_cm(1000))
+assert sq_m_to_sq_cm(1000) == '1000 Square meters are 10000000.00 square centimeters'
+
+# 305
+# count Liters to milliliters
+def lit_to_ml(lit):
+    return f'{lit} Liters are {lit * 1000:.2f} milliliters'
+
+# print(lit_to_ml(1000))
+assert lit_to_ml(1000) == '1000 Liters are 1000000.00 milliliters'
+
+# 306
+# count Gallons (US) to liters
+def gal_to_liters(g):
+    return f'{g} gallons are {g * 3.78541:.2f} liters'
+
+# print(gal_to_liters(1000))
+assert gal_to_liters(1000) == '1000 gallons are 3785.41 liters'
+
+# 307
+# count Liters per cubic inch
+def liters_to_cub_inches(liters):
+    return f'{liters} Liters are {liters * 1000:.2f} cubic inches'
+
+# print(liters_to_cub_inches(1000))
+assert liters_to_cub_inches(1000) == '1000 Liters are 1000000.00 cubic inches'
+
+# 308
+# count Kilograms to pounds
+def kg_to_pounds(kg):
+    return f'{kg} Kilograms are {kg * 2.20462:.2f} pounds'
+
+# print(kg_to_pounds(1000))
+assert kg_to_pounds(1000) == '1000 Kilograms are 2204.62 pounds'
+
+# 309
+# count Pounds to kilograms
+def pounds_to_kilograms(pounds):
+    return f'{pounds} Pounds are {pounds / 2.20462:.2f} kilograms'
+
+# print(pounds_to_kilograms(1000))
+assert pounds_to_kilograms(1000) == '1000 Pounds are 453.59 kilograms'
+
+# 310
+# count Grams to ounces
+def gr_to_ounces(gr):
+    return f'{gr} Grams are {gr / 28.3495:.2f} ounces'
+
+# print(gr_to_ounces(1000))
+assert gr_to_ounces(1000) == '1000 Grams are 35.27 ounces'
+
+# 311
+# count Ounces to grams
+def ounces_to_grams(ounces):
+    return f'{ounces} Ounces are {ounces * 28.3495:.2f} grams'
+
+# print(ounces_to_grams(1000))
+assert ounces_to_grams(1000) == '1000 Ounces are 28349.50 grams'
+
+# 312
+# count hours to minutes
+def hours_to_seconds(hours):
+    return f'{hours} Hours are {hours * 60:.2f} minutes'
+
+# print(hours_to_seconds(1000))
+assert hours_to_seconds(1000) == '1000 Hours are 60000.00 minutes'
+
+# 313
+# count Minutes to seconds
+def minutes_to_seconds(minutes):
+    return f'{minutes} Minutes are {minutes * 60:.2f} seconds'
+
+# print(minutes_to_seconds(1000))
+assert minutes_to_seconds(1000) == '1000 Minutes are 60000.00 seconds'
+
+# 314
+# count Kilometers per hour to meters per second
+def km_per_h_to_m_per_s(km_per_h):
+    return f'{km_per_h} Kilometers per hour are {km_per_h / 3.6:.2f} meters per second'
+
+# print(km_per_h_to_m_per_s(1000))
+assert km_per_h_to_m_per_s(1000) == '1000 Kilometers per hour are 277.78 meters per second'
+
+# 315
+# count Meters per second to kilometers per hour
+def m_per_s_to_km_per_h(m_per_s):
+    return f'{m_per_s} Meters per second are {m_per_s * 3.6:.2f} kilometers per hour'
+
+# print(m_per_s_to_km_per_h(1000))
+assert m_per_s_to_km_per_h(1000) == '1000 Meters per second are 3600.00 kilometers per hour'
+
+# 316
+# count Temperature Celsius to Fahrenheit
+def temp_cel_to_fah(temp_c):
+    return f'{temp_c} degrees Celsius are {(temp_c * (9 / 5)) + 32} Fahrenheits'
+
+# print(temp_cel_to_fah(100))
+assert temp_cel_to_fah(100) == '100 degrees Celsius are 212.0 Fahrenheits'
+
+# 317
+# count Temperature Fahrenheit to degrees Celsius
+def fahrenheit_to_celsius(fah):
+    return f'{fah} Fahrenheits are {(fah - 32) * (5 / 9):.2f} degrees Celsius'
+
+# print(fahrenheit_to_celsius(100))
+assert fahrenheit_to_celsius(100) == '100 Fahrenheits are 37.78 degrees Celsius'
+
+# 318
+# count Celsius to Kelvin
+def cel_to_kel(c):
+    return f'{c} Celsius are {c + 273:.2f} Kelvins'
+
+# print(cel_to_kel(100))
+assert cel_to_kel(100) == '100 Celsius are 373.00 Kelvins'
+
+# 319
+# count Kelvin to Celsius
+
+def kelvin_to_celsius(kelvin):
+    return f'{kelvin} kelvins are {kelvin - 273.15:.2f} degrees Celsius'
+
+# print(kelvin_to_celsius(100))
+assert kelvin_to_celsius(100) == '100 kelvins are -173.15 degrees Celsius'
+
+# 320
+# count Kilowatt hours to joules
+def kwh_to_joules(kwh):
+    return f'{kwh} Kilowatt hours are {kwh * 3600000:.2f} joules'
+
+# print(kwh_to_joules(1000))
+assert kwh_to_joules(1000) == '1000 Kilowatt hours are 3600000000.00 joules'
