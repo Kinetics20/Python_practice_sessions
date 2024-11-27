@@ -2813,17 +2813,21 @@ assert list_of_values_to_dict_5([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == {
 def every_second_letter_upper(any_str: str) -> str:
     return ''.join([any_str[i].upper() if i % 2 == 0 else any_str[i].lower() for i in range(len(any_str))])
 
+
 assert (every_second_letter_upper('This project is a simple Python program that simulates a lottery game')
         == 'ThIs pRoJeCt iS A SiMpLe pYtHoN PrOgRaM ThAt sImUlAtEs a lOtTeRy gAmE')
+
 
 # 395, 396, 397
 # the same what 392 but range replace on enumerate method
 def every_second_letter_upper_2(any_str: str) -> str:
-    return ''.join(item.upper() if not i % 2  else item.lower() for i, item in enumerate(any_str))
+    return ''.join(item.upper() if not i % 2 else item.lower() for i, item in enumerate(any_str))
+
 
 # print(every_second_letter_upper_2('This project is a simple Python program that simulates a lottery game'))
 assert (every_second_letter_upper_2('This project is a simple Python program that simulates a lottery game')
         == 'ThIs pRoJeCt iS A SiMpLe pYtHoN PrOgRaM ThAt sImUlAtEs a lOtTeRy gAmE')
+
 
 # 398, 399, 400
 # create function that takes tuple and use tuple comprehension and return new tuple when index of element is < 3
@@ -2831,4 +2835,126 @@ assert (every_second_letter_upper_2('This project is a simple Python program tha
 def create_tuple_index_(any_tuple: tuple[int, ...]) -> tuple[int, ...]:
     return tuple(i for i in any_tuple if any_tuple.index(i) < 3)
 
+
 assert create_tuple_index_((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) == (1, 2, 3)
+
+
+# 401
+# Codewars
+
+# Find the sum of all multiples of n below m
+# n and m are natural numbers (positive integers)
+# m is excluded from the multiples
+#
+# Examples
+#
+# sumMul(2, 9)   ==> 2 + 4 + 6 + 8 = 20
+# sumMul(3, 13)  ==> 3 + 6 + 9 + 12 = 30
+# sumMul(4, 123) ==> 4 + 8 + 12 + ... = 1860
+# sumMul(4, -7)  ==> "INVALID"
+
+def sum_mul(n, m):
+    return 'INVALID' if n <= 0 or m <= 0 else sum(range(n, m, n))
+
+
+assert sum_mul(2, 9) == 20
+
+
+# 402
+# Codewars
+
+# You are given a string containing a sequence of character sequences separated by commas.
+# Write a function which returns a new string containing the same character sequences except the first
+# and the last ones but this time separated by spaces.
+# If the input string is empty or the removal of the first and last items would cause the resulting
+# string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+# Examples
+#
+# "1,2,3"      =>  "2"
+# "1,2,3,4"    =>  "2 3"
+# "1,2,3,4,5"  =>  "2 3 4"
+#
+# ""     =>  NULL
+# "1"    =>  NULL
+# "1,2"  =>  NULL
+
+def array(string):
+    return None if len(string.split(',')) < 3 else ' '.join(string.split(',')[1:-1])
+
+
+assert array("1,2,3") == "2"
+
+
+# 403, 404, 405
+# Codewars
+
+# Convert number to reversed array of digits
+# Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+# Example(Input => Output):
+# 35231 => [1,3,2,5,3]
+# 0 => [0]
+
+def digitize(n):
+    return list(map(int, str(n)[::-1]))
+
+
+assert digitize(35231) == [1, 3, 2, 5, 3]
+
+
+# 406, 407, 408
+# the same what 403 but different way
+
+def digitize_2(n):
+    return [int(x) for x in str(n)[::-1]]
+
+
+assert digitize_2(35231) == [1, 3, 2, 5, 3]
+
+
+# 409
+# sort list by surnames
+
+def sorted_surnames_list(any_list):
+    return sorted(any_list, key=lambda item: item.split()[-1])
+
+
+assert (sorted_surnames_list(["Scarlett Johansson", "Leonardo Dicaprio", "Tom Hanks", "Meryl Streep"])
+        == ['Leonardo Dicaprio', 'Tom Hanks', 'Scarlett Johansson', 'Meryl Streep'])
+
+
+# 410
+# the same what 409 but different way
+
+
+def sorted_surnames_list_2(any_list):
+    return sorted(any_list, key=lambda item: len(item.split()[-1]))
+
+
+assert (sorted_surnames_list_2(["Scarlett Johansson", "Leonardo Dicaprio", "Tom Hanks", "Meryl Streep"])
+        == ['Tom Hanks', 'Meryl Streep', 'Leonardo Dicaprio', 'Scarlett Johansson'])
+
+
+# 411
+# the same what 409 but different way
+
+def sorted_surnames_list_3(any_list):
+    return sorted(any_list, key=lambda item: len(item.split()[-1]), reverse=True)
+
+
+assert (sorted_surnames_list_3(["Scarlett Johansson", "Leonardo Dicaprio", "Tom Hanks", "Meryl Streep"])
+        == ['Scarlett Johansson', 'Leonardo Dicaprio', 'Meryl Streep', 'Tom Hanks'])
+
+
+# 412
+# Codewars
+
+# Write a function that returns a string in which firstname is swapped with last name.
+# Example(Input --> Output)
+# "john McClane" --> "McClane john"
+
+def name_shuffler(str_):
+    x, y = str_.split(' ', 1)
+    return f'{y} {x}'
+
+
+assert name_shuffler("john McClane") == "McClane john"
