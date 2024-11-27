@@ -2274,117 +2274,146 @@ def sq_m_to_sq_cm(sq_m):
 # print(sq_m_to_sq_cm(1000))
 assert sq_m_to_sq_cm(1000) == '1000 Square meters are 10000000.00 square centimeters'
 
+
 # 305
 # count Liters to milliliters
 def lit_to_ml(lit):
     return f'{lit} Liters are {lit * 1000:.2f} milliliters'
 
+
 # print(lit_to_ml(1000))
 assert lit_to_ml(1000) == '1000 Liters are 1000000.00 milliliters'
+
 
 # 306
 # count Gallons (US) to liters
 def gal_to_liters(g):
     return f'{g} gallons are {g * 3.78541:.2f} liters'
 
+
 # print(gal_to_liters(1000))
 assert gal_to_liters(1000) == '1000 gallons are 3785.41 liters'
+
 
 # 307
 # count Liters per cubic inch
 def liters_to_cub_inches(liters):
     return f'{liters} Liters are {liters * 1000:.2f} cubic inches'
 
+
 # print(liters_to_cub_inches(1000))
 assert liters_to_cub_inches(1000) == '1000 Liters are 1000000.00 cubic inches'
+
 
 # 308
 # count Kilograms to pounds
 def kg_to_pounds(kg):
     return f'{kg} Kilograms are {kg * 2.20462:.2f} pounds'
 
+
 # print(kg_to_pounds(1000))
 assert kg_to_pounds(1000) == '1000 Kilograms are 2204.62 pounds'
+
 
 # 309
 # count Pounds to kilograms
 def pounds_to_kilograms(pounds):
     return f'{pounds} Pounds are {pounds / 2.20462:.2f} kilograms'
 
+
 # print(pounds_to_kilograms(1000))
 assert pounds_to_kilograms(1000) == '1000 Pounds are 453.59 kilograms'
+
 
 # 310
 # count Grams to ounces
 def gr_to_ounces(gr):
     return f'{gr} Grams are {gr / 28.3495:.2f} ounces'
 
+
 # print(gr_to_ounces(1000))
 assert gr_to_ounces(1000) == '1000 Grams are 35.27 ounces'
+
 
 # 311
 # count Ounces to grams
 def ounces_to_grams(ounces):
     return f'{ounces} Ounces are {ounces * 28.3495:.2f} grams'
 
+
 # print(ounces_to_grams(1000))
 assert ounces_to_grams(1000) == '1000 Ounces are 28349.50 grams'
+
 
 # 312
 # count hours to minutes
 def hours_to_seconds(hours):
     return f'{hours} Hours are {hours * 60:.2f} minutes'
 
+
 # print(hours_to_seconds(1000))
 assert hours_to_seconds(1000) == '1000 Hours are 60000.00 minutes'
+
 
 # 313
 # count Minutes to seconds
 def minutes_to_seconds(minutes):
     return f'{minutes} Minutes are {minutes * 60:.2f} seconds'
 
+
 # print(minutes_to_seconds(1000))
 assert minutes_to_seconds(1000) == '1000 Minutes are 60000.00 seconds'
+
 
 # 314
 # count Kilometers per hour to meters per second
 def km_per_h_to_m_per_s(km_per_h):
     return f'{km_per_h} Kilometers per hour are {km_per_h / 3.6:.2f} meters per second'
 
+
 # print(km_per_h_to_m_per_s(1000))
 assert km_per_h_to_m_per_s(1000) == '1000 Kilometers per hour are 277.78 meters per second'
+
 
 # 315
 # count Meters per second to kilometers per hour
 def m_per_s_to_km_per_h(m_per_s):
     return f'{m_per_s} Meters per second are {m_per_s * 3.6:.2f} kilometers per hour'
 
+
 # print(m_per_s_to_km_per_h(1000))
 assert m_per_s_to_km_per_h(1000) == '1000 Meters per second are 3600.00 kilometers per hour'
+
 
 # 316
 # count Temperature Celsius to Fahrenheit
 def temp_cel_to_fah(temp_c):
     return f'{temp_c} degrees Celsius are {(temp_c * (9 / 5)) + 32} Fahrenheits'
 
+
 # print(temp_cel_to_fah(100))
 assert temp_cel_to_fah(100) == '100 degrees Celsius are 212.0 Fahrenheits'
+
 
 # 317
 # count Temperature Fahrenheit to degrees Celsius
 def fahrenheit_to_celsius(fah):
     return f'{fah} Fahrenheits are {(fah - 32) * (5 / 9):.2f} degrees Celsius'
 
+
 # print(fahrenheit_to_celsius(100))
 assert fahrenheit_to_celsius(100) == '100 Fahrenheits are 37.78 degrees Celsius'
+
 
 # 318
 # count Celsius to Kelvin
 def cel_to_kel(c):
     return f'{c} Celsius are {c + 273:.2f} Kelvins'
 
+
 # print(cel_to_kel(100))
 assert cel_to_kel(100) == '100 Celsius are 373.00 Kelvins'
+
 
 # 319
 # count Kelvin to Celsius
@@ -2392,13 +2421,16 @@ assert cel_to_kel(100) == '100 Celsius are 373.00 Kelvins'
 def kelvin_to_celsius(kelvin):
     return f'{kelvin} kelvins are {kelvin - 273.15:.2f} degrees Celsius'
 
+
 # print(kelvin_to_celsius(100))
 assert kelvin_to_celsius(100) == '100 kelvins are -173.15 degrees Celsius'
+
 
 # 320
 # count Kilowatt hours to joules
 def kwh_to_joules(kwh):
     return f'{kwh} Kilowatt hours are {kwh * 3600000:.2f} joules'
+
 
 # print(kwh_to_joules(1000))
 assert kwh_to_joules(1000) == '1000 Kilowatt hours are 3600000000.00 joules'
@@ -2408,11 +2440,14 @@ assert kwh_to_joules(1000) == '1000 Kilowatt hours are 3600000000.00 joules'
 
 from decimal import Decimal
 
+
 def add_decimal(num_1, num_2):
     return Decimal(f'{num_1}') + Decimal(str(num_2))
 
+
 # print(add_decimal(0.25, 0.36))
 assert add_decimal(0.25, 0.36) == Decimal('0.61')
+
 
 # 322
 # create function that use decimal from python library during multiply two numbers
@@ -2420,17 +2455,21 @@ assert add_decimal(0.25, 0.36) == Decimal('0.61')
 def mult_decimal(num_1, num_2):
     return Decimal(f'{num_1}') * Decimal(str(num_2))
 
+
 # print(mult_decimal(0.21, 0.42))
 assert mult_decimal(0.21, 0.42) == Decimal('0.0882')
+
 
 # 323, 324, 325
 # using list comprehension create function that takes list of list and n and return the same list multiply by n
 
 def mult_list_of_list_1(any_list, n):
-    return [[x * n, y * n] for x , y in any_list ]
+    return [[x * n, y * n] for x, y in any_list]
+
 
 # print(mult_list_of_list_1([[1, 2], [3, 4], [5, 6]], 5))
 assert mult_list_of_list_1([[1, 2], [3, 4], [5, 6]], 5) == [[5, 10], [15, 20], [25, 30]]
+
 
 # 326, 327, 328
 # the same what # 323 but different way
@@ -2438,8 +2477,10 @@ assert mult_list_of_list_1([[1, 2], [3, 4], [5, 6]], 5) == [[5, 10], [15, 20], [
 def mult_list_of_list_2(any_list, n):
     return [[digit * n for digit in digits] for digits in any_list]
 
+
 # print(mult_list_of_list_2([[1, 2], [3, 4], [5, 6]], 5))
 assert mult_list_of_list_2([[1, 2], [3, 4], [5, 6]], 5) == [[5, 10], [15, 20], [25, 30]]
+
 
 # 329, 330, 331
 # create function that return seating plan in the plane in the set 25 rows and six seats in each row
@@ -2448,32 +2489,34 @@ assert mult_list_of_list_2([[1, 2], [3, 4], [5, 6]], 5) == [[5, 10], [15, 20], [
 def seating_plan(letters, rows):
     return [None] + [{letter: None for letter in letters} for _ in rows]
 
+
 # print(seating_plan('ABCDEF', range(1, 25)))
 assert seating_plan('ABCDEF', range(1, 25)) == [None,
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
- {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None}]
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None},
+                                                {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None}]
+
 
 # 332, 333, 334
 # using list comprehension and range inside create function that takes any str and number and return list of indexes with that string
@@ -2482,19 +2525,24 @@ assert seating_plan('ABCDEF', range(1, 25)) == [None,
 def lst_range_str(any_str, n):
     return [any_str for t in range(n)]
 
+
 # print(lst_range_str('I will not swearing',6))
-assert lst_range_str('I will not swearing',6) == ['I will not swearing', 'I will not swearing', 'I will not swearing', 'I will not swearing', 'I will not swearing', 'I will not swearing']
+assert lst_range_str('I will not swearing', 6) == ['I will not swearing', 'I will not swearing', 'I will not swearing',
+                                                   'I will not swearing', 'I will not swearing', 'I will not swearing']
 
 # 335, 336, 337
 # using reduce from functools library count sum of list indexes created inside by generation expression
 # index should be the power of the index created from the list
 from functools import reduce
 
+
 def reduce_list(any_list):
-    return reduce (lambda acc, ce: acc + ce, (x ** x for x in any_list))
+    return reduce(lambda acc, ce: acc + ce, (x ** x for x in any_list))
+
 
 # print(reduce_list([1, 2, 3, 4, 5]))
 assert reduce_list([1, 2, 3, 4, 5]) == 3413
+
 
 # 338
 # sum of list implementation
@@ -2505,8 +2553,10 @@ def sum_implementation(any_list):
         total += any_list[i]
     return total
 
+
 # print(sum_implementation([1, 2, 3, 4, 5]))
 assert sum_implementation([1, 2, 3, 4, 5]) == 15
+
 
 # 339
 # the same what # 338 but differt way
@@ -2517,8 +2567,10 @@ def sum_of_consecutive_elements(any_list):
         total += element
     return total
 
+
 # print(sum_of_consecutive_elements([1, 2, 3, 4, 5]))
 assert sum_of_consecutive_elements([1, 2, 3, 4, 5]) == 15
+
 
 # 340
 # The cumulative_sum function computes the cumulative sum of
@@ -2533,8 +2585,10 @@ def cumulative_sum(any_list):
         score.append(total)
     return score
 
+
 # print(cumulative_sum([1, 2, 3, 4, 5]))
 assert cumulative_sum([1, 2, 3, 4, 5]) == [1, 3, 6, 10, 15]
+
 
 # 341, 342, 343
 # create function that count amount of unique hobbies from data collection
@@ -2542,8 +2596,10 @@ assert cumulative_sum([1, 2, 3, 4, 5]) == [1, 3, 6, 10, 15]
 def amount_unique_hobbies(collection):
     return len({x for y in collection for x in y['hobbies']})
 
+
 # print(amount_unique_hobbies(data))
 assert amount_unique_hobbies(data) == 38
+
 
 # 344, 345, 346
 # the same what # 341 but use lambda and reduce
@@ -2551,8 +2607,10 @@ assert amount_unique_hobbies(data) == 38
 def count_unique_hobbies_2(people):
     return len(reduce(lambda acc, person: acc | set(person['hobbies']), people, set()))
 
+
 # print(count_unique_hobbies_2(data))
 assert count_unique_hobbies_2(data) == 38
+
 
 # 347, 348, 349
 # create function hash that return list with 2 first sign from values of data collection ( list of dictionaries )
@@ -2573,19 +2631,25 @@ def create_hash(people):
         hashes.append(text.lower())
     return hashes
 
+
 # print(create_hash(data))
-assert create_hash(data) == ['pakr39jspydr', 'jokr32mobofo', 'igwr31angamo', 'dawr43fimubi', 'piwa35wskoan', 'towa38shsama', 'rawa28cait',
-                             'mawr30bjpyja', 'adda33revichphbosh', 'ceki33prsppaan', 'szwr30crpoga', 'piwa50pysntr', 'igwa34gomuar',
+assert create_hash(data) == ['pakr39jspydr', 'jokr32mobofo', 'igwr31angamo', 'dawr43fimubi', 'piwa35wskoan',
+                             'towa38shsama', 'rawa28cait',
+                             'mawr30bjpyja', 'adda33revichphbosh', 'ceki33prsppaan', 'szwr30crpoga', 'piwa50pysntr',
+                             'igwa34gomuar',
                              'makr40pydssl', 'kakr35mu', 'mada31fi']
+
 
 # 350, 351, 352
 # create function that takes data and check if there is one person under age 20 , return should be bool value
 
 def is_young_people(people):
-     return bool([person for person in people if person['age'] < 20])
+    return bool([person for person in people if person['age'] < 20])
+
 
 # print(is_young_people(data))
 assert is_young_people(data) == False
+
 
 # 353, 354, 355
 # the same what # but using map and lambda
@@ -2593,12 +2657,15 @@ assert is_young_people(data) == False
 def is_young_people_2(people):
     return any(map(lambda person: person['age'] < 20, people))
 
+
 assert is_young_people_2(data) == False
+
 
 # 356, 357, 358
 
 def set_unique_hobbies(any_data):
     return {hobby for person in any_data for hobby in person['hobbies']}
+
 
 # print(set_unique_hobbies(data))
 assert set_unique_hobbies(data) == {'golf', 'video games', 'js', 'bjj', 'and more', 'wspinaczka', 'IT',
@@ -2608,6 +2675,7 @@ assert set_unique_hobbies(data) == {'golf', 'video games', 'js', 'bjj', 'and mor
                                     'martial arts', 'ds', 'java', 'sleep', 'film', 'snorkeling', 'anime',
                                     'reading', 'crypto', 'movies'}
 
+
 # 359, 360, 361
 # the same what # 356 but function has to use enumerate and return dictionary
 
@@ -2615,6 +2683,7 @@ def dict_unique_hobbies(any_data):
     set_h = {hobby for person in any_data for hobby in person['hobbies']}
     sorted_hobbies = sorted(set_h)
     return {key: value for key, value in enumerate(sorted_hobbies)}
+
 
 # print(dict_unique_hobbies(data))
 assert dict_unique_hobbies(data) == {0: 'IT', 1: 'and more', 2: 'anime', 3: 'art', 4: 'bike', 5: 'bjj', 6: 'boardgames',
@@ -2625,3 +2694,141 @@ assert dict_unique_hobbies(data) == {0: 'IT', 1: 'and more', 2: 'anime', 3: 'art
                                      27: 'programming', 28: 'python', 29: 'reading', 30: 'sailing',
                                      31: 'shooting', 32: 'sleep', 33: 'snorkeling', 34: 'sport shooting',
                                      35: 'traveling', 36: 'video games', 37: 'wspinaczka'}
+
+
+# 362, 363, 364
+# create function that takes list and return list only for the even indexes use index method
+
+def list_even_indexes(any_list: list[int]) -> list[int]:
+    return [i for i in any_list if not any_list.index(i) % 2]
+
+
+# print(list_even_indexes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+assert list_even_indexes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [1, 3, 5, 7, 9]
+
+
+# 365, 366, 367
+# corrected function from # 362 use enumerate function
+
+def list_even_indexes_2(any_list: list[int]) -> list[int]:
+    return [value for index, value in enumerate(any_list) if index % 2 == 0]
+
+
+# print(list_even_indexes_2([10, 30, 10, 10, 100, 80, 10, 10, 10, 10]))
+assert list_even_indexes_2([10, 30, 10, 10, 100, 80, 10, 10, 10, 10]) == [10, 10, 100, 10, 10]
+
+
+# 368, 369, 370
+# using list comprehension and enumerate method return list of tuples when value for index is 'home'
+
+def list_of_tuples(any_lst: list[object]) -> list[tuple]:
+    return [(index, value) for index, value in enumerate(any_lst) if value == 'home']
+
+
+# print(list_of_tuples([1, 2, 3, 'home', 5, 6, 'home', 7,'home']))
+assert list_of_tuples([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == [(3, 'home'), (6, 'home'), (8, 'home')]
+
+
+# 371, 372, 373
+# the same what # 368 but function should return only list of indexes for value 'home'
+
+def list_of_indexes(any_lst: list[object]) -> list[object]:
+    return [index for index, value in enumerate(any_lst) if value == 'home']
+
+
+# print(list_of_indexes([1, 2, 3, 'home', 5, 6, 'home', 7,'home']))
+assert list_of_indexes([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == [3, 6, 8]
+
+
+# 374, 375, 376
+# the same what # 371 but function should return only list with word 'home'
+
+def list_of_values(any_lst: list[object]) -> list[object]:
+    return [value for index, value in enumerate(any_lst) if value == 'home']
+
+
+# print(list_of_values([1, 2, 3, 'home', 5, 6, 'home', 7,'home']))
+assert list_of_values([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == ['home', 'home', 'home']
+
+
+# 377, 378, 379
+# the same what # 370 but function should return dictionary , keys should be indexes from the list
+
+def list_of_values_to_dict(any_lst: list[object]) -> dict[object, object]:
+    return {index: value for index, value in enumerate(any_lst) if value == 'home'}
+
+
+# print(list_of_values_to_dict([1, 2, 3, 'home', 5, 6, 'home', 7,'home']))
+assert list_of_values_to_dict([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == {3: 'home', 6: 'home', 8: 'home'}
+
+
+# 380, 381, 382
+# the same what # 377 but swapcase letters in word 'home'
+
+def list_of_values_to_dict_2(any_lst: list[object]) -> dict[object, object]:
+    return {index: value.swapcase() for index, value in enumerate(any_lst) if value == 'home'}
+
+
+assert list_of_values_to_dict_2([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == {3: 'HOME', 6: 'HOME', 8: 'HOME'}
+
+
+# 383, 384, 385
+# the same what # 380 but corrected logic in the function swapcase is replaced on title
+
+def list_of_values_to_dict_3(any_lst: list[object]) -> dict[object, object]:
+    return {index: value.title() if isinstance(value, str) else value
+            for index, value in enumerate(any_lst) if value == 'home'}
+
+
+assert list_of_values_to_dict_3([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == {3: 'Home', 6: 'Home', 8: 'Home'}
+
+
+# 386, 387, 388
+# the same what # 383 value should be two first character by upper the rest in lower letters
+
+def list_of_values_to_dict_4(any_lst: list[object]) -> dict[object, object]:
+    return {index: (value.upper()[:2] + value.lower()[2:]) if isinstance(value, str) else value
+            for index, value in enumerate(any_lst) if value == 'home'}
+
+
+assert list_of_values_to_dict_4([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == {3: 'HOme', 6: 'HOme', 8: 'HOme'}
+
+
+# 389, 390, 391
+# the same what # 386 but word 'home' should be 'HoMe'
+
+def list_of_values_to_dict_5(any_lst: list[object]) -> dict[object, object]:
+    return {
+        index: ''.join([value[i].upper() if i % 2 == 0 else value[i].lower() for i in range(len(value))])
+        for index, value in enumerate(any_lst)
+        if value == 'home'
+    }
+
+
+assert list_of_values_to_dict_5([1, 2, 3, 'home', 5, 6, 'home', 7, 'home']) == {3: 'HoMe', 6: 'HoMe', 8: 'HoMe'}
+
+
+# 392, 393, 394
+# create function that changes every second letter in any str on upper
+def every_second_letter_upper(any_str: str) -> str:
+    return ''.join([any_str[i].upper() if i % 2 == 0 else any_str[i].lower() for i in range(len(any_str))])
+
+assert (every_second_letter_upper('This project is a simple Python program that simulates a lottery game')
+        == 'ThIs pRoJeCt iS A SiMpLe pYtHoN PrOgRaM ThAt sImUlAtEs a lOtTeRy gAmE')
+
+# 395, 396, 397
+# the same what 392 but range replace on enumerate method
+def every_second_letter_upper_2(any_str: str) -> str:
+    return ''.join(item.upper() if not i % 2  else item.lower() for i, item in enumerate(any_str))
+
+# print(every_second_letter_upper_2('This project is a simple Python program that simulates a lottery game'))
+assert (every_second_letter_upper_2('This project is a simple Python program that simulates a lottery game')
+        == 'ThIs pRoJeCt iS A SiMpLe pYtHoN PrOgRaM ThAt sImUlAtEs a lOtTeRy gAmE')
+
+# 398, 399, 400
+# create function that takes tuple and use tuple comprehension and return new tuple when index of element is < 3
+
+def create_tuple_index_(any_tuple: tuple[int, ...]) -> tuple[int, ...]:
+    return tuple(i for i in any_tuple if any_tuple.index(i) < 3)
+
+assert create_tuple_index_((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) == (1, 2, 3)
