@@ -2877,3 +2877,260 @@ def name_shuffler(str_):
 
 
 assert name_shuffler("john McClane") == "McClane john"
+
+data_5 = [
+    {
+        "name": "pawel",
+        "age": 39,
+        "city": "krakow",
+        "hobbies": ["js", "python", "drugs"]
+    },
+    {
+        "name": "kamil",
+        "age": 28,
+        "city": "gryfino",
+        "hobbies": ["js", "python", "godot"]
+    },
+    {
+        "name": "szymon",
+        "age": 30,
+        "city": "legnica",
+        "hobbies": ["crypto", "work", "movies"]
+    },
+    {
+        "name": "mateusz",
+        "age": 30,
+        "city": "wroclaw",
+        "hobbies": ["bjj", "coding", "movies"]
+    },
+    {
+        'name': 'piotr',
+        'age': 34,
+        'city': 'warszawa',
+        'hobbies': ['climbing', 'running', 'python']
+    },
+    {
+        'name': 'dawid',
+        'age': 36,
+        'city': 'torun',
+        'hobbies': ['boardgames', 'football', 'squash']
+    },
+    {
+        "name": "aleksandra",
+        "age": 29,
+        "city": "poznan",
+        "hobbies": ["music", "art", "math"]
+    },
+    {
+        "name": "renata",
+        "age": 29,
+        "city": "sosnowiec",
+        "hobbies": ["photography", "literature", "trips"]
+    },
+    {
+        'name': "lukasz",
+        'age': 37,
+        'city': 'brwinow',
+        'hobbies': ['Cycling', 'Home Beer brewing', 'Learning new things'],
+    },
+    {
+        "name": "bartek",
+        "age": 47,
+        "city": "warszawa",
+        "hobbies": ["games", "music", "movies"]
+    },
+    {
+        "name": "igor",
+        "age": 31,
+        "city": "wroclaw",
+        "hobbies": ["anime", "mangi", "games"]
+    },
+    {
+        "name": "magda",
+        "age": 31,
+        "city": "torun",
+        "hobbies": ["books", "jogging", "plants"]
+    },
+    {
+        "name": "karol",
+        "age": 38,
+        "city": "warszawa",
+        "hobbies": ["sport", "music", "culinary"]
+    },
+    {
+        "name": "pawel",
+        "age": 33,
+        "city": "poznan",
+        "hobbies": ["music", "traveling", "photography"]
+    }
+]
+
+
+# 413, 414, 415
+# create function that takes list of dictionaries and return numerated strings of names besides index 0
+# use generation expression
+
+
+def numerated_names(data_list):
+    return "\n".join([f'{idx}. {person['name'].title()}' for idx, person in enumerate(data_list)][1:])
+
+
+# print(numerated_names(data_5))
+assert numerated_names(data_5) == """1. Kamil
+2. Szymon
+3. Mateusz
+4. Piotr
+5. Dawid
+6. Aleksandra
+7. Renata
+8. Lukasz
+9. Bartek
+10. Igor
+11. Magda
+12. Karol
+13. Pawel"""
+
+
+# 416, 417, 418
+# the same what # 413 but list of names has to be sorted
+
+
+def numerated_names_sorted(data_list):
+    sorted_data = sorted(data_list, key=lambda person: person['name'].lower())
+
+    return '\n'.join([f"{idx + 1}. {person['name'].title()}" for idx, person in enumerate(sorted_data)])
+
+
+# print(numerated_names_sorted(data_5))
+assert numerated_names_sorted(data_5) == """1. Aleksandra
+2. Bartek
+3. Dawid
+4. Igor
+5. Kamil
+6. Karol
+7. Lukasz
+8. Magda
+9. Mateusz
+10. Pawel
+11. Pawel
+12. Piotr
+13. Renata
+14. Szymon"""
+
+
+# 419, 420, 421
+# the same what # 413 but list of people who has in their hobbies 'music'
+
+def numerated_names_music(data_list):
+    return "\n".join(
+        [f'{idx}. {person['name'].title()}' for idx, person in enumerate(data_list) if 'music' in person['hobbies']][
+        1:])
+
+
+# print(numerated_names_music(data_5))
+assert numerated_names_music(data_5) == '''9. Bartek
+12. Karol
+13. Pawel'''
+
+
+# 422, 423, 424
+# create function that takes list of dictionaries and return dict : key - name , value - hobbies only when movies are in hobbies
+
+def dict_name_hobbies_movies(data_list):
+    return {person['name']: person['hobbies'] for person in data_list if 'movies' in person['hobbies']}
+
+
+# print(dict_name_hobbies_movies(data_5))
+assert dict_name_hobbies_movies(data_5) == {'szymon': ['crypto', 'work', 'movies'],
+                                            'mateusz': ['bjj', 'coding', 'movies'],
+                                            'bartek': ['games', 'music', 'movies']}
+
+
+# 425, 426, 427
+# the same what # 422 but function has to return list of tuples second index in tuple should be a list of hobbies
+
+def list_tuples_name_hobbies_movies(data_list):
+    return [(person['name'], person['hobbies']) for person in data_list if 'movies' in person['hobbies']]
+
+
+# print(list_tuples_name_hobbies_movies(data_5))
+assert list_tuples_name_hobbies_movies(data_5) == [('szymon', ['crypto', 'work', 'movies']),
+                                                   ('mateusz', ['bjj', 'coding', 'movies']),
+                                                   ('bartek', ['games', 'music', 'movies'])]
+
+
+# 428, 429, 430
+# create function that takes list of dictionaries nad return numerated names and hobbies for people who have movies in their hobbies
+
+def numerated_names_hobbies_for_movies(data_list):
+    list_tuples = [(person['name'], person['hobbies']) for person in data_list if 'movies' in person['hobbies']]
+
+    return '\n'.join([f'{idx}. {pers_hob}' for idx, pers_hob in enumerate(list_tuples)])
+
+
+# print(numerated_names_hobbies_for_movies(data_5))
+assert numerated_names_hobbies_for_movies(data_5) == '''0. ('szymon', ['crypto', 'work', 'movies'])
+1. ('mateusz', ['bjj', 'coding', 'movies'])
+2. ('bartek', ['games', 'music', 'movies'])'''
+
+
+# 431, 432, 433
+# The same what # 428 but different style of output
+
+def numerated_names_hobbies_for_movies_2(data_list):
+    list_tuples = [(person['name'], person['hobbies']) for person in data_list if 'movies' in person['hobbies']]
+
+    return '\n'.join([f'{idx}. {name}: {hobbies}.' for idx, (name, hobbies) in enumerate(list_tuples)])
+
+
+# print(numerated_names_hobbies_for_movies_2(data_5))
+assert numerated_names_hobbies_for_movies_2(data_5) == '''0. szymon: ['crypto', 'work', 'movies'].
+1. mateusz: ['bjj', 'coding', 'movies'].
+2. bartek: ['games', 'music', 'movies'].'''
+
+
+# 434, 435, 436
+
+
+def numerated_names_hobbies_for_movies_2(data_list):
+    list_tuples = [(person['name'], person['hobbies']) for person in data_list if 'movies' in person['hobbies']]
+
+    return '\n'.join([f'{idx}. {name}: {', '.join(hobbies)}.' for idx, (name, hobbies) in enumerate(list_tuples)])
+
+
+# print(numerated_names_hobbies_for_movies_2(data_5))
+assert numerated_names_hobbies_for_movies_2(data_5) == '''0. szymon: crypto, work, movies.
+1. mateusz: bjj, coding, movies.
+2. bartek: games, music, movies.'''
+
+
+# 437, 438, 439
+# create function that takes list of dictionaries and return dictionary key: name value: city for people over or equal 34 years old
+
+
+def dict_name_city_age_over_34(data_list):
+    return {person['name']: person['city'] for person in data_list if person['age'] >= 34}
+
+
+# print(sth(data_5))
+assert dict_name_city_age_over_34(data_5) == {'pawel': 'krakow', 'piotr': 'warszawa', 'dawid': 'torun',
+                                              'lukasz': 'brwinow', 'bartek': 'warszawa', 'karol': 'warszawa'}
+
+
+# 440, 441, 442
+
+
+def str_name_city_age_over_34(data_list):
+    list_tuples = [(person['name'].title(), person['age'], person['city'].title()) for person in data_list if
+                   person['age'] >= 34]
+    # return list_tuples
+    return '\n'.join([f'{idx}. {name}: {age}: {city}.' for idx, (name, age, city) in enumerate(list_tuples)])
+
+
+# print(str_name_city_age_over_34(data_5))
+assert str_name_city_age_over_34(data_5) == '''0. Pawel: 39: Krakow.
+1. Piotr: 34: Warszawa.
+2. Dawid: 36: Torun.
+3. Lukasz: 37: Brwinow.
+4. Bartek: 47: Warszawa.
+5. Karol: 38: Warszawa.'''
