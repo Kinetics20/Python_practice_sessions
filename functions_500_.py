@@ -3624,3 +3624,262 @@ def best_loot_location_2(dataset):
 
 
 assert best_loot_location_2(expowiska) == {'location': 'Dragon Lair', 'total_loot_value': 529120}
+
+pokemons_data = [
+    {
+        "name": "Bulbasaur",
+        "type": ["Grass", "Poison"],
+        "hp": 45,
+        "attack": 49,
+        "defense": 49,
+        "beats": ["Water", "Rock", "Ground"],
+    },
+    {
+        "name": "Ivysaur",
+        "type": ["Grass", "Poison"],
+        "hp": 60,
+        "attack": 62,
+        "defense": 63,
+        "beats": ["Water", "Rock", "Ground"],
+    },
+    {
+        "name": "Venusaur",
+        "type": ["Grass", "Poison"],
+        "hp": 80,
+        "attack": 82,
+        "defense": 83,
+        "beats": ["Water", "Rock", "Ground"],
+    },
+    {
+        "name": "Charmander",
+        "type": ["Fire"],
+        "hp": 39,
+        "attack": 52,
+        "defense": 43,
+        "beats": ["Grass", "Bug", "Ice", "Steel"],
+    },
+    {
+        "name": "Charmeleon",
+        "type": ["Fire"],
+        "hp": 58,
+        "attack": 64,
+        "defense": 58,
+        "beats": ["Grass", "Bug", "Ice", "Steel"],
+    },
+    {
+        "name": "Charizard",
+        "type": ["Fire", "Flying"],
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "beats": ["Grass", "Bug", "Ice", "Steel"],
+    },
+    {
+        "name": "Squirtle",
+        "type": ["Water"],
+        "hp": 44,
+        "attack": 48,
+        "defense": 65,
+        "beats": ["Fire", "Rock", "Ground"],
+    },
+    {
+        "name": "Wartortle",
+        "type": ["Water"],
+        "hp": 59,
+        "attack": 63,
+        "defense": 80,
+        "beats": ["Fire", "Rock", "Ground"],
+    },
+    {
+        "name": "Blastoise",
+        "type": ["Water"],
+        "hp": 79,
+        "attack": 83,
+        "defense": 100,
+        "beats": ["Fire", "Rock", "Ground"],
+    },
+    {
+        "name": "Caterpie",
+        "type": ["Bug"],
+        "hp": 45,
+        "attack": 30,
+        "defense": 35,
+        "beats": ["Grass", "Psychic", "Dark"],
+    },
+    {
+        "name": "Metapod",
+        "type": ["Bug"],
+        "hp": 50,
+        "attack": 20,
+        "defense": 55,
+        "beats": ["Grass", "Psychic", "Dark"],
+    },
+    {
+        "name": "Butterfree",
+        "type": ["Bug", "Flying"],
+        "hp": 60,
+        "attack": 45,
+        "defense": 50,
+        "beats": ["Grass", "Fighting", "Bug"],
+    },
+    {
+        "name": "Weedle",
+        "type": ["Bug", "Poison"],
+        "hp": 40,
+        "attack": 35,
+        "defense": 30,
+        "beats": ["Grass", "Fairy", "Fighting"],
+    },
+    {
+        "name": "Kakuna",
+        "type": ["Bug", "Poison"],
+        "hp": 45,
+        "attack": 25,
+        "defense": 50,
+        "beats": ["Grass", "Fairy", "Fighting"],
+    },
+    {
+        "name": "Beedrill",
+        "type": ["Bug", "Poison"],
+        "hp": 65,
+        "attack": 90,
+        "defense": 40,
+        "beats": ["Grass", "Fairy", "Fighting"],
+    },
+    {
+        "name": "Pidgey",
+        "type": ["Normal", "Flying"],
+        "hp": 40,
+        "attack": 45,
+        "defense": 40,
+        "beats": ["Bug", "Grass", "Fighting"],
+    },
+    {
+        "name": "Pidgeotto",
+        "type": ["Normal", "Flying"],
+        "hp": 63,
+        "attack": 60,
+        "defense": 55,
+        "beats": ["Bug", "Grass", "Fighting"],
+    },
+    {
+        "name": "Pidgeot",
+        "type": ["Normal", "Flying"],
+        "hp": 83,
+        "attack": 80,
+        "defense": 75,
+        "beats": ["Bug", "Grass", "Fighting"],
+    },
+    {
+        "name": "Rattata",
+        "type": ["Normal"],
+        "hp": 30,
+        "attack": 56,
+        "defense": 35,
+        "beats": ["Ghost"],
+    },
+    {
+        "name": "Raticate",
+        "type": ["Normal"],
+        "hp": 55,
+        "attack": 81,
+        "defense": 60,
+        "beats": ["Ghost"],
+    },
+    {
+        "name": "Spearow",
+        "type": ["Normal", "Flying"],
+        "hp": 40,
+        "attack": 60,
+        "defense": 30,
+        "beats": ["Bug", "Grass", "Fighting"],
+    },
+    {
+        "name": "Fearow",
+        "type": ["Normal", "Flying"],
+        "hp": 65,
+        "attack": 90,
+        "defense": 65,
+        "beats": ["Bug", "Grass", "Fighting"],
+    },
+    {
+        "name": "Ekans",
+        "type": ["Poison"],
+        "hp": 35,
+        "attack": 60,
+        "defense": 44,
+        "beats": ["Grass", "Fairy", "Fighting"],
+    },
+    {
+        "name": "Arbok",
+        "type": ["Poison"],
+        "hp": 60,
+        "attack": 95,
+        "defense": 69,
+        "beats": ["Grass", "Fairy", "Fighting"],
+    },
+    {
+        "name": "Pikachu",
+        "type": ["Electric"],
+        "hp": 35,
+        "attack": 55,
+        "defense": 40,
+        "beats": ["Water", "Flying"],
+    },
+    {
+        "name": "Raichu",
+        "type": ["Electric"],
+        "hp": 60,
+        "attack": 90,
+        "defense": 55,
+        "beats": ["Water", "Flying"],
+    },
+    {
+        "name": "Sandshrew",
+        "type": ["Ground"],
+        "hp": 50,
+        "attack": 75,
+        "defense": 85,
+        "beats": ["Fire", "Electric", "Poison"],
+    }
+]
+
+
+# 456, 457, 458
+# create function that takes list od dictionaries and return int , number that is answer on the following question:
+# How many Pokemon are there that beat Water Pokemon and have an attack greater than 70?
+
+
+def check_num_pok(any_data):
+    return len([name['name'] for name in any_data if 'Water' in name['beats'] and name['attack'] > 70])
+
+
+# print(check_num_pok(pokemons_data))
+assert check_num_pok(pokemons_data) == 2
+
+
+# 459, 460, 461
+# create function that takes list od dictionaries and return int , number that is answer on the following question:
+# What is the average attack power of Pokemons that beat at least 3 types of Pokemon?
+
+
+def average_attack_force_value(data):
+    values_lst = [a_value['attack'] for a_value in data if len(a_value['beats']) >= 3]
+    return round((sum(values_lst) / len(values_lst)), 3)
+
+
+assert average_attack_force_value(pokemons_data) == 60.739
+
+
+# 462, 463, 464
+# create function that takes list od dictionaries and return str , number that is answer on the following question:
+# Which Pokémon has the highest Attack and Defense totals among those beating Grass-type Pokémon?
+
+
+def strongest_pokemon(data):
+    grass_beaters = [pokemon for pokemon in data if "Grass" in pokemon["beats"]]
+    strongest = max(grass_beaters, key=lambda p: p["attack"] + p["defense"])
+    return strongest["name"]
+
+
+assert strongest_pokemon(pokemons_data) == 'Arbok'
