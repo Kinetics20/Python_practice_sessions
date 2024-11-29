@@ -3134,3 +3134,493 @@ assert str_name_city_age_over_34(data_5) == '''0. Pawel: 39: Krakow.
 3. Lukasz: 37: Brwinow.
 4. Bartek: 47: Warszawa.
 5. Karol: 38: Warszawa.'''
+
+expowiska = [
+    {
+        "name": "Dragon Lair",
+        "monsters": [
+            {
+                "name": "Dragon",
+                "hp": 1000,
+                "exp": 700,
+                "count_monster_on_spawn": 10,
+                "loot": [
+                    {"item_name": "Dragon Ham", "npc_value": 50},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Green Dragon Scale", "npc_value": 100},
+                    {"item_name": "Dragonbone Staff", "npc_value": 15000},
+                    {"item_name": "Strong Health Potion", "npc_value": 100},
+                    {"item_name": "Dragon Shield", "npc_value": 4000},
+                    {"item_name": "Life Crystal", "npc_value": 50},
+                    {"item_name": "Small Diamond", "npc_value": 300}
+                ]
+            },
+            {
+                "name": "Dragon Hatchling",
+                "hp": 300,
+                "exp": 200,
+                "count_monster_on_spawn": 8,
+                "loot": [
+                    {"item_name": "Dragon Ham", "npc_value": 50},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Small Emerald", "npc_value": 250}
+                ]
+            },
+            {
+                "name": "Dragon Lord",
+                "hp": 2100,
+                "exp": 2100,
+                "count_monster_on_spawn": 2,
+                "loot": [
+                    {"item_name": "Dragon Ham", "npc_value": 50},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Royal Helmet", "npc_value": 30000},
+                    {"item_name": "Dragon Scale Mail", "npc_value": 40000},
+                    {"item_name": "Life Crystal", "npc_value": 50},
+                    {"item_name": "Small Ruby", "npc_value": 250},
+                    {"item_name": "Dragonbone Staff", "npc_value": 15000},
+                    {"item_name": "Magic Plate Armor", "npc_value": 80000}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Orc Fortress",
+        "monsters": [
+            {
+                "name": "Orc Berserker",
+                "hp": 380,
+                "exp": 270,
+                "count_monster_on_spawn": 15,
+                "loot": [
+                    {"item_name": "Double Axe", "npc_value": 260},
+                    {"item_name": "Orc Tooth", "npc_value": 100},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Health Potion", "npc_value": 50},
+                    {"item_name": "Battle Hammer", "npc_value": 350}
+                ]
+            },
+            {
+                "name": "Orc Leader",
+                "hp": 450,
+                "exp": 280,
+                "count_monster_on_spawn": 3,
+                "loot": [
+                    {"item_name": "Battle Hammer", "npc_value": 350},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Orc Leather", "npc_value": 60},
+                    {"item_name": "Halberd", "npc_value": 400}
+                ]
+            },
+            {
+                "name": "Orc Shaman",
+                "hp": 240,
+                "exp": 170,
+                "count_monster_on_spawn": 8,
+                "loot": [
+                    {"item_name": "Staff", "npc_value": 40},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Leather Armor", "npc_value": 12},
+                    {"item_name": "Mana Potion", "npc_value": 50},
+                    {"item_name": "Orc Tooth", "npc_value": 100}
+                ]
+            },
+            {
+                "name": "Orc Warlord",
+                "hp": 950,
+                "exp": 950,
+                "count_monster_on_spawn": 1,
+                "loot": [
+                    {"item_name": "Double Axe", "npc_value": 260},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Orc Trophy", "npc_value": 5000},
+                    {"item_name": "Warrior Helmet", "npc_value": 5000}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Necromancer Tomb",
+        "monsters": [
+            {
+                "name": "Necromancer",
+                "hp": 580,
+                "exp": 580,
+                "count_monster_on_spawn": 12,
+                "loot": [
+                    {"item_name": "Skull Staff", "npc_value": 6000},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Rope Belt", "npc_value": 500},
+                    {"item_name": "Dark Shield", "npc_value": 4000},
+                    {"item_name": "Strong Mana Potion", "npc_value": 80},
+                    {"item_name": "Bone Shoulderplate", "npc_value": 1500}
+                ]
+            },
+            {
+                "name": "Crypt Shambler",
+                "hp": 300,
+                "exp": 210,
+                "count_monster_on_spawn": 6,
+                "loot": [
+                    {"item_name": "Bone Club", "npc_value": 90},
+                    {"item_name": "Ghoul Snack", "npc_value": 150},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Small Stone", "npc_value": 50}
+                ]
+            },
+            {
+                "name": "Priestess",
+                "hp": 300,
+                "exp": 230,
+                "count_monster_on_spawn": 3,
+                "loot": [
+                    {"item_name": "Life Ring", "npc_value": 900},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Skull", "npc_value": 50},
+                    {"item_name": "Red Rose", "npc_value": 50},
+                    {"item_name": "Mace", "npc_value": 90}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ancient Scarab Cave",
+        "monsters": [
+            {
+                "name": "Ancient Scarab",
+                "hp": 900,
+                "exp": 1000,
+                "count_monster_on_spawn": 4,
+                "loot": [
+                    {"item_name": "Scarab Coin", "npc_value": 100},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Gold Ingot", "npc_value": 5000},
+                    {"item_name": "Small Ruby", "npc_value": 250},
+                    {"item_name": "Time Ring", "npc_value": 2000}
+                ]
+            },
+            {
+                "name": "Scarab",
+                "hp": 220,
+                "exp": 150,
+                "count_monster_on_spawn": 12,
+                "loot": [
+                    {"item_name": "Scarab Coin", "npc_value": 100},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Small Sapphire", "npc_value": 250},
+                    {"item_name": "Iron Ore", "npc_value": 400}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Minotaur Tower",
+        "monsters": [
+            {
+                "name": "Minotaur Guard",
+                "hp": 400,
+                "exp": 250,
+                "count_monster_on_spawn": 6,
+                "loot": [
+                    {"item_name": "Minotaur Leather", "npc_value": 80},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Chain Armor", "npc_value": 200},
+                    {"item_name": "Halberd", "npc_value": 400}
+                ]
+            },
+            {
+                "name": "Minotaur Archer",
+                "hp": 230,
+                "exp": 185,
+                "count_monster_on_spawn": 8,
+                "loot": [
+                    {"item_name": "Iron Helmet", "npc_value": 150},
+                    {"item_name": "Crossbow", "npc_value": 500},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Steel Arrow", "npc_value": 5}
+                ]
+            },
+            {
+                "name": "Minotaur Mage",
+                "hp": 215,
+                "exp": 190,
+                "count_monster_on_spawn": 4,
+                "loot": [
+                    {"item_name": "Spellbook", "npc_value": 150},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Minotaur Horn", "npc_value": 50},
+                    {"item_name": "Mana Potion", "npc_value": 50}
+                ]
+            },
+            {
+                "name": "Minotaur",
+                "hp": 100,
+                "exp": 50,
+                "count_monster_on_spawn": 12,
+                "loot": [
+                    {"item_name": "Mace", "npc_value": 90},
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Minotaur Leather", "npc_value": 80},
+                    {"item_name": "Leather Armor", "npc_value": 12}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Cyclops Mountain",
+        "monsters": [
+            {
+                "name": "Cyclops",
+                "hp": 260,
+                "exp": 275,
+                "count_monster_on_spawn": 8,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Battle Hammer", "npc_value": 350},
+                    {"item_name": "Cyclops Toe", "npc_value": 100},
+                    {"item_name": "Meat", "npc_value": 5}
+                ]
+            },
+            {
+                "name": "Cyclops Smith",
+                "hp": 335,
+                "exp": 345,
+                "count_monster_on_spawn": 4,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Iron Ore", "npc_value": 400},
+                    {"item_name": "Mace", "npc_value": 90}
+                ]
+            },
+            {
+                "name": "Cyclops Drone",
+                "hp": 395,
+                "exp": 395,
+                "count_monster_on_spawn": 6,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Health Potion", "npc_value": 50},
+                    {"item_name": "Cyclops Toe", "npc_value": 100},
+                    {"item_name": "Strong Health Potion", "npc_value": 100}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Poison Spider Cave",
+        "monsters": [
+            {
+                "name": "Poison Spider",
+                "hp": 85,
+                "exp": 90,
+                "count_monster_on_spawn": 20,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Poisonous Slime", "npc_value": 30},
+                    {"item_name": "Spider Fangs", "npc_value": 30}
+                ]
+            },
+            {
+                "name": "Giant Spider",
+                "hp": 1200,
+                "exp": 900,
+                "count_monster_on_spawn": 2,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Platinum Coin", "npc_value": 100},
+                    {"item_name": "Spider Silk", "npc_value": 3000},
+                    {"item_name": "Knight Armor", "npc_value": 5000}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Tortoise Cave",
+        "monsters": [
+            {
+                "name": "Tortoise",
+                "hp": 250,
+                "exp": 195,
+                "count_monster_on_spawn": 15,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Fish", "npc_value": 5},
+                    {"item_name": "Tortoise Egg", "npc_value": 100}
+                ]
+            },
+            {
+                "name": "Thornback Tortoise",
+                "hp": 450,
+                "exp": 355,
+                "count_monster_on_spawn": 5,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Platinum Coin", "npc_value": 100},
+                    {"item_name": "Leather Armor", "npc_value": 12},
+                    {"item_name": "Tortoise Shield", "npc_value": 1500}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Amazon Camp",
+        "monsters": [
+            {
+                "name": "Amazon",
+                "hp": 110,
+                "exp": 60,
+                "count_monster_on_spawn": 12,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Sword", "npc_value": 85},
+                    {"item_name": "Leather Boots", "npc_value": 10}
+                ]
+            },
+            {
+                "name": "Valkyrie",
+                "hp": 125,
+                "exp": 95,
+                "count_monster_on_spawn": 6,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Plate Armor", "npc_value": 400},
+                    {"item_name": "Longsword", "npc_value": 160}
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Hydra Cave",
+        "monsters": [
+            {
+                "name": "Hydra",
+                "hp": 2600,
+                "exp": 2100,
+                "count_monster_on_spawn": 3,
+                "loot": [
+                    {"item_name": "Gold Coin", "npc_value": 1},
+                    {"item_name": "Platinum Coin", "npc_value": 100},
+                    {"item_name": "Hydra Head", "npc_value": 1000},
+                    {"item_name": "Great Health Potion", "npc_value": 190},
+                    {"item_name": "Royal Helmet", "npc_value": 30000}
+                ]
+            }
+        ]
+    }
+]
+
+
+# 443, 444, 445
+# Create function that takes list of dictionaries and return int , number that is answer for the question:
+# Knowing that I can't handle monsters that have over 600hp, where will I gain the most experience (exp)?
+
+def max_exp(dataset):
+    max_exp_value = max(monster['exp'] for location in dataset for monster in location['monsters'])
+
+    return max_exp_value
+
+
+assert max_exp(expowiska) == 2100
+
+
+# 446, 447, 448
+# Create function that takes list of dictionaries and return dictionary that is answer for the question:
+# Which monster has the best exp to hp ratio (the more exp for less hp the better)
+
+def best_exp_to_hp_ratio(dataset):
+    best_monster = max(
+        (
+            {'monster': monster['name'], 'exp_to_hp': monster['exp'] / monster['hp']}
+            for location in dataset
+            for monster in location['monsters']
+        ),
+        key=lambda m: m['exp_to_hp'],
+        default=None
+    )
+    return best_monster
+
+
+# print(best_exp_to_hp_ratio(expowiska))
+assert best_exp_to_hp_ratio(expowiska) == {'monster': 'Ancient Scarab', 'exp_to_hp': 1.1111111111111112}
+
+
+# 449
+# The same what # 446 but traditional way
+
+
+def best_exp_to_hp_ratio_2(dataset):
+    best_monster = None
+    best_ratio = 0
+
+    for location in dataset:
+        for monster in location['monsters']:
+
+            ratio = monster['exp'] / monster['hp']
+
+            if ratio > best_ratio:
+                best_ratio = ratio
+                best_monster = {
+                    'monster': monster['name'],
+                    'exp_to_hp': best_ratio
+                }
+
+    return best_monster
+
+
+assert best_exp_to_hp_ratio_2(expowiska) == {'monster': 'Ancient Scarab', 'exp_to_hp': 1.1111111111111112}
+
+
+# 450, 451, 452
+# create function that takes list of dictionaries and return dictionary which is answer for the following question:
+# Knowing that every monster always drops all the loot, which hunting ground will give me the most money?
+#
+# - Monsters will only appear once on hunting grounds and will not reappear after being killed
+
+
+def best_loot_location(dataset):
+    max_loot_value = 0
+    best_location = None
+
+    for location in dataset:
+        total_loot_value = 0
+        for monster in location['monsters']:
+            loot_value_per_monster = sum(item['npc_value'] for item in monster['loot'])
+            total_loot_value += loot_value_per_monster * monster['count_monster_on_spawn']
+
+        if total_loot_value > max_loot_value:
+            max_loot_value = total_loot_value
+            best_location = {
+                'location': location['name'],
+                'total_loot_value': max_loot_value
+            }
+
+    return best_location
+
+
+# print(best_loot_location(expowiska))
+assert best_loot_location(expowiska) == {'location': 'Dragon Lair', 'total_loot_value': 529120}
+
+
+# 453, 454, 455
+# The same what 450 but different way
+
+
+def best_loot_location_2(dataset):
+    best_location = max(
+        (
+            {
+                'location': location['name'],
+                'total_loot_value': sum(
+                    sum(item['npc_value'] for item in monster['loot']) * monster['count_monster_on_spawn']
+                    for monster in location['monsters']
+                )
+            }
+            for location in dataset
+        ),
+        key=lambda loc: loc['total_loot_value'],
+        default=None
+    )
+    return best_location
+
+
+assert best_loot_location_2(expowiska) == {'location': 'Dragon Lair', 'total_loot_value': 529120}
