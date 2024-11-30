@@ -3846,7 +3846,7 @@ pokemons_data = [
 
 
 # 456, 457, 458
-# create function that takes list od dictionaries and return int , number that is answer on the following question:
+# create function that takes list od dictionaries and returns int , number that is answer on the following question:
 # How many Pokemon are there that beat Water Pokemon and have an attack greater than 70?
 
 
@@ -3859,7 +3859,7 @@ assert check_num_pok(pokemons_data) == 2
 
 
 # 459, 460, 461
-# create function that takes list od dictionaries and return int , number that is answer on the following question:
+# create function that takes list od dictionaries and returns int , number that is answer on the following question:
 # What is the average attack power of Pokemons that beat at least 3 types of Pokemon?
 
 
@@ -3872,7 +3872,7 @@ assert average_attack_force_value(pokemons_data) == 60.739
 
 
 # 462, 463, 464
-# create function that takes list od dictionaries and return str , number that is answer on the following question:
+# create function that takes list od dictionaries and returns str , number that is answer on the following question:
 # Which Pokémon has the highest Attack and Defense totals among those beating Grass-type Pokémon?
 
 
@@ -3883,3 +3883,60 @@ def strongest_pokemon(data):
 
 
 assert strongest_pokemon(pokemons_data) == 'Arbok'
+
+
+# 465, 467, 468
+# create function that takes list of dictionaries and returns sorted names list for the pokemons that have
+# attack > 50 and defence > 70
+
+def sorted_list_pokemons(any_data):
+    return sorted([p_name['name'] for p_name in any_data if p_name['attack'] > 50 and p_name['defense'] > 70])
+
+
+# print(sorted_list_pokemons(pokemons_data))
+assert sorted_list_pokemons(pokemons_data) == ['Blastoise', 'Charizard', 'Pidgeot', 'Sandshrew', 'Venusaur',
+                                               'Wartortle']
+
+
+# 469, 470, 471
+# create function that takes list of dictionaries and returns dictionary for the pokemons that have
+# hp > 70, key: name, value: beats
+
+
+def dict_pokemons_hp_over_70(any_data):
+    return {p_name['name']: p_name['beats'] for p_name in any_data if p_name['hp'] > 70}
+
+
+# print(dict_pokemons_hp_over_70(pokemons_data))
+assert dict_pokemons_hp_over_70(pokemons_data) == {'Venusaur': ['Water', 'Rock', 'Ground'],
+                                                   'Charizard': ['Grass', 'Bug', 'Ice', 'Steel'],
+                                                   'Blastoise': ['Fire', 'Rock', 'Ground'],
+                                                   'Pidgeot': ['Bug', 'Grass', 'Fighting']}
+
+
+# 472, 473, 473
+# create function that takes list of dictionaries and returns list of tuples if 'Flying' is in 'type' and not 'Normal' in the 'type'
+# tuple has to includes name and list of type
+
+
+def list_of_tuples_for_fly_norm(any_data):
+    return [(p_name['name'], p_name['type']) for p_name in any_data if
+            'Flying' in p_name['type'] and 'Normal' not in p_name['type']]
+
+
+assert (list_of_tuples_for_fly_norm(pokemons_data)) == [('Charizard', ['Fire', 'Flying']),
+                                                        ('Butterfree', ['Bug', 'Flying'])]
+
+
+# 474, 475, 476
+# The same what # 472 but name should be swapcase and reverse
+
+
+def list_of_tuples_for_fly_norm_swap_reverse(any_data):
+    return [(p_name['name'].swapcase()[::-1], p_name['type']) for p_name in any_data if
+            'Flying' in p_name['type'] and 'Normal' not in p_name['type']]
+
+
+# print(list_of_tuples_for_fly_norm_swap_reverse(pokemons_data))
+assert list_of_tuples_for_fly_norm_swap_reverse(pokemons_data) == [('DRAZIRAHc', ['Fire', 'Flying']),
+                                                                   ('EERFRETTUb', ['Bug', 'Flying'])]
