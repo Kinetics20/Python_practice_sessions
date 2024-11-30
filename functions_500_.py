@@ -3940,3 +3940,918 @@ def list_of_tuples_for_fly_norm_swap_reverse(any_data):
 # print(list_of_tuples_for_fly_norm_swap_reverse(pokemons_data))
 assert list_of_tuples_for_fly_norm_swap_reverse(pokemons_data) == [('DRAZIRAHc', ['Fire', 'Flying']),
                                                                    ('EERFRETTUb', ['Bug', 'Flying'])]
+
+movies = [
+    {
+        "title": "Nausicaä of the Valley of the Wind",
+        "polish_title": "Nausicaä z Doliny Wiatru",
+        "year": 1984,
+        "genre": ["Animation", "Adventure", "Sci-Fi"],
+        "main_character": "Nausicaä",
+        "main_character_sex": "Female",
+        "duration": 117,
+        "imdb_rating": 8.0,
+        "director": "Hayao Miyazaki",
+        "box_office": 9019660,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "Castle in the Sky",
+        "polish_title": "Laputa – podniebny zamek",
+        "year": 1986,
+        "genre": ["Animation", "Adventure", "Family"],
+        "main_character": "Sheeta",
+        "main_character_sex": "Female",
+        "duration": 124,
+        "imdb_rating": 8.0,
+        "director": "Hayao Miyazaki",
+        "box_office": 6218229,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "Grave of the Fireflies",
+        "polish_title": "Grobowiec świetlików",
+        "year": 1988,
+        "genre": ["Animation", "Drama", "War"],
+        "main_character": "Yokokawa Seita",
+        "main_character_sex": "Male",
+        "duration": 88,
+        "imdb_rating": 8.5,
+        "director": "Isao Takahata",
+        "box_office": 519421,
+        "soundtrack_by": "Michio Mamiya"
+    },
+    {
+        "title": "My Neighbor Totoro",
+        "polish_title": "Mój sąsiad Totoro",
+        "year": 1988,
+        "genre": ["Animation", "Comedy", "Family"],
+        "main_character": "Satsuki Kusakabe",
+        "main_character_sex": "Female",
+        "duration": 86,
+        "imdb_rating": 8.1,
+        "director": "Hayao Miyazaki",
+        "box_office": 30336425,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "Kiki's Delivery Service",
+        "polish_title": "Podniebna poczta Kiki",
+        "year": 1989,
+        "genre": ["Animation", "Family", "Fantasy"],
+        "main_character": "Kiki",
+        "main_character_sex": "Female",
+        "duration": 103,
+        "imdb_rating": 7.8,
+        "director": "Hayao Miyazaki",
+        "box_office": 10403278,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "Only Yesterday",
+        "polish_title": "Powrót do marzeń",
+        "year": 1991,
+        "genre": ["Animation", "Drama", "Romance"],
+        "main_character": "Taeko Okajima",
+        "main_character_sex": "Female",
+        "duration": 119,
+        "imdb_rating": 7.6,
+        "director": "Isao Takahata",
+        "box_office": 608562,
+        "soundtrack_by": "Katz Hoshi"
+    },
+    {
+        "title": "Porco Rosso",
+        "polish_title": "Szkarłatny pilot",
+        "year": 1992,
+        "genre": ["Animation", "Adventure", "Comedy"],
+        "main_character": "Porco Rosso",
+        "main_character_sex": "Male",
+        "duration": 94,
+        "imdb_rating": 7.7,
+        "director": "Hayao Miyazaki",
+        "box_office": 1458536,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "Ocean Waves",
+        "polish_title": "Szum morza",
+        "year": 1993,
+        "genre": ["Animation", "Drama", "Romance"],
+        "main_character": "Taku Morisaki",
+        "main_character_sex": "Male",
+        "duration": 72,
+        "imdb_rating": 6.6,
+        "director": "Tomomi Mochizuki",
+        "box_office": 87738,
+        "soundtrack_by": "Shigeru Nagata"
+    },
+    {
+        "title": "Pom Poko",
+        "polish_title": "Szopy w natarciu",
+        "year": 1994,
+        "genre": ["Animation", "Comedy", "Drama"],
+        "main_character": "Shoukichi",
+        "main_character_sex": "Male",
+        "duration": 119,
+        "imdb_rating": 7.3,
+        "director": "Isao Takahata",
+        "box_office": 1279218,
+        "soundtrack_by": "Shang Shang Typhoon"
+    },
+    {
+        "title": "Whisper of the Heart",
+        "polish_title": "Szept serca",
+        "year": 1995,
+        "genre": ["Animation", "Drama", "Family"],
+        "main_character": "Shizuku Tsukishima",
+        "main_character_sex": "Female",
+        "duration": 111,
+        "imdb_rating": 7.8,
+        "director": "Yoshifumi Kondō",
+        "box_office": 4420615,
+        "soundtrack_by": "Yuji Nomi"
+    },
+    {
+        "title": "Princess Mononoke",
+        "polish_title": "Księżniczka Mononoke",
+        "year": 1997,
+        "genre": ["Animation", "Action", "Adventure"],
+        "main_character": "Ashitaka",
+        "main_character_sex": "Male",
+        "duration": 133,
+        "imdb_rating": 8.3,
+        "director": "Hayao Miyazaki",
+        "box_office": 170347532,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "My Neighbors the Yamadas",
+        "polish_title": "Rodzinka Yamadów",
+        "year": 1999,
+        "genre": ["Animation", "Comedy", "Family"],
+        "main_character": "Matsuko Yamada",
+        "main_character_sex": "Female",
+        "duration": 104,
+        "imdb_rating": 7.1,
+        "director": "Isao Takahata",
+        "box_office": 22261,
+        "soundtrack_by": "Akiko Yano"
+    },
+    {
+        "title": "Spirited Away",
+        "polish_title": "W krainie bogów",
+        "year": 2001,
+        "genre": ["Animation", "Adventure", "Family"],
+        "main_character": "Chihiro",
+        "main_character_sex": "Female",
+        "duration": 124,
+        "imdb_rating": 8.6,
+        "director": "Hayao Miyazaki",
+        "box_office": 358135197,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "The Cat Returns",
+        "polish_title": "Narzeczona dla kota",
+        "year": 2002,
+        "genre": ["Animation", "Adventure", "Comedy"],
+        "main_character": "Haru",
+        "main_character_sex": "Female",
+        "duration": 75,
+        "imdb_rating": 7.1,
+        "director": "Hiroyuki Morita",
+        "box_office": 54505827,
+        "soundtrack_by": "Yuji Nomi"
+    },
+    {
+        "title": "Howl's Moving Castle",
+        "polish_title": "Ruchomy zamek Hauru",
+        "year": 2004,
+        "genre": ["Animation", "Adventure", "Family"],
+        "main_character": "Sofi",
+        "main_character_sex": "Female",
+        "duration": 119,
+        "imdb_rating": 8.2,
+        "director": "Hayao Miyazaki",
+        "box_office": 240420227,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "Tales from Earthsea",
+        "polish_title": "Opowieści z Ziemiomorza",
+        "year": 2006,
+        "genre": ["Animation", "Adventure", "Fantasy"],
+        "main_character": "Arren",
+        "main_character_sex": "Male",
+        "duration": 115,
+        "imdb_rating": 6.3,
+        "director": "Gorō Miyazaki",
+        "box_office": 68673762,
+        "soundtrack_by": "Tamiya Terashima"
+    },
+    {
+        "title": "Ponyo",
+        "polish_title": "Ponyo",
+        "year": 2008,
+        "genre": ["Animation", "Adventure", "Comedy"],
+        "main_character": "Ponyo",
+        "main_character_sex": "Female",
+        "duration": 101,
+        "imdb_rating": 7.6,
+        "director": "Hayao Miyazaki",
+        "box_office": 205918431,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "Arrietty",
+        "polish_title": "Tajemniczy świat Arrietty",
+        "year": 2010,
+        "genre": ["Animation", "Adventure", "Drama"],
+        "main_character": "Arrietty",
+        "main_character_sex": "Female",
+        "duration": 94,
+        "imdb_rating": 7.6,
+        "director": "Hiromasa Yonebayashi",
+        "box_office": 149660003,
+        "soundtrack_by": "Cécile Corbel"
+    },
+    {
+        "title": "From Up on Poppy Hill",
+        "polish_title": "Makowe wzgórze",
+        "year": 2011,
+        "genre": ["Animation", "Comedy", "Drama"],
+        "main_character": "Umi Matsuzaki",
+        "main_character_sex": "Female",
+        "duration": 91,
+        "imdb_rating": 7.4,
+        "director": "Gorō Miyazaki",
+        "box_office": 61485364,
+        "soundtrack_by": "Satoshi Takebe"
+    },
+    {
+        "title": "The Wind Rises",
+        "polish_title": "Zrywa się wiatr",
+        "year": 2013,
+        "genre": ["Animation", "Biography", "Drama"],
+        "main_character": "Jirō Horikoshi",
+        "main_character_sex": "Male",
+        "duration": 126,
+        "imdb_rating": 7.8,
+        "director": "Hayao Miyazaki",
+        "box_office": 136865294,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "The Tale of the Princess Kaguya",
+        "polish_title": "Księżniczka Kaguya",
+        "year": 2013,
+        "genre": ["Animation", "Drama", "Family"],
+        "main_character": "Princess Kaguya",
+        "main_character_sex": "Female",
+        "duration": 137,
+        "imdb_rating": 8.0,
+        "director": "Isao Takahata",
+        "box_office": 24751400,
+        "soundtrack_by": "Joe Hisaishi"
+    },
+    {
+        "title": "When Marnie Was There",
+        "polish_title": "Marnie. Przyjaciółka ze snów",
+        "year": 2014,
+        "genre": ["Animation", "Drama", "Family"],
+        "main_character": "Anna Sasaki",
+        "main_character_sex": "Female",
+        "duration": 103,
+        "imdb_rating": 7.6,
+        "director": "Hiromasa Yonebayashi",
+        "box_office": 35012681,
+        "soundtrack_by": "Takatsugu Muramatsu"
+    },
+    {
+        "title": "The Red Turtle",
+        "polish_title": "Czerwony żółw",
+        "year": 2016,
+        "genre": ["Animation", "Drama", "Family"],
+        "main_character": "The Man",
+        "main_character_sex": "Male",
+        "duration": 80,
+        "imdb_rating": 7.5,
+        "director": "Michaël Dudok de Wit",
+        "box_office": 6613503,
+        "soundtrack_by": "Laurent Perez del Mar"
+    },
+    {
+        "title": "Earwig and the Witch",
+        "polish_title": "Skorek i czarownica",
+        "year": 2020,
+        "genre": ["Animation", "Adventure", "Family"],
+        "main_character": "Earwig",
+        "main_character_sex": "Female",
+        "duration": 82,
+        "imdb_rating": 4.7,
+        "director": "Gorō Miyazaki",
+        "box_office": 842744,
+        "soundtrack_by": "Satoshi Takebe"
+    },
+    {
+        "title": "The Boy and the Heron",
+        "polish_title": "Chłopiec i czapla",
+        "year": 2023,
+        "genre": ["Animation", "Adventure", "Drama"],
+        "main_character": "Mahito Maki",
+        "main_character_sex": "Male",
+        "duration": 124,
+        "imdb_rating": 7.5,
+        "director": "Hayao Miyazaki",
+        "box_office": 173437244,
+        "soundtrack_by": "Joe Hisaishi"
+    }
+]
+
+
+# 477, 478, 479
+# create a function that returns dictionary that :
+# key: movies with a female lead value: year of production that have an IMDb rating of 8.0 or higher
+
+
+def dict_film_female(any_data):
+    return {item['title']: item['year'] for item in any_data if
+            item['main_character_sex'] == 'Female' and item['imdb_rating'] >= 8}
+
+
+assert dict_film_female(movies) == {'Nausicaä of the Valley of the Wind': 1984, 'Castle in the Sky': 1986,
+                                    'My Neighbor Totoro': 1988, 'Spirited Away': 2001, "Howl's Moving Castle": 2004,
+                                    'The Tale of the Princess Kaguya': 2013}
+
+
+# 480, 481, 482
+# the same what # 477 but function has to return list of tuples
+
+
+def list_tuples_film_female(any_data):
+    return [(item['title'], item['year']) for item in any_data if
+            item['main_character_sex'] == 'Female' and item['imdb_rating'] >= 8]
+
+
+assert list_tuples_film_female(movies) == [('Nausicaä of the Valley of the Wind', 1984), ('Castle in the Sky', 1986),
+                                           ('My Neighbor Totoro', 1988), ('Spirited Away', 2001),
+                                           ("Howl's Moving Castle", 2004), ('The Tale of the Princess Kaguya', 2013)]
+
+
+# 483, 484, 485
+# create a function that returns tuple with the answer on th efollowing question :
+# What is the highest grossing film genre (excluding "Animation") produced by director Hayao Miyazaki?
+
+
+def dict_genre_film_hayao(any_data):
+    list_of_movies_hayao = [film for film in any_data if film['director'] == 'Hayao Miyazaki']
+
+    genre_without_animation = [[genre for genre in film['genre'] if genre != 'Animation'] for film in
+                               list_of_movies_hayao]
+
+    genre_revenue_pairs = [
+        (genre, film["box_office"])
+        for film in list_of_movies_hayao
+        for genre in film["genre"] if genre != "Animation"
+    ]
+
+    genre_revenues = {
+        genre: sum(revenue for g, revenue in genre_revenue_pairs if g == genre)
+        for genre, _ in genre_revenue_pairs
+    }
+
+    highest_revenue_genre = max(genre_revenues, key=genre_revenues.get)
+    highest_revenue = genre_revenues[highest_revenue_genre]
+
+    return highest_revenue_genre, highest_revenue
+
+
+assert dict_genre_film_hayao(movies) == ('Adventure', 1164955056)
+
+
+# 486, 487, 489
+# create a function that returns tuple with the answer on th efollowing question :
+# Find the shortest Ghibli movie that earned more than the average earnings of all movies.
+# View the movie title, length, and its revenue.
+
+
+def shortest_film_above_avg(any_data):
+    avg_revenue = sum(film["box_office"] for film in any_data) / len(any_data)
+
+    films_above_avg = [film for film in any_data if film["box_office"] > avg_revenue]
+
+    shortest_film = min(films_above_avg, key=lambda film: film["duration"])
+
+    return shortest_film["title"], shortest_film["duration"], shortest_film["box_office"]
+
+
+assert shortest_film_above_avg(movies) == ('Arrietty', 94, 149660003)
+
+f1_1998_season = {
+    'scoring': {
+        '1st': 10,
+        '2nd': 6,
+        '3rd': 4,
+        '4th': 3,
+        '5th': 2,
+        '6th': 1
+    },
+    'teams': {
+        'williams': {
+            'car': 'FW20',
+            'nationality': 'Great Britain',
+            'drivers': [
+                {
+                    'name': 'Damon Hill',
+                    'nationality': 'Great Britain'
+                },
+                {
+                    'name': 'Jacques Villeneuve',
+                    'nationality': 'Canada'
+                }
+            ],
+        },
+        'ferrari': {
+            'car': 'F300',
+            'nationality': 'Italy',
+            'drivers': [
+                {
+                    'name': 'Michael Schumacher',
+                    'nationality': 'Germany'
+                },
+                {
+                    'name': 'Eddie Irvine',
+                    'nationality': 'Great Britain'
+                }
+            ],
+        },
+        'benetton': {
+            'car': 'B198',
+            'nationality': 'Italy',
+            'drivers': [
+                {
+                    'name': 'Giancarlo Fisichella',
+                    'nationality': 'Italy'
+                },
+                {
+                    'name': 'Alexander Wurz',
+                    'nationality': 'Austria'
+                }
+            ],
+        },
+        'mclaren': {
+            'car': 'MP4/13',
+            'nationality': 'Great Britain',
+            'drivers': [
+                {
+                    'name': 'David Coulthard',
+                    'nationality': 'Great Britain'
+                },
+                {
+                    'name': 'Mika Häkkinen',
+                    'nationality': 'Finland'
+                }
+            ],
+        },
+        'jordan': {
+            'car': '198',
+            'nationality': 'Ireland',
+            'drivers': [
+                {
+                    'name': 'Heinz-Harald Frentzen',
+                    'nationality': 'Germany'
+                },
+                {
+                    'name': 'Ralf Schumacher',
+                    'nationality': 'Germany'
+                }
+            ],
+        },
+        'peugeot': {
+            'car': 'AP01',
+            'nationality': 'France',
+            'drivers': [
+                {
+                    'name': 'Olivier Panis',
+                    'nationality': 'France'
+                },
+                {
+                    'name': 'Jarno Trulli',
+                    'nationality': 'Italy'
+                }
+            ],
+        },
+        'sauber': {
+            'car': 'C17',
+            'nationality': 'Switzerland',
+            'drivers': [
+                {
+                    'name': 'Jean Alesi',
+                    'nationality': 'France'
+                },
+                {
+                    'name': 'Johnny Herbert',
+                    'nationality': 'Great Britain'
+                }
+            ],
+        },
+        'arrows': {
+            'car': 'A19',
+            'nationality': 'Great Britain',
+            'drivers': [
+                {
+                    'name': 'Pedro Diniz',
+                    'nationality': 'Brazil'
+                },
+                {
+                    'name': 'Mika Salo',
+                    'nationality': 'Finland'
+                }
+            ],
+        },
+        'stewart': {
+            'car': 'SF02',
+            'nationality': 'Great Britain',
+            'drivers': [
+                {
+                    'name': 'Rubens Barrichello',
+                    'nationality': 'Brazil'
+                },
+                {
+                    'name': 'Jan Magnussen',
+                    'nationality': 'Denmark'
+                },
+                {
+                    'name': 'Jos Verstappen',
+                    'nationality': 'Netherlands'
+                }
+            ],
+        },
+        'tyrrell': {
+            'car': '026',
+            'nationality': 'Great Britain',
+            'drivers': [
+                {
+                    'name': 'Ricardo Rosset',
+                    'nationality': 'Brazil'
+                },
+                {
+                    'name': 'Toranosuke Takagi',
+                    'nationality': 'Japan'
+                }
+            ],
+        },
+        'minardi': {
+            'car': 'M198',
+            'nationality': 'Italy',
+            'drivers': [
+                {
+                    'name': 'Pedro Diniz',
+                    'nationality': 'Brazil'
+                },
+                {
+                    'name': 'Esteban Tuero',
+                    'nationality': 'Argentina'
+                }
+            ],
+        },
+    },
+    'rounds': {
+        'australia': {
+            'summary': {
+                'winner': 'Mika Häkkinen',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'Mika Häkkinen'
+            },
+            'race_result': {
+                '1st': 'Mika Häkkinen',
+                '2nd': 'David Coulthard',
+                '3rd': 'Heinz-Harald Frentzen',
+                '4th': 'Eddie Irvine',
+                '5th': 'Jacques Villeneuve',
+                '6th': 'Johnny Herbert',
+            },
+        },
+        'brazil': {
+            'summary': {
+                'winner': 'Mika Häkkinen',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'Mika Häkkinen'
+            },
+            'race_result': {
+                '1st': 'Mika Häkkinen',
+                '2nd': 'David Coulthard',
+                '3rd': 'Michael Schumacher',
+                '4th': 'Alexander Wurz',
+                '5th': 'Heinz-Harald Frentzen',
+                '6th': 'Giancarlo Fisichella',
+            },
+        },
+        'argentina': {
+            'summary': {
+                'winner': 'Michael Schumacher',
+                'pole_position': 'David Coulthard',
+                'fastest_lap': 'Alexander Wurz'
+            },
+            'race_result': {
+                '1st': 'Michael Schumacher',
+                '2nd': 'Mika Häkkinen',
+                '3rd': 'Eddie Irvine',
+                '4th': 'Alexander Wurz',
+                '5th': 'Jean Alesi',
+                '6th': 'David Coulthard',
+            },
+        },
+        'san_marino': {
+            'summary': {
+                'winner': 'David Coulthard',
+                'pole_position': 'David Coulthard',
+                'fastest_lap': 'Michael Schumacher'
+            },
+            'race_result': {
+                '1st': 'David Coulthard',
+                '2nd': 'Michael Schumacher',
+                '3rd': 'Eddie Irvine',
+                '4th': 'Jacques Villeneuve',
+                '5th': 'Heinz-Harald Frentzen',
+                '6th': 'Jean Alesi',
+            },
+        },
+        'spain': {
+            'summary': {
+                'winner': 'Mika Häkkinen',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'Mika Häkkinen'
+            },
+            'race_result': {
+                '1st': 'Mika Häkkinen',
+                '2nd': 'David Coulthard',
+                '3rd': 'Michael Schumacher',
+                '4th': 'Alexander Wurz',
+                '5th': 'Rubens Barrichello',
+                '6th': 'Jacques Villeneuve',
+            },
+        },
+        'monaco': {
+            'summary': {
+                'winner': 'Mika Häkkinen',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'Mika Häkkinen'
+            },
+            'race_result': {
+                '1st': 'Mika Häkkinen',
+                '2nd': 'Giancarlo Fisichella',
+                '3rd': 'Eddie Irvine',
+                '4th': 'Mika Salo',
+                '5th': 'Jacques Villeneuve',
+                '6th': 'Pedro Diniz',
+            },
+        },
+        'canada': {
+            'summary': {
+                'winner': 'Michael Schumacher',
+                'pole_position': 'David Coulthard',
+                'fastest_lap': 'Michael Schumacher'
+            },
+            'race_result': {
+                '1st': 'Michael Schumacher',
+                '2nd': 'Giancarlo Fisichella',
+                '3rd': 'Eddie Irvine',
+                '4th': 'Alexander Wurz',
+                '5th': 'Rubens Barrichello',
+                '6th': 'Jan Magnussen',
+            },
+        },
+        'france': {
+            'summary': {
+                'winner': 'Michael Schumacher',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'David Coulthard'
+            },
+            'race_result': {
+                '1st': 'Michael Schumacher',
+                '2nd': 'Eddie Irvine',
+                '3rd': 'Mika Häkkinen',
+                '4th': 'Jacques Villeneuve',
+                '5th': 'Alexander Wurz',
+                '6th': 'David Coulthard',
+            },
+        },
+        'britain': {
+            'summary': {
+                'winner': 'Michael Schumacher',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'Michael Schumacher'
+            },
+            'race_result': {
+                '1st': 'Michael Schumacher',
+                '2nd': 'Mika Häkkinen',
+                '3rd': 'Eddie Irvine',
+                '4th': 'Alexander Wurz',
+                '5th': 'Giancarlo Fisichella',
+                '6th': 'Ralf Schumacher',
+            },
+        },
+        'austria': {
+            'summary': {
+                'winner': 'Mika Häkkinen',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'David Coulthard'
+            },
+            'race_result': {
+                '1st': 'Mika Häkkinen',
+                '2nd': 'David Coulthard',
+                '3rd': 'Michael Schumacher',
+                '4th': 'Eddie Irvine',
+                '5th': 'Ralf Schumacher',
+                '6th': 'Jacques Villeneuve',
+            },
+        },
+        'german': {
+            'summary': {
+                'winner': 'Mika Häkkinen',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'David Coulthard'
+            },
+            'race_result': {
+                '1st': 'Mika Häkkinen',
+                '2nd': 'David Coulthard',
+                '3rd': 'Jacques Villeneuve',
+                '4th': 'Damon Hill',
+                '5th': 'Michael Schumacher',
+                '6th': 'Ralf Schumacher',
+            },
+        },
+        'hungary': {
+            'summary': {
+                'winner': 'Michael Schumacher',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'Michael Schumacher'
+            },
+            'race_result': {
+                '1st': 'Michael Schumacher',
+                '2nd': 'David Coulthard',
+                '3rd': 'Jacques Villeneuve',
+                '4th': 'Damon Hill',
+                '5th': 'Heinz-Harald Frentzen',
+                '6th': 'Mika Häkkinen',
+            },
+        },
+        'belgium': {
+            'summary': {
+                'winner': 'Damon Hill',
+                'pole_position': 'Mika Häkkinen',
+                'fastest_lap': 'Michael Schumacher'
+            },
+            'race_result': {
+                '1st': 'Damon Hill',
+                '2nd': 'Ralf Schumacher',
+                '3rd': 'Jean Alesi',
+                '4th': 'Heinz-Harald Frentzen',
+                '5th': 'Pedro Diniz',
+                '6th': 'Jarno Trulli',
+            },
+        },
+        'italy': {
+            'summary': {
+                'winner': 'Michael Schumacher',
+                'pole_position': 'Michael Schumacher',
+                'fastest_lap': 'Mika Häkkinen'
+            },
+            'race_result': {
+                '1st': 'Michael Schumacher',
+                '2nd': 'Eddie Irvine',
+                '3rd': 'Ralf Schumacher',
+                '4th': 'Mika Häkkinen',
+                '5th': 'Jean Alesi',
+                '6th': 'Damon Hill',
+            },
+        },
+        'luxembourg': {
+            'summary': {
+                'winner': 'Mika Häkkinen',
+                'pole_position': 'Michael Schumacher',
+                'fastest_lap': 'Mika Häkkinen'
+            },
+            'race_result': {
+                '1st': 'Mika Häkkinen',
+                '2nd': 'Michael Schumacher',
+                '3rd': 'David Coulthard',
+                '4th': 'Eddie Irvine',
+                '5th': 'Heinz-Harald Frentzen',
+                '6th': 'Giancarlo Fisichella',
+            },
+        },
+        'japan': {
+            'summary': {
+                'winner': 'Mika Häkkinen',
+                'pole_position': 'Michael Schumacher',
+                'fastest_lap': 'Michael Schumacher'
+            },
+            'race_result': {
+                '1st': 'Mika Häkkinen',
+                '2nd': 'Eddie Irvine',
+                '3rd': 'David Coulthard',
+                '4th': 'Damon Hill',
+                '5th': 'Heinz-Harald Frentzen',
+                '6th': 'Jacques Villeneuve',
+            },
+        },
+    }
+}
+
+
+# 490, 491, 492
+# create a function that returns dictionary with the answer on th efollowing question :
+# Create a dictionary with the final driver classification.
+
+
+def get_driver_standings(season_data):
+    scoring_system = season_data['scoring']
+
+    standings = {
+        driver: sum(
+            scoring_system.get(position, 0)
+            for round_data in season_data['rounds'].values()
+            for position, race_driver in round_data['race_result'].items()
+            if race_driver == driver
+        )
+        for round_data in season_data['rounds'].values()
+        for driver in round_data['race_result'].values()
+    }
+
+    sorted_standings = dict(sorted(standings.items(), key=lambda item: item[1], reverse=True))
+
+    return sorted_standings
+
+
+assert get_driver_standings(f1_1998_season) == {'Mika Häkkinen': 100, 'Michael Schumacher': 86, 'David Coulthard': 56,
+                                                'Eddie Irvine': 47, 'Jacques Villeneuve': 21, 'Damon Hill': 20,
+                                                'Heinz-Harald Frentzen': 17, 'Alexander Wurz': 17,
+                                                'Giancarlo Fisichella': 16, 'Ralf Schumacher': 14, 'Jean Alesi': 9,
+                                                'Rubens Barrichello': 4, 'Mika Salo': 3, 'Pedro Diniz': 3,
+                                                'Johnny Herbert': 1, 'Jan Magnussen': 1, 'Jarno Trulli': 1}
+
+
+# 493, 494, 495
+# create a function that returns dictionary with the answer on the following question :
+# Create a dictionary with each grand prix(round) and its winner.
+
+
+def get_round_winners(season_data):
+    return {
+        round_name: round_info['summary']['winner']
+        for round_name, round_info in season_data['rounds'].items()
+    }
+
+
+assert get_round_winners(f1_1998_season) == {'australia': 'Mika Häkkinen', 'brazil': 'Mika Häkkinen',
+                                             'argentina': 'Michael Schumacher', 'san_marino': 'David Coulthard',
+                                             'spain': 'Mika Häkkinen', 'monaco': 'Mika Häkkinen',
+                                             'canada': 'Michael Schumacher', 'france': 'Michael Schumacher',
+                                             'britain': 'Michael Schumacher', 'austria': 'Mika Häkkinen',
+                                             'german': 'Mika Häkkinen', 'hungary': 'Michael Schumacher',
+                                             'belgium': 'Damon Hill', 'italy': 'Michael Schumacher',
+                                             'luxembourg': 'Mika Häkkinen', 'japan': 'Mika Häkkinen'}
+
+
+# 496, 497, 498
+# create a function that returns list with the answer on the following question :
+# Did brothers Michael and Ralf Schumacher stand on the podium together in 1998? If so, in which race(s)?
+
+
+def find_schumacher_podiums(season_data):
+    return [
+        round_name.capitalize()  # Dodajemy nazwę rundy z kapitalizacją
+        for round_name, round_info in season_data['rounds'].items()
+        if 'Michael Schumacher' in list(round_info['race_result'].values())[:3] and 'Ralf Schumacher' in list(
+            round_info['race_result'].values())[:3]
+    ]
+
+
+assert (find_schumacher_podiums(f1_1998_season)) == ['Italy']
+
+
+# 499
+# create function that takes list and element and append it to the list
+
+
+def append_to_list(any_list, element):
+    any_list.append(element)
+    return any_list
+
+
+assert append_to_list([1, 2, 3, 4], 'find_schumacher_podiums') == [1, 2, 3, 4, 'find_schumacher_podiums']
+
+
+# 500
+# create function that takes list and remove last element from list
+
+
+def pop_from_list(any_list):
+    any_list.pop()
+    return any_list
+
+
+assert pop_from_list([1, 2, 3, 4, 'find_schumacher_podiums']) == [1, 2, 3, 4]
