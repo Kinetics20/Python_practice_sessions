@@ -4855,3 +4855,23 @@ def pop_from_list(any_list):
 
 
 assert pop_from_list([1, 2, 3, 4, 'find_schumacher_podiums']) == [1, 2, 3, 4]
+
+# 501
+# create function that takes tuple and return count method of number 3
+
+
+def tuple_count(any_tuple):
+    return any_tuple.count(3)
+
+
+assert tuple_count((1, 2, 3, 3, 3)) == 3
+
+# 502
+# create function that takes tuple and return index for index method for number 3 in range (3, 5)
+
+
+def tuple_index_check(any_tuple):
+    return any_tuple.index(3, 3, 6)
+
+
+assert tuple_index_check((1, 2, 4, 1, 3, 3, 14, 3)) == 4
