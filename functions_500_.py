@@ -4877,14 +4877,127 @@ def tuple_index_check(any_tuple):
 assert tuple_index_check((1, 2, 4, 1, 3, 3, 14, 3)) == 4
 
 set1 = {1, 2, 3}
-set2 = {3, 4, 5}
+set2 = {3, 4, 5, 100, 999999}
 
 # 503
 # create function that takes set and add element to it using add method
 
 
 def add_element_to_set_(any_set, element):
-    n_set = any_set.add(element)
+    any_set.add(element)
     return any_set
 
-print(add_element_to_set_(set1, 10))
+# print(add_element_to_set_(set1, 10))
+assert add_element_to_set_(set1, 10) == {10, 1, 2, 3}
+
+# 504
+# remove method for set
+
+def remove_element_set(any_set, element):
+    any_set.remove(element)
+    return any_set
+
+# print(remove_element_set(set1, 10))
+assert remove_element_set(set1, 10) == {1, 2, 3}
+
+# 505
+# discard method for set
+
+def discard_element_set(any_set, element):
+    any_set.discard(element)
+    return any_set
+
+# print(discard_element_set(set1, 1))
+assert discard_element_set(set1, 1) == {2, 3}
+
+# 506
+# update method for set
+
+def update_set(any_set, any_list):
+    any_set.update(any_list)
+    return any_set
+
+# print(update_set(set1, [1, 2, 3, 5, 60, 70, 800, 9, 10]))
+assert update_set(set1, [1, 2, 3, 5, 60, 70, 800, 9, 10]) == {800, 1, 2, 3, 5, 70, 9, 10, 60}
+
+# 507
+# copy method for set
+
+def copy_set(any_set):
+    return set(any_set.copy())
+
+# print(copy_set(set1))
+assert copy_set(set1) == {800, 1, 2, 3, 5, 70, 9, 10, 60}
+
+# 508
+# union method for set
+
+def union_set(any_set, any_set_2):
+    return any_set.union(any_set_2)
+
+# print(union_set(set1, set2))
+assert union_set(set1, set2) == {800, 1, 2, 3, 100, 5, 70, 4, 9, 10, 60, 999999}
+
+# 509
+# union method short |
+
+def union_set_2(any_set, any_set_2):
+    return any_set | any_set_2
+
+# print(union_set_2(set1, set2))
+assert union_set_2(set1, set2) == {800, 1, 2, 3, 100, 5, 70, 4, 9, 10, 60, 999999}
+
+# 510
+# intersection method
+
+def intersection_set(any_set, any_set_2):
+    return any_set.intersection(any_set_2)
+
+# print(intersection_set(set1, set2))
+assert intersection_set(set1, set2) == {3, 5}
+
+# 511
+# intersection method short &
+
+def intersection_set_2(any_set, any_set_2):
+    return any_set & any_set_2
+
+# print(intersection_set_2(set1, set2))
+assert intersection_set_2(set1, set2) == {3, 5}
+
+# 512
+# difference method
+
+def difference_set(any_set, any_set_2):
+    return any_set.difference(any_set_2)
+
+# print(difference_set(set1, set2))
+assert difference_set(set1, set2) == {800, 1, 2, 70, 9, 10, 60}
+
+# 513
+# difference method - short
+
+def difference_set_2(any_set, any_set_2):
+    return any_set - any_set_2
+
+# print(difference_set_2(set1, set2))
+assert difference_set_2(set1, set2) == {800, 1, 2, 70, 9, 10, 60}
+
+# 514
+# symmetric difference method for set
+
+def symmetric_difference_set(any_set, any_set_2):
+    return any_set.symmetric_difference(any_set_2)
+
+# print(symmetric_difference_set({1, 2, 3}, {2, 3, 4}))
+assert symmetric_difference_set({1, 2, 3}, {2, 3, 4}) == {1, 4}
+
+# 515
+# symmetric difference method for set
+
+def symmetric_difference_set_2(any_set, any_set_2):
+    return any_set ^ any_set_2
+
+# print(symmetric_difference_set_2({1, 2, 3}, {2, 3, 4}))
+assert symmetric_difference_set_2({1, 2, 3}, {2, 3, 4}) == {1, 4}
+
