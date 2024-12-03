@@ -68,9 +68,14 @@ class Auto:
         self.model = model
         self.engine = True
 
-dodge = Auto('Venom', 350, 2005)
+dodge = Auto('Viper', 350, 2005)
 porsche = Auto('911', 380, 2009)
-print(dodge.model, dodge.max_speed, dodge.year )
+# TODO bad practice !!! declare self out of the Class !!!!!!!
+dodge.gearbox = 'Manual'
+
+
+# print(dodge.model, dodge.max_speed, dodge.year, dodge.gearbox )
+print(dodge.model, dodge.max_speed, dodge.year)
 print(porsche.model, porsche.max_speed, porsche.year )
     
 
