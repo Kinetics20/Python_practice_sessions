@@ -43,6 +43,7 @@ class NameFive:
     def __new__(cls, *args: Any, **kwargs: Any) -> 'NameFive':
         # print(args, kwargs)
         self = super().__new__(cls)
+        self.value = 'Home'
         # self.value_ = args[0]
         return self
 
@@ -54,5 +55,17 @@ class NameFive:
 # TODO constructor - after constructor ( __init__) starts __init__
 # TODO MRO method resolution order - mechanism uses to search classes to provide inheritance
 # TODO first __new__ create object in class, second __init__ set fields of object created by __new__
-n_five = NameFive(2)
-print(n_five)
+# TODO metaclass type is responsible for passing params from __new__ to __init__ 
+n_five = NameFive(2666)
+# print(n_five.value)
+
+
+class Auto:
+    def __init__(self, model, max_speed, year):
+        self.year = year
+        self.max_speed = max_speed
+        self.model = model
+    
+
+
+
