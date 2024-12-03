@@ -62,27 +62,80 @@ n_five = NameFive(2666)
 # type inference - auto discovering data types
 
 class Auto:
+    colour = 'green'
+
     def __init__(self, model: str, max_speed: int, year: int) -> None:
         self.year = year
         self.max_speed = max_speed
         self.model = model
         self.engine = True
+        # type(self).colour = new_colour
+        self._colour = type(self).colour
+        self.speed = 0
+
+    def speed_up(self, amount):
+        if self.engine:
+            self.speed = min(self.speed + amount, self.max_speed)
+
+    @classmethod
+    def auto_nitro(cls, model: str, max_speed: int, year: int, nitro: bool) -> 'Auto':
+        self = super().__new__(cls)
+        # self = cls.__new__(cls)
+        self.__init__(model, max_speed, year)
+        self.nitro = nitro
+        return self
+
+    @staticmethod
+    def magic():
+        return 'brum!!!'
+
+
+    # def magic(self, new_colour):
+    #     type(self).colour = new_colour
 
     # def tune(self):
     #     self.nitro = True
 
 dodge = Auto('Viper', 350, 2005)
 porsche = Auto('911', 380, 2009)
+nissan = Auto.auto_nitro('skyline',380, 2001, True)
+
+print(nissan.nitro)
+
+# syntactic sugar
+dodge.speed_up(100)
+# type(dodge).speed_up(dodge, 60)
+# Auto.speed_up(dodge, 30)
+print(dir(Auto))
+print(dodge.speed)
+
 # TODO bad practice !!! declare self out of the Class !!!!!!!
 dodge.gearbox = 'Manual'
+
+
+
 
 # dodge.tune()
 
 # print(dodge.model, dodge.max_speed, dodge.year, dodge.gearbox )
 # print(dodge.model, dodge.max_speed, dodge.year, dodge.nitro)
-print(dodge.model, dodge.max_speed, dodge.year)
-print(porsche.model, porsche.max_speed, porsche.year )
-    
+# print(dodge.model, dodge.max_speed, dodge.year, dodge.colour)
+# print(dodge.model, dodge.max_speed, dodge.year)
+# print(porsche.model, porsche.max_speed, porsche.year )
+
+# TODO bad practice !!! it's possible to change class property/field but we don't apply this method
+# dodge.colour = 'black'
+# TODO this is write way to change class field from object level by class referring
+dodge.magic = 'Gold'
+# print(Auto.colour)
+# print(dodge.colour)
+
+# TODO vars is a dict with whole properties for exact object
+
+# print(vars(Auto))
+# print(vars(dodge))
+print(vars(porsche))
+
 
 
 
