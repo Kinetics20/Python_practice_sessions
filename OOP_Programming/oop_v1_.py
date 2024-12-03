@@ -41,18 +41,18 @@ nf = NameFour(777)
 
 class NameFive:
     def __new__(cls, *args: Any, **kwargs: Any) -> 'NameFive':
-        print(args, kwargs)
+        # print(args, kwargs)
         self = super().__new__(cls)
-        self.value_ = args[0]
+        # self.value_ = args[0]
         return self
 
-    def __init__(self, *args, **kwargs):
-        self.value = 5
+    def __init__(self, value):
+        self.value = value
         self.temp = 42
 
 # TODO constructor - __new__ | only object class has __new__ that can create object
 # TODO constructor - after constructor ( __init__) starts __init__
 # TODO MRO method resolution order - mechanism uses to search classes to provide inheritance
 # TODO first __new__ create object in class, second __init__ set fields of object created by __new__
-n_five = NameFive(2, 3, 789, temp = 80, temp1 = 60)
+n_five = NameFive(2)
 print(n_five)
