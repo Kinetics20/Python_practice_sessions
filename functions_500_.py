@@ -4875,3 +4875,16 @@ def tuple_index_check(any_tuple):
 
 
 assert tuple_index_check((1, 2, 4, 1, 3, 3, 14, 3)) == 4
+
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+# 503
+# create function that takes set and add element to it using add method
+
+
+def add_element_to_set_(any_set, element):
+    n_set = any_set.add(element)
+    return any_set
+
+print(add_element_to_set_(set1, 10))
