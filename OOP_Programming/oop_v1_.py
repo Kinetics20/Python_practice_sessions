@@ -59,12 +59,17 @@ class NameFive:
 n_five = NameFive(2666)
 # print(n_five.value)
 
+# type inference - auto discovering data types
 
 class Auto:
-    def __init__(self, model, max_speed, year):
+    def __init__(self, model: str, max_speed: int, year: int):
         self.year = year
         self.max_speed = max_speed
         self.model = model
+        self.engine = True
+
+dodge = Auto('Venom', 350, 2005)
+print(dodge.model, dodge.max_speed, dodge.year )
     
 
 
