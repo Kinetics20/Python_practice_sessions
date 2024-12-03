@@ -68,14 +68,18 @@ class Auto:
         self.model = model
         self.engine = True
 
+    def tune(self):
+        self.nitro = True
+
 dodge = Auto('Viper', 350, 2005)
 porsche = Auto('911', 380, 2009)
 # TODO bad practice !!! declare self out of the Class !!!!!!!
 dodge.gearbox = 'Manual'
 
+dodge.tune()
 
 # print(dodge.model, dodge.max_speed, dodge.year, dodge.gearbox )
-print(dodge.model, dodge.max_speed, dodge.year)
+print(dodge.model, dodge.max_speed, dodge.year, dodge.nitro)
 print(porsche.model, porsche.max_speed, porsche.year )
     
 
