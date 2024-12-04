@@ -5019,3 +5019,13 @@ def intersection_update(any_set, any_set_2):
 # print(intersection_update(set1, set2))
 assert intersection_update(set1, set2) == {3, 5}
 
+# 517
+# intersection_update method for set - short  &=
+
+def intersection_update_2(any_set, any_set_2):
+    any_set &= any_set_2
+    return any_set
+
+# print(intersection_update_2(set1, set2))
+assert intersection_update_2(set1, set2) == {3, 5}
+
