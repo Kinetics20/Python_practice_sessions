@@ -21,5 +21,9 @@ class X(B, C, A):
 
 
 x = X()
-print(X.__mro__)
+# print(X.__mro__)
 x.magic()
+
+print(dir(tuple))
+# print(help('ala'.title))
+print(help((2,).count))
