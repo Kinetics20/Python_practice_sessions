@@ -5059,3 +5059,13 @@ def difference_update(any_set, any_set_2):
 # print(difference_update(set1, set2))
 assert difference_update(set1, set2) == set()
 
+# 521
+# difference_update method for set short -=
+
+def difference_update_2(any_set, any_set_2):
+    any_set -= any_set_2
+    return any_set
+
+# print(difference_update_2(set1, set2))
+assert difference_update_2(set1, set2) == set()
+
