@@ -5001,3 +5001,14 @@ def symmetric_difference_set_2(any_set, any_set_2):
 # print(symmetric_difference_set_2({1, 2, 3}, {2, 3, 4}))
 assert symmetric_difference_set_2({1, 2, 3}, {2, 3, 4}) == {1, 4}
 
+# 515
+# issubset method for set
+
+def issubset_set(any_set, any_set_2):
+    return any_set.issubset(any_set_2)
+
+# print(issubset_set(set1, set2))
+assert issubset_set(set1, set2) == False
+
+# 516
+
