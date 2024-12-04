@@ -5011,4 +5011,11 @@ def issubset_set(any_set, any_set_2):
 assert issubset_set(set1, set2) == False
 
 # 516
+# intersection_update method for set
+
+def intersection_update(any_set, any_set_2):
+    return any_set.intersection(any_set_2)
+
+# print(intersection_update(set1, set2))
+assert intersection_update(set1, set2) == {3, 5}
 
