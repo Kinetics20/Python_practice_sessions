@@ -89,6 +89,8 @@ class Auto:
     def magic():
         return 'brum!!!'
 
+    def __len__(self) -> int:
+        return 42
 
     # def magic(self, new_colour):
     #     type(self).colour = new_colour
@@ -96,46 +98,45 @@ class Auto:
     # def tune(self):
     #     self.nitro = True
 
-dodge = Auto('Viper', 350, 2005)
+doodge = Auto('Viper', 350, 2005)
 porsche = Auto('911', 380, 2009)
 nissan = Auto.auto_nitro('skyline',380, 2001, True)
 
 print(nissan.nitro)
 
 # syntactic sugar
-dodge.speed_up(100)
-# type(dodge).speed_up(dodge, 60)
-# Auto.speed_up(dodge, 30)
+doodge.speed_up(100)
+# type(doodge).speed_up(doodge, 60)
+# Auto.speed_up(doodge, 30)
 print(dir(Auto))
-print(dodge.speed)
+# print(doodge.speed)
 
 # TODO bad practice !!! declare self out of the Class !!!!!!!
-dodge.gearbox = 'Manual'
+# doodge.gearbox = 'Manual'
 
+# doodge.tune()
 
-
-
-# dodge.tune()
-
-# print(dodge.model, dodge.max_speed, dodge.year, dodge.gearbox )
-# print(dodge.model, dodge.max_speed, dodge.year, dodge.nitro)
-# print(dodge.model, dodge.max_speed, dodge.year, dodge.colour)
-# print(dodge.model, dodge.max_speed, dodge.year)
+# print(doodge.model, doodge.max_speed, doodge.year, doodge.gearbox )
+# print(doodge.model, doodge.max_speed, doodge.year, doodge.nitro)
+# print(doodge.model, doodge.max_speed, doodge.year, doodge.colour)
+# print(doodge.model, doodge.max_speed, doodge.year)
 # print(porsche.model, porsche.max_speed, porsche.year )
 
 # TODO bad practice !!! it's possible to change class property/field but we don't apply this method
-# dodge.colour = 'black'
+# doodge.colour = 'black'
 # TODO this is write way to change class field from object level by class referring
-dodge.magic = 'Gold'
+doodge.magic = 'Gold'
 # print(Auto.colour)
-# print(dodge.colour)
+# print(doodge.colour)
 
 # TODO vars is a dict with whole properties for exact object
 
 # print(vars(Auto))
-# print(vars(dodge))
-print(vars(porsche))
-
+print(vars(doodge))
+# print(vars(porsche))
+# print(dir(doodge))
+print(len(doodge))
+print(doodge.__len__())
 
 
 
