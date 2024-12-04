@@ -5039,3 +5039,23 @@ def symmetric_difference_update(any_set, any_set_2):
 # print(symmetric_difference_update(set1, set2))
 assert symmetric_difference_update(set1, set2) == {100, 4, 999999}
 
+# 519
+# symmetric_difference_update method for set
+
+def symmetric_difference_update_2(any_set, any_set_2):
+    any_set.symmetric_difference_update(any_set_2)
+    return any_set
+
+# print(symmetric_difference_update_2(set1, set2))
+assert symmetric_difference_update_2(set1, set2) == {3, 5}
+
+# 520
+# difference_update method for set
+
+def difference_update(any_set, any_set_2):
+    any_set.difference_update(any_set_2)
+    return any_set
+
+# print(difference_update(set1, set2))
+assert difference_update(set1, set2) == set()
+
