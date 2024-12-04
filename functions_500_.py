@@ -5029,3 +5029,13 @@ def intersection_update_2(any_set, any_set_2):
 # print(intersection_update_2(set1, set2))
 assert intersection_update_2(set1, set2) == {3, 5}
 
+# 518
+# symmetric_difference_update method for set - short  ^=
+
+def symmetric_difference_update(any_set, any_set_2):
+    any_set ^= any_set_2
+    return any_set
+
+# print(symmetric_difference_update(set1, set2))
+assert symmetric_difference_update(set1, set2) == {100, 4, 999999}
+
