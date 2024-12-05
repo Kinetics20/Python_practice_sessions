@@ -19,9 +19,6 @@ class Odd:
 
 
 
-
-
-
 class Iterable:
     def __init__(self, data):
         self.data = data
