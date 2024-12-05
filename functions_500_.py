@@ -5121,3 +5121,18 @@ class Player:
 players = [Player("Alice"), Player("Bob"), Player("Charlie")]
 
 assert get_player_name(players, 1) == "Alice"
+
+# 525
+# create function that takes int and iterable and return index % len(iterable)
+# Example
+# cyclic_index(0, iterable) → 0
+# cyclic_index(1, iterable) → 1
+# cyclic_index(2, iterable) → 2
+# cyclic_index(3, iterable) → 0
+# cyclic_index(4, iterable) → 1
+
+
+def cyclic_index(index, iterable):
+    return index % len(iterable)
+
+assert cyclic_index(2, iterable = [0, 1, 2]) == 2
