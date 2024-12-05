@@ -3,7 +3,7 @@ from datetime import datetime
 
 def reverse(fn):
     def inner(name):
-        result = fn(name.swapcase())
+        result = fn(name.swapcase()[::-1])
         return result
     return inner
 
@@ -21,7 +21,7 @@ def upper(fn):
 
 # @reverse
 @upper
-# @reverse
+@reverse
 def say_hello(name):
 
     return f'Hello {name}'
