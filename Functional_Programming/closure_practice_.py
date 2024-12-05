@@ -5,4 +5,11 @@ def sentence(name):
     return inner
 
 new_sentence = sentence('Mike Tyson')
-print(new_sentence('New York'))
+# sent = new_sentence('New York')
+# sent_2 = new_sentence('Chicago')
+#
+# print(sent)
+# print(sent_2)
+
+# new_sentence = sentence('Mike Tyson')('Warsaw')
+# print(new_sentence)
