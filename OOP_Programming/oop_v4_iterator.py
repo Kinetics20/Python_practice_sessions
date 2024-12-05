@@ -24,7 +24,7 @@ class Iterable:
         self.data = data
 
     def __iter__(self):
-        return iter(self.data)
+        return Odd(self.data)
 
 # for element in Iterable([1, 2, 3, 4, 5, 6]):
 for element in Iterable({'a': 1, 'b': 2, 'c': 3, 'd': 4}):
