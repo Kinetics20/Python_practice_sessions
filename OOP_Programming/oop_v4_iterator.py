@@ -8,7 +8,17 @@ class Odd:
 
     def __next__(self):
         if self._index >= len(self.iterable):
-            raise StopIteration()
+            raise StopIteration(' _StopIteration_ ')
+
+        for item in self.iterable:
+            if self._index % 2 == 1:
+                self._index += 1
+                return item
+            else:
+                self._index += 1
+
+
+
 
 
 
