@@ -5099,3 +5099,25 @@ def _all_2(seq, fun):
     return all(fun(item) for item in seq)
 
 assert _all_2(numbers, is_even) == True
+
+# 524
+# Codewars
+#
+# Given an array of Player objects and a position (first position is 1), return the name of the chosen Player.
+# name is a property of Player objects, e.g Player.name
+#
+# Example:
+#
+# duck_duck_goose([a, b, c, d], 1) should return a.name
+# duck_duck_goose([a, b, c, d], 5) should return a.name
+
+def get_player_name(players, position):
+    return players[(position - 1) % len(players)].name
+
+class Player:
+    def __init__(self, name):
+        self.name = name
+
+players = [Player("Alice"), Player("Bob"), Player("Charlie")]
+
+assert get_player_name(players, 1) == "Alice"
