@@ -5091,3 +5091,11 @@ def _all(seq, fun):
 numbers = [2, 4, 6, 8]
 is_even = lambda x: x % 2 == 0
 assert _all(numbers, is_even) == True
+
+# 523
+# the same what # 522 but different way
+
+def _all_2(seq, fun):
+    return all(fun(item) for item in seq)
+
+assert _all_2(numbers, is_even) == True
