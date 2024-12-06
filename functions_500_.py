@@ -5136,3 +5136,20 @@ def cyclic_index(index, iterable):
     return index % len(iterable)
 
 assert cyclic_index(2, iterable = [0, 1, 2]) == 2
+
+# 527
+# Create function that use closure
+
+def outer(name):
+    def inner(city):
+        return f'I am {name} and I come from {city}'
+
+    return inner
+
+n_1 = outer('Mike Tyson')
+n_2 = n_1('New York')
+n_3 = n_1('Chicago')
+# print(n_3)
+
+assert n_2 == 'I am Mike Tyson and I come from New York'
+assert n_3 == 'I am Mike Tyson and I come from Chicago'
