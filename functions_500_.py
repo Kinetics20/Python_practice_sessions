@@ -5245,3 +5245,21 @@ sum_2 = st(3, 10)
 
 assert sum_1 == 40
 assert sum_2 == 65
+
+
+# 530
+# Create function that use closure for simple mathematical operation
+
+def math_2(n):
+    def inner(a, b):
+        return (n / a) + b
+
+    return inner
+
+
+st_2 = math_2(2)
+seq = st_2(1, 5)
+seq_1 = st_2(2, 5)
+
+assert seq == 7.0
+assert seq_1 == 6.0
