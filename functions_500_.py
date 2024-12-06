@@ -5329,8 +5329,14 @@ assert n_lst == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1
 
 
 # 533
-# the same wgat 534 but decoratr has to be take parameter
+# the same what 534 but decorator has to be take parameter
 
+def remove_last_element(fn):
+    def inner(n):
+        any_lst = fn(n)
+        any_lst.pop()
+        return any_lst
+    return inner
 
 def extend_list(extra_lst):
     def decorator(fn):
@@ -5351,7 +5357,7 @@ def append_list(c):
         return wrapper
     return decorator
 
-
+@remove_last_element
 @extend_list([800, 900])
 @append_list(1000)
 def create_list(n):
