@@ -5305,3 +5305,24 @@ b = say_hello('john')
 
 assert a == 'Hi Ecila ,you have to go now'
 assert b == 'Hello nhoJ'
+
+# 532
+# create function that generate list and decorator that modify this list
+
+
+def append_list(fn):
+    def inner(n, c):
+        any_lst = fn(n)
+        any_lst.append(c)
+
+        return any_lst
+    return inner
+
+
+@append_list
+def create_list(n):
+    return list(range(n))
+
+n_lst = create_list(20, 1000)
+# print(n_lst)
+assert n_lst == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 1000]
