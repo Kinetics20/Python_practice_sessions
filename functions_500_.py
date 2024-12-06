@@ -5168,10 +5168,13 @@ power_3 = power_2(3)
 power_4 = power_2(4)
 power_5 = power_2(5)
 
-print(power_3)
-print(power_4)
-print(power_5)
+# print(power_3)
+# print(power_4)
+# print(power_5)
 
+assert power_3 == 8
+assert power_4 == 16
+assert power_5 == 32
 
 
 
