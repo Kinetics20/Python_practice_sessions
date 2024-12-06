@@ -5338,6 +5338,27 @@ def remove_last_element(fn):
         return any_lst
     return inner
 
+
+def insert_any_list_to_indexes(start, stop, x_lst):
+    def decorator(fn):
+        def wrapper(n):
+            any_lst = fn(n)
+            any_lst[start: stop] = x_lst
+            return any_lst
+        return wrapper
+    return decorator
+
+
+def insert_any_element_index(index, element):
+    def decorator(fn):
+        def wrapper(n):
+            any_lst = fn(n)
+            any_lst.insert(index, element)
+            return any_lst
+        return wrapper
+    return decorator
+
+
 def extend_list(extra_lst):
     def decorator(fn):
         def wrapper(n):
@@ -5357,6 +5378,8 @@ def append_list(c):
         return wrapper
     return decorator
 
+@insert_any_list_to_indexes(7, 11, ['Candy', '777', 777, 'Chicago'])
+@insert_any_element_index(5, 'Better now than never')
 @remove_last_element
 @extend_list([800, 900])
 @append_list(1000)
