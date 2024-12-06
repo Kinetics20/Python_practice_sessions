@@ -5243,5 +5243,5 @@ st = math_1(5)
 sum_1 = st(3, 5)
 sum_2 = st(3, 10)
 
-print(sum_1)
-print(sum_2)
+assert sum_1 == 40
+assert sum_2 == 65
