@@ -5263,3 +5263,45 @@ seq_1 = st_2(2, 5)
 
 assert seq == 7.0
 assert seq_1 == 6.0
+
+# 531
+# create function that takes string and return string and
+# decorator that change returned string from that funtion
+
+
+def capitalize_str(fn):
+    def inner(name):
+        return fn(name.capitalize())
+    return inner
+
+
+def reverse(fn):
+    def wrapper(text):
+        return fn(text[::-1])
+
+    return wrapper
+
+
+def add_sth(fn):
+    def in_2(txt):
+        return fn(txt) + ' ,you have to go now'
+    return in_2
+
+
+@add_sth
+@reverse
+@capitalize_str
+def say_hi(name):
+    return f'Hi {name}'
+
+
+@capitalize_str
+@reverse
+def say_hello(name):
+    return f'Hello {name}'
+
+a = say_hi('alice')
+b = say_hello('john')
+
+assert a == 'Hi Ecila ,you have to go now'
+assert b == 'Hello nhoJ'
