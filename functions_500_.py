@@ -5153,3 +5153,25 @@ n_3 = n_1('Chicago')
 
 assert n_2 == 'I am Mike Tyson and I come from New York'
 assert n_3 == 'I am Mike Tyson and I come from Chicago'
+
+# 528
+# Create function that use closure for simple mathematic operation
+
+def power(base):
+    def inner(exponent):
+        return base ** exponent
+
+    return inner
+
+power_2 = power(2)
+power_3 = power_2(3)
+power_4 = power_2(4)
+power_5 = power_2(5)
+
+print(power_3)
+print(power_4)
+print(power_5)
+
+
+
+
