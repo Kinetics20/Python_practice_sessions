@@ -5388,4 +5388,52 @@ def create_list(n):
     return list(range(n))
 
 n_lst = create_list(20)
-print(n_lst)
+assert n_lst == [0, 1, 2, 3, 4, 'Better now than never', 5, 'Candy', '777', 777, 'Chicago', 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 1000, 800]
+
+# 534
+
+# write a function :
+# volume_pyramid_without_base
+# that takes height of the pyramid and volume without the base
+# mathematical formula on volume pyramid : V = 1 / 3 * H * P
+# H - height of pyramid
+# P - the area of the base
+# additionally create decorator for few bases that takes parameters of the bases and apply for the original function
+# to achieve volume of the pyramid with exact base
+
+# from decimal import Decimal, ROUND_HALF_UP
+
+
+def pyramid_square(a_sq):
+    base_area = a_sq ** 2
+    def decorator(fn):
+        def wrapper(n):
+            return round(fn(n) * base_area, 2)
+        return wrapper
+    return decorator
+
+
+def pyramid_triangle(a_tr, h_tr):
+    base_area = 1/2 * a_tr * h_tr
+    def decorator(fn):
+        def wrapper(n):
+            # result = Decimal(fn(n) * base_area).quantize(Decimal('0.001'), rounding=ROUND_HALF_UP)
+            # return float(result)
+            return round(fn(n) * base_area, 2)
+        return wrapper
+    return decorator
+
+
+@pyramid_triangle(3, 5)
+def volume_pyramid_without_base(h_pyr):
+    return 1/3 * h_pyr
+
+# print(volume_pyramid_without_base(10))
+assert volume_pyramid_without_base(10) == 25.0
+
+@pyramid_square(5)
+def volume_pyramid_without_base(h_pyr):
+    return 1/3 * h_pyr
+
+# print(volume_pyramid_without_base(10))
+assert volume_pyramid_without_base(10) == 83.33
