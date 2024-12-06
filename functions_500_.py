@@ -5402,6 +5402,26 @@ assert n_lst == [0, 1, 2, 3, 4, 'Better now than never', 5, 'Candy', '777', 777,
 # to achieve volume of the pyramid with exact base
 
 # from decimal import Decimal, ROUND_HALF_UP
+from math import tan, radians
+
+def pyramid_polygon_n_(n, a):
+    angle_in_radians = radians(180 / n)
+    cot_value = 1 / tan(angle_in_radians)
+    base_area = 4 * n * (a ** 2) * cot_value
+    def decorator(fn):
+        def wrapper(n):
+            return round(fn(n) * base_area, 2)
+        return wrapper
+    return decorator
+
+
+def pyramid_rectangle(a_rec, b_rec):
+    base_area = a_rec * b_rec
+    def decorator(fn):
+        def wrapper(n):
+            return round(fn(n) * base_area, 2)
+        return wrapper
+    return decorator
 
 
 def pyramid_square(a_sq):
@@ -5437,3 +5457,19 @@ def volume_pyramid_without_base(h_pyr):
 
 # print(volume_pyramid_without_base(10))
 assert volume_pyramid_without_base(10) == 83.33
+
+
+@pyramid_rectangle(5, 8)
+def volume_pyramid_without_base(h_pyr):
+    return 1/3 * h_pyr
+
+# print(volume_pyramid_without_base(10))
+assert volume_pyramid_without_base(10) == 133.33
+
+
+@pyramid_polygon_n_(6, 5)
+def volume_pyramid_without_base(h_pyr):
+    return 1/3 * h_pyr
+
+# print(volume_pyramid_without_base(10))
+assert volume_pyramid_without_base(10) == 3464.1
