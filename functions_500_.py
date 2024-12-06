@@ -5326,3 +5326,37 @@ def create_list(n):
 n_lst = create_list(20, 1000)
 # print(n_lst)
 assert n_lst == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 1000]
+
+
+# 533
+# the same wgat 534 but decoratr has to be take parameter
+
+
+def extend_list(extra_lst):
+    def decorator(fn):
+        def wrapper(n):
+            any_lst = fn(n)
+            any_lst.extend(extra_lst)
+            return any_lst
+        return wrapper
+    return decorator
+
+
+def append_list(c):
+    def decorator(fn):
+        def wrapper(n):
+            any_lst = fn(n)
+            any_lst.append(c)
+            return any_lst
+        return wrapper
+    return decorator
+
+
+@extend_list([800, 900])
+@append_list(1000)
+def create_list(n):
+
+    return list(range(n))
+
+n_lst = create_list(20)
+print(n_lst)
