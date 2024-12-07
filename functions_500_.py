@@ -5473,3 +5473,20 @@ def volume_pyramid_without_base(h_pyr):
 
 # print(volume_pyramid_without_base(10))
 assert volume_pyramid_without_base(10) == 3464.1
+
+
+# 535
+# Create function that use in argument lambda function and takes sentence or int
+# and return list in 1st version str in 2nd version
+# use generic typing from typing
+
+from typing import Callable, TypeVar, List
+
+T = TypeVar('T')
+R = TypeVar('R')
+
+def sentence(cb: Callable[[T], R], txt: T) -> List[R]:
+    return [cb(txt)]
+
+assert sentence(lambda x: str(x).upper(), 42) == ['42']
+assert sentence(lambda x: str(x).upper(), 'ala ma kota') == ['ALA MA KOTA']
