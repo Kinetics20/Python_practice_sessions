@@ -5490,3 +5490,13 @@ def sentence(cb: Callable[[T], R], txt: T) -> List[R]:
 
 assert sentence(lambda x: str(x).upper(), 42) == ['42']
 assert sentence(lambda x: str(x).upper(), 'ala ma kota') == ['ALA MA KOTA']
+
+# 536
+# the same but 2nd version
+
+def sentence(cb: Callable[[T], R], txt: T) -> R:
+    return cb(txt)
+
+assert sentence(lambda x: str(x).upper(), 42) == '42'
+assert sentence(lambda x: str(x).upper(), 'ala ma kota') == 'ALA MA KOTA'
+
