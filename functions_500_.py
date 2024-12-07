@@ -5500,3 +5500,17 @@ def sentence(cb: Callable[[T], R], txt: T) -> R:
 assert sentence(lambda x: str(x).upper(), 42) == '42'
 assert sentence(lambda x: str(x).upper(), 'ala ma kota') == 'ALA MA KOTA'
 
+# 537
+# write a simple function that takes 2 parameters and return list, create generic typing
+
+TT = TypeVar('TT', int, str)
+
+def combine_(aa: TT, bb: TT) -> list[TT]:
+    return [aa, bb]
+
+
+res_1 = combine_(1, 2)
+res_2 = combine_('1', '2')
+
+assert res_1 == [1, 2]
+assert res_2 == ['1', '2']
