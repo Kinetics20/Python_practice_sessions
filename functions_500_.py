@@ -5530,3 +5530,14 @@ v_3 = magic(['Future Branch', 'Westworld'])
 assert v == 3000
 assert v_1 == 100000
 assert v_3 == 'Future Branch'
+
+# 539
+# create function that takes unlimited positional parameters and return len from this collection , apply typing
+
+
+def my_max(*args: int) -> int:
+    return len(args)
+
+x = my_max(1, 2, 3, 4, 6, 7)
+
+assert x == 6
