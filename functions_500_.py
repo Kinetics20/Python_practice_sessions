@@ -1,5 +1,5 @@
 # This is a set of 500 pieces python functions
-
+from collections.abc import Sequence
 from math import pi
 
 
@@ -5514,3 +5514,19 @@ res_2 = combine_('1', '2')
 
 assert res_1 == [1, 2]
 assert res_2 == ['1', '2']
+
+# 538
+# the same what # 537 use sequence protocol during typing
+
+U = TypeVar('U')
+
+def magic(data_77: Sequence[U]) -> U:
+    return data_77[0]
+
+v = magic((3000, 2, 3))
+v_1 = magic((100000, 2))
+v_3 = magic(['Future Branch', 'Westworld'])
+
+assert v == 3000
+assert v_1 == 100000
+assert v_3 == 'Future Branch'
