@@ -5541,3 +5541,13 @@ def my_max(*args: int) -> int:
 x = my_max(1, 2, 3, 4, 6, 7)
 
 assert x == 6
+
+# 540
+# create function that takes int parameters and returns tuple with list inside
+
+def create_tuple_with_list(a, b, c, *args):
+    t = a, b, c, *args
+    return t
+
+# print(create_tuple_with_list(1, 2, 3, [4, 5, 6, 7]))
+assert create_tuple_with_list == (1, 2, 3, [4, 5, 6, 7])
