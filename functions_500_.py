@@ -5549,5 +5549,13 @@ def create_tuple_with_list(a, b, c, *args):
     t = a, b, c, *args
     return t
 
-# print(create_tuple_with_list(1, 2, 3, [4, 5, 6, 7]))
-assert create_tuple_with_list == (1, 2, 3, [4, 5, 6, 7])
+assert create_tuple_with_list(1, 2, 3, [4, 5, 6, 7]) == (1, 2, 3, [4, 5, 6, 7])
+
+# 541
+# create function that takes double list of tuples and return dict
+
+def create_from_double_tuple_dict(d_tuple):
+    return dict(d_tuple)
+
+# print(dict(create_from_double_tuple_dict([(1, 2), (3, 4), (4, 4)])))
+assert dict(create_from_double_tuple_dict([(1, 2), (3, 4), (4, 4)])) == {1: 2, 3: 4, 4: 4}
