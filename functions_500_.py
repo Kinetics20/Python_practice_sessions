@@ -5627,3 +5627,13 @@ def create_new_lst_from_dict(any_dict):
 
 # print(create_new_lst_from_dict(names_dict))
 assert create_new_lst_from_dict(names_dict) == ['Alexander', 'Charlotte']
+
+# 543
+# the same what 542 but function has to return dictionary for the same condition
+
+def create_new_lst_from_dict_20(any_dict):
+    return {key: value for key, value in any_dict.items() if len(value) >= 6}
+
+
+# print(create_new_lst_from_dict_20(names_dict))
+assert create_new_lst_from_dict_20(names_dict) == {1: 'Alexander', 3: 'Charlotte'}
