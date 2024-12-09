@@ -5264,6 +5264,7 @@ seq_1 = st_2(2, 5)
 assert seq == 7.0
 assert seq_1 == 6.0
 
+
 # 531
 # create function that takes string and return string and
 # decorator that change returned string from that funtion
@@ -5272,6 +5273,7 @@ assert seq_1 == 6.0
 def capitalize_str(fn):
     def inner(name):
         return fn(name.capitalize())
+
     return inner
 
 
@@ -5285,6 +5287,7 @@ def reverse(fn):
 def add_sth(fn):
     def in_2(txt):
         return fn(txt) + ' ,you have to go now'
+
     return in_2
 
 
@@ -5300,11 +5303,13 @@ def say_hi(name):
 def say_hello(name):
     return f'Hello {name}'
 
+
 a = say_hi('alice')
 b = say_hello('john')
 
 assert a == 'Hi Ecila ,you have to go now'
 assert b == 'Hello nhoJ'
+
 
 # 532
 # create function that generate list and decorator that modify this list
@@ -5316,12 +5321,14 @@ def append_list(fn):
         any_lst.append(c)
 
         return any_lst
+
     return inner
 
 
 @append_list
 def create_list(n):
     return list(range(n))
+
 
 n_lst = create_list(20, 1000)
 # print(n_lst)
@@ -5336,6 +5343,7 @@ def remove_last_element(fn):
         any_lst = fn(n)
         any_lst.pop()
         return any_lst
+
     return inner
 
 
@@ -5345,7 +5353,9 @@ def insert_any_list_to_indexes(start, stop, x_lst):
             any_lst = fn(n)
             any_lst[start: stop] = x_lst
             return any_lst
+
         return wrapper
+
     return decorator
 
 
@@ -5355,7 +5365,9 @@ def insert_any_element_index(index, element):
             any_lst = fn(n)
             any_lst.insert(index, element)
             return any_lst
+
         return wrapper
+
     return decorator
 
 
@@ -5365,7 +5377,9 @@ def extend_list(extra_lst):
             any_lst = fn(n)
             any_lst.extend(extra_lst)
             return any_lst
+
         return wrapper
+
     return decorator
 
 
@@ -5375,8 +5389,11 @@ def append_list(c):
             any_lst = fn(n)
             any_lst.append(c)
             return any_lst
+
         return wrapper
+
     return decorator
+
 
 @insert_any_list_to_indexes(7, 11, ['Candy', '777', 777, 'Chicago'])
 @insert_any_element_index(5, 'Better now than never')
@@ -5384,11 +5401,12 @@ def append_list(c):
 @extend_list([800, 900])
 @append_list(1000)
 def create_list(n):
-
     return list(range(n))
 
+
 n_lst = create_list(20)
-assert n_lst == [0, 1, 2, 3, 4, 'Better now than never', 5, 'Candy', '777', 777, 'Chicago', 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 1000, 800]
+assert n_lst == [0, 1, 2, 3, 4, 'Better now than never', 5, 'Candy', '777', 777, 'Chicago', 10, 11, 12, 13, 14, 15, 16,
+                 17, 18, 19, 1000, 800]
 
 # 534
 
@@ -5404,56 +5422,72 @@ assert n_lst == [0, 1, 2, 3, 4, 'Better now than never', 5, 'Candy', '777', 777,
 # from decimal import Decimal, ROUND_HALF_UP
 from math import tan, radians
 
+
 def pyramid_polygon_n_(n, a):
     angle_in_radians = radians(180 / n)
     cot_value = 1 / tan(angle_in_radians)
     base_area = 4 * n * (a ** 2) * cot_value
+
     def decorator(fn):
         def wrapper(n):
             return round(fn(n) * base_area, 2)
+
         return wrapper
+
     return decorator
 
 
 def pyramid_rectangle(a_rec, b_rec):
     base_area = a_rec * b_rec
+
     def decorator(fn):
         def wrapper(n):
             return round(fn(n) * base_area, 2)
+
         return wrapper
+
     return decorator
 
 
 def pyramid_square(a_sq):
     base_area = a_sq ** 2
+
     def decorator(fn):
         def wrapper(n):
             return round(fn(n) * base_area, 2)
+
         return wrapper
+
     return decorator
 
 
 def pyramid_triangle(a_tr, h_tr):
-    base_area = 1/2 * a_tr * h_tr
+    base_area = 1 / 2 * a_tr * h_tr
+
     def decorator(fn):
         def wrapper(n):
             # result = Decimal(fn(n) * base_area).quantize(Decimal('0.001'), rounding=ROUND_HALF_UP)
             # return float(result)
             return round(fn(n) * base_area, 2)
+
         return wrapper
+
     return decorator
 
 
 @pyramid_triangle(3, 5)
 def volume_pyramid_without_base(h_pyr):
-    return 1/3 * h_pyr
+    return 1 / 3 * h_pyr
+
 
 # print(volume_pyramid_without_base(10))
 assert volume_pyramid_without_base(10) == 25.0
 
+
 @pyramid_square(5)
 def volume_pyramid_without_base(h_pyr):
-    return 1/3 * h_pyr
+    return 1 / 3 * h_pyr
+
 
 # print(volume_pyramid_without_base(10))
 assert volume_pyramid_without_base(10) == 83.33
@@ -5461,7 +5495,8 @@ assert volume_pyramid_without_base(10) == 83.33
 
 @pyramid_rectangle(5, 8)
 def volume_pyramid_without_base(h_pyr):
-    return 1/3 * h_pyr
+    return 1 / 3 * h_pyr
+
 
 # print(volume_pyramid_without_base(10))
 assert volume_pyramid_without_base(10) == 133.33
@@ -5469,11 +5504,11 @@ assert volume_pyramid_without_base(10) == 133.33
 
 @pyramid_polygon_n_(6, 5)
 def volume_pyramid_without_base(h_pyr):
-    return 1/3 * h_pyr
+    return 1 / 3 * h_pyr
+
 
 # print(volume_pyramid_without_base(10))
 assert volume_pyramid_without_base(10) == 3464.1
-
 
 # 535
 # Create function that use in argument lambda function and takes sentence or int
@@ -5485,17 +5520,21 @@ from typing import Callable, TypeVar, List
 T = TypeVar('T')
 R = TypeVar('R')
 
+
 def sentence(cb: Callable[[T], R], txt: T) -> List[R]:
     return [cb(txt)]
 
+
 assert sentence(lambda x: str(x).upper(), 42) == ['42']
 assert sentence(lambda x: str(x).upper(), 'ala ma kota') == ['ALA MA KOTA']
+
 
 # 536
 # the same but 2nd version
 
 def sentence(cb: Callable[[T], R], txt: T) -> R:
     return cb(txt)
+
 
 assert sentence(lambda x: str(x).upper(), 42) == '42'
 assert sentence(lambda x: str(x).upper(), 'ala ma kota') == 'ALA MA KOTA'
@@ -5504,6 +5543,7 @@ assert sentence(lambda x: str(x).upper(), 'ala ma kota') == 'ALA MA KOTA'
 # write a simple function that takes 2 parameters and return list, create generic typing
 
 TT = TypeVar('TT', int, str)
+
 
 def combine_(aa: TT, bb: TT) -> list[TT]:
     return [aa, bb]
@@ -5520,8 +5560,10 @@ assert res_2 == ['1', '2']
 
 U = TypeVar('U')
 
+
 def magic(data_77: Sequence[U]) -> U:
     return data_77[0]
+
 
 v = magic((3000, 2, 3))
 v_1 = magic((100000, 2))
@@ -5531,6 +5573,7 @@ assert v == 3000
 assert v_1 == 100000
 assert v_3 == 'Future Branch'
 
+
 # 539
 # create function that takes unlimited positional parameters and return len from this collection , apply typing
 
@@ -5538,9 +5581,11 @@ assert v_3 == 'Future Branch'
 def my_max(*args: int) -> int:
     return len(args)
 
+
 x = my_max(1, 2, 3, 4, 6, 7)
 
 assert x == 6
+
 
 # 540
 # create function that takes int parameters and returns tuple with list inside
@@ -5549,7 +5594,9 @@ def create_tuple_with_list(a, b, c, *args):
     t = a, b, c, *args
     return t
 
+
 assert create_tuple_with_list(1, 2, 3, [4, 5, 6, 7]) == (1, 2, 3, [4, 5, 6, 7])
+
 
 # 541
 # create function that takes double list of tuples and return dict
@@ -5557,5 +5604,26 @@ assert create_tuple_with_list(1, 2, 3, [4, 5, 6, 7]) == (1, 2, 3, [4, 5, 6, 7])
 def create_from_double_tuple_dict(d_tuple):
     return dict(d_tuple)
 
+
 # print(dict(create_from_double_tuple_dict([(1, 2), (3, 4), (4, 4)])))
 assert dict(create_from_double_tuple_dict([(1, 2), (3, 4), (4, 4)])) == {1: 2, 3: 4, 4: 4}
+
+# 542
+# write a simple function that takes dict and return list of values for len > 6
+
+names_dict = {
+    1: "Alexander",
+    2: "Bob",
+    3: "Charlotte",
+    4: "Diana",
+    5: "Ethan",
+    6: "Fiona"
+}
+
+
+def create_new_lst_from_dict(any_dict):
+    return [values for values in any_dict.values() if len(values) >= 6]
+
+
+# print(create_new_lst_from_dict(names_dict))
+assert create_new_lst_from_dict(names_dict) == ['Alexander', 'Charlotte']
