@@ -5694,3 +5694,14 @@ def tuple_unpack_6(any_str):
 
 # print(tuple_unpack_6('Home is very close'))
 assert tuple_unpack_6('Home is very close') == ('H', 'o', ['m', 'e', ' ', 'i', 's', ' ', 'v', 'e', 'r', 'y', ' ', 'c', 'l', 'o', 's', 'e'])
+
+# 550
+# the same what 459 but fn takes a list
+
+
+def tuple_unpack_7(any_str):
+    a1, b1, *rest = any_str
+    return a1, b1, rest
+
+# print(tuple_unpack_7([1, 2, 3, 4, 5, 6, 7]))
+assert tuple_unpack_7([1, 2, 3, 4, 5, 6, 7]) == (1, 2, [3, 4, 5, 6, 7])
