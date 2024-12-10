@@ -5637,3 +5637,16 @@ def create_new_lst_from_dict_20(any_dict):
 
 # print(create_new_lst_from_dict_20(names_dict))
 assert create_new_lst_from_dict_20(names_dict) == {1: 'Alexander', 3: 'Charlotte'}
+
+# 544, 545, 546
+# write function that takes any tuple and returns its elements in following order:
+# a1, b1, *rest = t5
+# *rest_1, a2, b2 = t5
+# a3, *rest_2, b3, c3 = t5
+
+def tuple_unpack_1(any_tuple):
+    a1, b1, *rest = any_tuple
+    return a1, b1, rest
+
+print(tuple_unpack_1((1, 2, 3, 4, 5, 6, 7)))
+assert tuple_unpack_1((1, 2, 3, 4, 5, 6, 7)) == (1, 2, [3, 4, 5, 6, 7])
