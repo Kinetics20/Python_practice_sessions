@@ -5648,5 +5648,13 @@ def tuple_unpack_1(any_tuple):
     a1, b1, *rest = any_tuple
     return a1, b1, rest
 
-print(tuple_unpack_1((1, 2, 3, 4, 5, 6, 7)))
+# print(tuple_unpack_1((1, 2, 3, 4, 5, 6, 7)))
 assert tuple_unpack_1((1, 2, 3, 4, 5, 6, 7)) == (1, 2, [3, 4, 5, 6, 7])
+
+
+def tuple_unpack_2(any_tuple):
+    *rest, a1, b1  = any_tuple
+    return rest, a1, b1
+
+# print(tuple_unpack_2((1, 2, 3, 4, 5, 6, 7)))
+assert tuple_unpack_2((1, 2, 3, 4, 5, 6, 7)) == ([1, 2, 3, 4, 5], 6, 7)
