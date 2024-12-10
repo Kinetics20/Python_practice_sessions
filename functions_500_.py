@@ -5665,3 +5665,32 @@ def tuple_unpack_3(any_tuple):
 
 # print(tuple_unpack_3((1, 2, 3, 4, 5, 6, 7)))
 assert tuple_unpack_3((1, 2, 3, 4, 5, 6, 7)) == (1, [2, 3, 4, 5, 6], 7)
+
+# 547, 548, 549
+# write the same fn what 544 but function has to take any string and return following result:
+# two first elements from str and str
+# two first elements from str and list , use join
+# two first elements from str and list , use join - list - each one letter like seaparated index
+
+
+def tuple_unpack_4(any_str):
+    a1, b1, *rest = any_str
+    return a1, b1, ''.join(rest)
+
+assert tuple_unpack_4('Home is very close') == ('H', 'o', 'me is very close')
+
+
+def tuple_unpack_5(any_str):
+    a1, b1, *rest = any_str
+    return a1, b1, ''.join(rest).split(',')
+
+# print(tuple_unpack_5('Home is very close'))
+assert tuple_unpack_5('Home is very close') == ('H', 'o', ['me is very close'])
+
+
+def tuple_unpack_6(any_str):
+    a1, b1, *rest = any_str
+    return a1, b1, rest
+
+# print(tuple_unpack_6('Home is very close'))
+assert tuple_unpack_6('Home is very close') == ('H', 'o', ['m', 'e', ' ', 'i', 's', ' ', 'v', 'e', 'r', 'y', ' ', 'c', 'l', 'o', 's', 'e'])
