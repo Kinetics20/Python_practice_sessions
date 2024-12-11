@@ -8,7 +8,7 @@ else:
     raise AssertionError('Sth is wrong')
 
 
-if divide(20, 5) != 10.0
+if divide(20, 5) != 10.0:
     print('OK')
 else:
     raise AssertionError('Sth is wrong')
