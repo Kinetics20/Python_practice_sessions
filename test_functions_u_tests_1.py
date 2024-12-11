@@ -1,3 +1,5 @@
+import pytest
+
 from functions_u_tests_1 import divide
 
 
@@ -9,9 +11,6 @@ def test_divide_numbers_negative():
     assert divide(20, 5) != 10.0
 
 
-
-try:
-    divide(20, 0)
-    raise AssertionError('Sth is wrong')
-except ZeroDivisionError:
-    print('OK')
+def test_divide_by_zero():
+    with pytest.raises(ZeroDivisionError):
+        divide(20, 0)
