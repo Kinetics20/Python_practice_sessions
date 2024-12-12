@@ -14,3 +14,8 @@ def test_negative_numbers():
 def test_divide_by_zero():
     with pytest.raises(ZeroDivisionError):
         add_up(1, 2, 0)
+
+
+def test_divide_floats():
+    assert add_up(0, 1, 3) == pytest.approx(0.3333333333333333
+, rel=1e-4)
