@@ -1,6 +1,7 @@
 import pytest
 
 from Unit_tests.fn_1 import add_up
+from functions_500_ import count_square_root
 
 
 def test_positive_numbers():
@@ -19,3 +20,7 @@ def test_divide_by_zero():
 def test_divide_floats():
     assert add_up(0, 1, 3) == pytest.approx(0.3333333333333333
 , rel=1e-4)
+
+
+def test_square_positive():
+    assert count_square_root(4) == 2.0
