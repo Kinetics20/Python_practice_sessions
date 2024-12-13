@@ -28,3 +28,7 @@ def test_square_positive():
 
 def test_square_negative():
     assert count_square_root(4) != 3.0
+
+
+def test_square_complex():
+    assert count_square_root(-1) == 6.123233995736766e-17 + 1j
