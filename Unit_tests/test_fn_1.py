@@ -19,8 +19,12 @@ def test_divide_by_zero():
 
 def test_divide_floats():
     assert add_up(0, 1, 3) == pytest.approx(0.3333333333333333
-, rel=1e-4)
+                                            , rel=1e-4)
 
 
 def test_square_positive():
     assert count_square_root(4) == 2.0
+
+
+def test_square_negative():
+    assert count_square_root(4) != 3.0
