@@ -4,7 +4,7 @@ from collections import Counter
 
 def most_common_word(txt: str) -> tuple[str, int]:
     """
-    Function returns most frequently occurring word in the text and its count.
+    Function returns the most frequently occurring word in the text and its count.
 
     Args:
          txt (str): The text to analyse.
