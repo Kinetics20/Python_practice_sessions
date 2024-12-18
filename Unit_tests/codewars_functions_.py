@@ -3263,7 +3263,7 @@ def data_reverse_2(data):
 
 
 def data_reverse_3(data):
-    return [b for a in xrange(len(data) - 8, -1, -8) for b in data[a:a + 8]]
+    return [b for a in range(len(data) - 8, -1, -8) for b in data[a:a + 8]]
 
 
 def generate_custom_dict():
