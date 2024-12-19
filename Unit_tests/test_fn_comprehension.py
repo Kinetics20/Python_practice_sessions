@@ -18,3 +18,12 @@ def test_zero_fn_comprehension():
 def test_non_integer_fn_comprehension():
     with pytest.raises(TypeError):
         create_lst_('Home')
+
+
+@pytest.mark.parametrize(
+    "invalid_input", [3.14, (1, 2, 3), [1, 2, 3], {"key": "value"}, None, True]
+)
+def test_invalid_type_fn_comprehension(invalid_input):
+    with pytest.raises(TypeError):
+        create_lst_(invalid_input)
+
