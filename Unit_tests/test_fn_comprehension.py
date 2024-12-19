@@ -6,4 +6,8 @@ def test_positive_fn_comprehension():
 
 
 def test_negative_fn_comprehension():
-    assert create_lst_(-1) == []
+    assert create_lst_(-1) != [-1]
+
+
+def test_zero_fn_comprehension():
+    assert create_lst_(0) == []
