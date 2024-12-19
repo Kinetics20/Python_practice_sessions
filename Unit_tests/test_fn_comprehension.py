@@ -1,3 +1,5 @@
+import pytest
+
 from Unit_tests.fn_comprehension import create_lst_
 
 
@@ -11,3 +13,8 @@ def test_negative_fn_comprehension():
 
 def test_zero_fn_comprehension():
     assert create_lst_(0) == []
+
+
+def test_non_integer_fn_comprehension():
+    with pytest.raises(TypeError):
+        create_lst_('Home')
