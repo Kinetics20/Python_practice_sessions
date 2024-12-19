@@ -1,7 +1,8 @@
 def create_lst_(num: int) -> list[int]:
+    if not isinstance(num, int):
+        raise TypeError(f'Expected int but got {type(num)}')
     return [item for item in range(num)]
 
 
-# print(create_lst_(5))
-# print(create_lst_(-1))
-# print(create_lst_('Home'))
+if __name__ == "__main__":
+    print(create_lst_('Home'))
