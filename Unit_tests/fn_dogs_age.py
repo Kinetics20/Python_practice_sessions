@@ -5,6 +5,8 @@ def dogs_age(age: int | float) -> int | float | str:
 def dogs_age_2(age: int | float) -> int | float:
     if not isinstance(age, (int, float)) or type(age) is bool:
         raise TypeError(f'Expected int or float but got {type(age)}')
+    if age == float('inf') or age == -float('inf'):
+        raise ValueError(f'age must be a finite number')
     if age <= 0:
         raise ValueError('age must be greater than 0')
     return age * 10.5 if age <= 2 else 21 + (age - 2) * 4
