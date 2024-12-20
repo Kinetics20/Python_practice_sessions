@@ -14,7 +14,10 @@ if __name__ == '__main__':
     test_cases = [2, 3.5, -1, "pies", True, None]
 
     for case in test_cases:
-        try:
-            print(f"Input: {case}, Dog's age: {dogs_age_2(case)}")
-        except (TypeError, ValueError) as e:
-            print(f"Input: {case}, Error: {e}")
+        if isinstance(case, (int, float)) and not isinstance(case, bool):
+            try:
+                print(f"Input: {case}, Dog's age: {dogs_age_2(case)}")
+            except ValueError as e:
+                print(f"Input: {case}, Error: {e}")
+        else:
+            print(f"Input: {case}, Error: Expected int or float but got {type(case).__name__}")
