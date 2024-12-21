@@ -3,10 +3,4 @@ def is_even(num: int | float) -> bool:
         raise TypeError(f"Expected int or float, but got {type(num)}")
     if isinstance(num, float) and not num.is_integer():
         raise ValueError(f"Expected an integer-like value, but got a float: {num}")
-    if isinstance(num, float) and (num == float('inf') or num == float('-inf') or num != num):  # NaN check
-        raise ValueError("Cannot determine parity of special float values (inf, -inf, NaN)")
     return not int(num) % 2
-
-
-if __name__ == '__main__':
-    print(is_even('ala'))
