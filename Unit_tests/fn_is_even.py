@@ -7,5 +7,6 @@ def is_even(num: int | float) -> bool:
         raise ValueError("Cannot determine parity of special float values (inf, -inf, NaN)")
     return not int(num) % 2
 
-print(is_even(3))
-print(is_even(4))
+
+if __name__ == '__main__':
+    print(is_even('ala'))
