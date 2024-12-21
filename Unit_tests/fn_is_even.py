@@ -6,3 +6,6 @@ def is_even(num: int | float) -> bool:
     if isinstance(num, float) and (num == float('inf') or num == float('-inf') or num != num):  # NaN check
         raise ValueError("Cannot determine parity of special float values (inf, -inf, NaN)")
     return not int(num) % 2
+
+print(is_even(3))
+print(is_even(4))
