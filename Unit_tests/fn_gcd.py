@@ -12,7 +12,7 @@ def gcd(a: int, b: int) -> int:
     if not isinstance(a, int) or not isinstance(b, int):
         raise TypeError("a and b must be integers")
 
-    a, b =abs(a), abs(b)
+    a, b = abs(a), abs(b)
     while b:
         a, b = b, a % b
     return a
