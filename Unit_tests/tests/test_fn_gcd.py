@@ -30,3 +30,10 @@ def test_gcd_invalid_input():
         gcd([54], 24)
     with pytest.raises(TypeError):
         gcd(54, None)
+
+
+def test_gcd_edge_cases():
+    assert gcd(1, 1) == 1
+    assert gcd(1, 0) == 1
+    assert gcd(0, 0) == 0
+    assert gcd(123456789, 987654321) == 9
