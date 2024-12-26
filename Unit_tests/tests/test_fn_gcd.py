@@ -1,3 +1,5 @@
+import pytest
+
 from Unit_tests.fn_gcd import gcd
 
 
@@ -15,5 +17,16 @@ def test_gcd_negative_numbers():
 
 def test_gcd_zero():
     assert gcd(0, 5) == 5
-    assert gcd(5, 0) == 0
+    assert gcd(5, 0) == 5
     assert gcd(0, 0) == 0
+
+
+def test_gcd_invalid_input():
+    with pytest.raises(TypeError):
+        gcd(54.5, 24)
+    with pytest.raises(TypeError):
+        gcd("54", 24)
+    with pytest.raises(TypeError):
+        gcd([54], 24)
+    with pytest.raises(TypeError):
+        gcd(54, None)
