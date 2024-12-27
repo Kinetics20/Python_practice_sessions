@@ -22,3 +22,9 @@ def test_anagrams_with_spaces_and_cases():
 def test_anagrams_with_numbers_and_special_chars():
     assert is_anagram("123 listen!", "silent 123") == True
     assert is_anagram("An@agr@am!", "Nag a ram!!") == True
+
+
+def test_empty_and_single_char_strings():
+    assert is_anagram("", "") == True
+    assert is_anagram("a", "a") == True
+    assert is_anagram("a", "b") == False
