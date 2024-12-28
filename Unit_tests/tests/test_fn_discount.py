@@ -18,11 +18,16 @@ def test_invalid_prices():
 
 
 def test_invalid_discount():
-    with pytest.raises(ValueError, match="Discount must be greater than 0"):
+    with pytest.raises(ValueError, match="Discount must be between 0 and 100"):
         calc_discount(100, 0)
-    with pytest.raises(ValueError, match="Discount must be greater than 0"):
+    with pytest.raises(ValueError, match="Discount must be between 0 and 100"):
         calc_discount(100, 100)
-    with pytest.raises(ValueError, match="Discount must be greater than 0"):
+    with pytest.raises(ValueError, match="Discount must be between 0 and 100"):
         calc_discount(100, -10)
-    with pytest.raises(ValueError, match="Discount must be greater than 0"):
+    with pytest.raises(ValueError, match="Discount must be between 0 and 100"):
         calc_discount(100, 150)
+
+
+def test_edge_cases():
+    assert calc_discount(0.0001, 50) == 0.0001 * (1 - 50 / 100)
+    assert calc_discount(10 ** 6, 99.99) == 10 ** 6 * (1 - 99.99 / 100)
