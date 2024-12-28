@@ -1,18 +1,18 @@
 def calc_discount(price: float, discount: float) -> float:
     """
-    Function calculates price after apply the discount .
-    :param price: amount in any currency
+    Calculates the price after applying a discount.
+
+    :param price: The original price of the product (must be greater than 0).
     :type price: float
-    :param discount: value between 0 and 100
+    :param discount: The discount percentage (must be greater than 0 and less than 100).
     :type discount: float
-    :return: price after discount
+    :return: The price after applying the discount.
     :rtype: float
-    :raises: ValueError if price or discount is invalid
-        price must be greater than 0 and discount must be greater than 0 and less than 100
+    :raises ValueError: If price is not greater than 0 or if discount is not strictly between 0 and 100.
     """
     if price <= 0:
         raise ValueError("Price must be greater than 0")
-    if not (0 <= discount <= 100):
+    if not (0 < discount < 100):
         raise ValueError("Discount must be between 0 and 100")
 
     return price * (1 - discount / 100)
