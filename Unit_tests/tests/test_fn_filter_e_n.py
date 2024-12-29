@@ -1,3 +1,5 @@
+import pytest
+
 from Unit_tests.fn_filter_e_n import filter_odd_numbers
 
 
@@ -19,3 +21,12 @@ def test_no_odd_numbers():
 def test_all_odd_numbers():
     assert filter_odd_numbers([1, 3, 5, 7]) == [1, 3, 5, 7]
     assert filter_odd_numbers([-1, -3, -5]) == [-1, -3, -5]
+
+
+def test_invalid_input_not_list():
+    with pytest.raises(TypeError, match="Input must be a list"):
+        filter_odd_numbers("string")
+    with pytest.raises(TypeError, match="Input must be a list"):
+        filter_odd_numbers(12345)
+    with pytest.raises(TypeError, match="Input must be a list"):
+        filter_odd_numbers(None)
