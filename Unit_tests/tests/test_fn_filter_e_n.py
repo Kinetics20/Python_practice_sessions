@@ -30,3 +30,12 @@ def test_invalid_input_not_list():
         filter_odd_numbers(12345)
     with pytest.raises(TypeError, match="Input must be a list"):
         filter_odd_numbers(None)
+
+
+def test_invalid_input_non_integers():
+    with pytest.raises(TypeError, match="All elements in the list must be integers"):
+        filter_odd_numbers([1, 2, "3", 4])
+    with pytest.raises(TypeError, match="All elements in the list must be integers"):
+        filter_odd_numbers([1.5, 2, 3, 4])
+    with pytest.raises(TypeError, match="All elements in the list must be integers"):
+        filter_odd_numbers([1, None, 3, 4])
