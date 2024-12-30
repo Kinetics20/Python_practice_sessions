@@ -1,3 +1,5 @@
+import pytest
+
 from Unit_tests.fn_average_ import calc_average
 
 
@@ -15,3 +17,8 @@ def test_mixed_numbers():
 
 def test_single_element():
     assert calc_average([42]) == 42.0
+
+
+def test_empty_list():
+    with pytest.raises(ValueError, match="List cannot be empty"):
+        calc_average([])

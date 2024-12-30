@@ -7,4 +7,6 @@ def calc_average(l: list[int | float]) -> float:
     :rtype: float
     : raises ValueError if list is empty.
     """
+    if not l:
+        raise ValueError("List cannot be empty")
     return sum(l) / len(l)
