@@ -7,3 +7,11 @@ def test_positive_numbers():
 
 def test_negative_numbers():
     assert calc_average([-1, -2, -3, -4, -5]) == -3.0
+
+
+def test_mixed_numbers():
+    assert calc_average([-1, 0, 1]) == 0.0
+
+
+def test_single_element():
+    assert calc_average([42]) == 42.0
