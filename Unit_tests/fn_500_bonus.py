@@ -15,6 +15,3 @@ def factorial(n: int) -> int:
         raise RecursionError("n must be smaller than 999")
 
     return 1 if n == 0 else n * factorial(n - 1)
-
-
-print(factorial(20))
