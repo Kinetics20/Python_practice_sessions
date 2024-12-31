@@ -12,6 +12,11 @@ def with_calc_discount(product):
     return product
 
 
+def add_producer(product, producer):
+    product['producer'] = producer
+    return product
+
+
 product_1 = create_product('laptop', 1000)
 product_2 = create_product('laptop', 500)
 
