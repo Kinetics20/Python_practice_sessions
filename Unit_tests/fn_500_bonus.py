@@ -34,6 +34,13 @@ def factorial_iterative(n: int) -> int:
     return result
 
 
-# def count_vowels(text: str) -> int:
-#     vowels = "aeiouAEIOU"
-#     return sum(1 for char in text if char in vowels)
+def count_vowels(text: str) -> int:
+    """
+    Counts vowels in text.
+    :param text: the text.
+    :type text: str
+    :return: int number of vowels in text.
+    :rtype: int
+    """
+    vowels = "aeiouAEIOU"
+    return sum(1 for char in text if char in vowels)
