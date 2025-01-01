@@ -1,4 +1,4 @@
-# Python Practice Session
+# Python Practice Sessions
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![Notebook](https://img.shields.io/badge/Notebook-7.3.1-orange?logo=jupyter&logoColor=white)
