@@ -5,6 +5,7 @@
 ![mypy](https://img.shields.io/badge/mypy-1.14.0-blueviolet?logo=mypy&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-8.3.4-yellow?logo=pytest&logoColor=white)
 ![Poetry](https://img.shields.io/badge/Poetry-1.x-65C2CB?logo=poetry&logoColor=white)
+![PyCharm](https://img.shields.io/badge/PyCharm-2025.1-blue?logo=jetbrains&logoColor=white)
 
 ## About the Repository
 
