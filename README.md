@@ -75,5 +75,15 @@ poetry update
 - **`pytest`** is a testing framework for Python that allows you to write simple and scalable tests to ensure your code behaves as expected.
   ```bash
   poetry run pytest
+  ```
+  ```bash
   poetry run mypy script_name.py
-```
+  ```
+
+
+## 🧑‍💻 Author
+
+Piotr Lipiński
+
+Feel free to contribute, submit issues, or ask questions! 😊
+
