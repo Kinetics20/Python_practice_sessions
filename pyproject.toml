@@ -3,6 +3,7 @@ name = "python-practice-sessions"
 version = "0.1.0"
 description = ""
 authors = ["Piotr Lipinski <kinetics20@gmail.com>"]
+license = "Beerware"
 readme = "README.md"
 
 [tool.poetry.dependencies]
