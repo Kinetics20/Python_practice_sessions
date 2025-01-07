@@ -48,3 +48,8 @@ y1 = [1, 2, 3]
 
 r = map(lambda a, b: a * b, x1, y1)
 print(list(r))
+
+print(range(10))
+print([range(10)])
+print(list(range(10)))
+print([x for x in range(10)])
