@@ -1,4 +1,6 @@
+# import dataclasses
 import dataclasses
+from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
