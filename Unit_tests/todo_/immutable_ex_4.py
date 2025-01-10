@@ -32,8 +32,8 @@ def change_todo_name(todo: Todo, name: str) -> Todo:
 def update_todos(todo_list: TodoList, prev_todo: Todo, next_todo: Todo) -> TodoList:
     def replace_todo(todo: Todo) -> Todo:
         if todo is not prev_todo:
-            return todo
-        return next_todo
+            return next_todo
+        return todo
 
 
     return TodoList(tuple(map(replace_todo, todo_list.todos)))
