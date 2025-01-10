@@ -58,4 +58,47 @@ def ex_3():
                 print(f'{i} is even')
 
 
-ex_3()
+# ex_3()
+
+
+# TODO first true condition ends the match i.e :
+
+# z = 42
+#
+# match z:
+#     case 42:
+#         print('z is : 42')
+#     case 42:
+#         print('z is : 43')
+#     case _:
+#         print('z is not 42 or 44')
+
+
+# TODO 4// aliased matching
+
+
+def ex_4():
+    for calls in [1, 2, 3], (4, 5, 6, 7, 8, 9, 8), {'a': 42}:
+        match calls:
+            case [1, 2, 3] as my_list:
+                print(f'list: {my_list}')
+            case (_, 5 as my_int, _, *i) as my_tuple if len(calls) > 5:
+                print(f'tuple: {my_tuple} with {my_int}')
+            case {'a': 42} as my_dict:
+                print(f'dict: {my_dict}')
+            case _:
+                print('unknown')
+
+
+# ex_4()
+
+
+# TODO 5// matching with walrus operator
+
+
+def ex_5():
+    match the_answer := 2 * 1 * 3 * 7:
+        case _:
+            print(f'The answer is {the_answer}')
+
+ex_5()
