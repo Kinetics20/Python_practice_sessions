@@ -29,7 +29,7 @@ def ex_2():
             case Exception():
                 print(f'Exception: {x}')
             case y:
-                print(f'unknown: {x}')
+                print(f'unknown: {y}')
 
 # ex_2()
 
