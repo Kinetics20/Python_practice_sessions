@@ -38,4 +38,16 @@ def fib(n):
         a, b = b, a + b
     return a
 
-print(fib(100_000))
+# print(fib(100_000))
+
+
+def remove(text: str, chars: str) -> str:
+    if chars:
+        return remove(
+            text.replace(chars[0], ''),
+            chars[1:]
+        )
+    return text
+
+# print(remove('ala ma kota ?!', '?!'))
+
