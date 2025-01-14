@@ -51,6 +51,8 @@ class Employee:
 
 
 e = Employee('John', 25,10000, 'Software Engineer')
-print(e)
-# print(str(e))
-print(repr(e))
+print(e.__dict__)
+print(vars(e))
+# print(e)
+# # print(str(e))
+# print(repr(e))
