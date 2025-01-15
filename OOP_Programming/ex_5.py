@@ -9,6 +9,10 @@ class Employee:
         self.salary += self.salary * (percent / 100)
 
     @property
+    def salary_gross(self):
+        return self._salary * 1.2
+
+    @property
     def salary(self):
         print('Getting salary')
         return self._salary
@@ -41,7 +45,8 @@ class Employee:
 
 
 e1 = Employee('John', 25, 10000, 'Software Engineer C1')
-print(e1.salary)
+# print(e1.salary)
+# print(e1.salary_gross)
 
 # e1._salary = 4.0
 # e1.set_salary(10001)
@@ -50,3 +55,5 @@ print(e1.salary)
 # e2 = Employee('Martyna', 35, 'Software Engineer C1', 12000)
 
 # print(e1)
+print(vars(e1))
+print(vars(Employee))
