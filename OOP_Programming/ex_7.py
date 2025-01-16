@@ -15,7 +15,17 @@ class Tester(Employee):
         print(f'({self.name}) is testing...')
         print('All tests passed!')
 
-class Developer(Employee):
+
+class SlotsInspectorMixin:
+    __slots__ = ()
+
+    def has_slots(self):
+        return hasattr(self, '__slots__')
+
+
+class Developer(SlotsInspectorMixin, Employee):
+    __slots__ = ('tech_stack',)
+
     def __init__(self, name, age, position, salary, tech_stack):
         super().__init__(name, age, position, salary)
         self.tech_stack = tech_stack
@@ -25,8 +35,9 @@ class Developer(Employee):
         self.salary += bonus
 
 e1 = Developer('John', 25,  'Software Engineer C1', 10000, 'python')
-print(e1.__slots__)
-print(e1.__dict__)
+print(e1.has_slots())
+print(Employee.__slots__)
+# print(e1.__dict__)
 
 # e1 = Tester('John', 25,  'Software Engineer C1', 10000)
 # e2 = Developer('Kate', 35,  'Software Engineer C1', 12000, 'java')
