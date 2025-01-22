@@ -1,7 +1,4 @@
-def divide(a: float, b: float) -> float |str:
-    if b == 0:
-        raise ValueError("b cannot be zero")
-        # return "Error: Division by zero"
+def divide(a: float, b: float) -> float | str:
     return a / b
 
 try:
