@@ -7,37 +7,93 @@ class Vector:
 
     def __getattr__(self, name):
         protected_name = f'_{name}'
-        if protected_name not in self.__dict__:
-            raise AttributeError(f'{self!r} object has no attribute {name!r}')
-        return getattr(self, protected_name)
+        try:
+            return self.__dict__[protected_name]
+        except KeyError:
+            raise AttributeError(f"{self!r} object has no attribute {name!r}")
 
     def __setattr__(self, name, value):
         raise AttributeError(f"Can`t set attribute {name!r}")
 
+    def __delattr__(self, name):
+        raise AttributeError(f"Can`t delete attribute {name!r}")
+
     def __repr__(self):
-        return f'{type(self).__name__}({", ".join(
-            f'{key[1:]}={value}' for key, value in self.__dict__.items()
-        )})'
+        return f"{type(self).__name__}({', '.join(
+            f'{key}={value}' for key, value in self._args().items()
+        )})"
+
+    def _args(self):
+        return {key[1:]: value for key, value in self.__dict__.items()}
 
 
-v1 = Vector(x=1, y=2)
-v2 = Vector(p=3, q=4)
-# print(v1.__dict__)
-# print(v2.__dict__)
+class ColoredVector(Vector):
+    COLOR_INDEX = ("red", "green", "blue")
 
-# print(v2.p)
-# print(v1.x)
-# print(v1.dupa)
+    def __init__(self, red, green, blue, **components):
+        super().__init__(**components)
+        self.__dict__["_color"] = [red, green, blue]
 
-v1.x = 42
-print(v1.__dict__)
-print(v1.x)
+    def __getattr__(self, name):
+        try:
+            channel = type(self).COLOR_INDEX.index(name)
+        except ValueError:
+            return super().__getsttr__(name)
+        else:
+            return self.__dict__['_color'][channel]
 
-# # print(type(v))
-# v.__dict__['z'] = 100
-# del v.__dict__['x']
-# print(v.z)
-# print(getattr(v, 'z'))
-# print(hasattr(v, 'z'))
-# delattr(v, 'z')
-# print(v.__dict__)
+    def __setattr__(self, name, value):
+        try:
+            channel = type(self).COLOR_INDEX.index(name)
+        except ValueError:
+            super().__setattr__(name, value)
+        else:
+            self.__dict__["_color"][channel] = value
+
+    def _args(self):
+        args = {color_name: getattr(self, color_name) for color_name in type(self).COLOR_INDEX}
+        args.update(super()._args())
+        del args["color"]
+        return args
+
+# Proxy Logging
+class LoggingProxy:
+    def __init__(self, target):
+        super().__setattr__("target", target)
+
+    def __getattribute__(self, name):
+        target = super().__getattribute__("target")
+
+        try:
+            value = getattr(target, name)
+        except AttributeError as e:
+            raise AttributeError(
+                f"{super().__getattribute__('__class__').__name__}"
+                f" could not forward request {name} to {target}"
+            ) from e
+
+        print(f"Retrieved attribute {name} = {value!r} from {target!r}")
+        return value
+
+    def __setattr__(self, name, value):
+        target = super().__getattribute__("target")
+
+        try:
+            setattr(target, name, value)
+        except AttributeError as e:
+            raise AttributeError(
+                f"{super().__getattribute__('__class__').__name__}"
+                f" could not forward request {name} to {target}"
+            ) from e
+
+        print(f"Set attribute {name} = {value!r} on {target!r}")
+
+    def __repr__(self):
+        target = super().__getattribute__("target")
+        return repr(target)
+
+
+v1 = ColoredVector(red=23, green=23, blue=5, x=9, y=4)
+lp = LoggingProxy(v1)
+print(lp.__repr__())
+print(repr(lp))
