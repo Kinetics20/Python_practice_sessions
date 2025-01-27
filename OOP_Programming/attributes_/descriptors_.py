@@ -5,16 +5,19 @@ class Positive:
     def __init__(self):
         self._instance_data = WeakKeyDictionary()
 
+    def __set_name__(self, owner, name):
+        self._name = name
+
     def __get__(self, instance, owner):
         return self._instance_data[instance]
 
     def __set__(self, instance, value):
         if value <= 0:
-            raise ValueError(f"Value {value} is not positive.")
+            raise ValueError(f"{self._name} {value} is not positive.")
         self._instance_data[instance] = value
 
     def __delete__(self, instance):
-        raise AttributeError("Can't delete attribute")
+        raise AttributeError(f"Can't delete attribute {self._name}")
 
 
 
@@ -55,6 +58,14 @@ pluto = Planet(
     mass_kilograms=1.305e22,
     orbital_period_seconds=7816012992,
     surface_temperature_kelvin=55,
+)
+
+earth = Planet(
+    name="Earth",
+    radius_metres=6371e3,
+    mass_kilograms=6.0e24,
+    orbital_period_seconds=3.1e7,
+    surface_temperature_kelvin=280,
 )
 
 print(pluto.radius_metres)
