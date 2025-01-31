@@ -1,4 +1,6 @@
 import pytest
+import sys
+sys.path.append('/home/lipov/projects/Python_practice_sessions')
 
 from Unit_tests.fn_lamb_average_ import calc_average
 
@@ -18,4 +20,4 @@ def test_invalid_input():
 def test_edge_cases():
     assert calc_average([0, 0, 0]) == 0.0
     assert calc_average([1e6, 1e6, 1e6]) == 1e6
-    assert calc_average([0.0001, 0.0002, 0.0003]) == 0.0002
+    assert calc_average([0.0001, 0.0002, 0.0003]) == pytest.approx(0.0002, rel=1e-9)
