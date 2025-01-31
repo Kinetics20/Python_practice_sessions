@@ -19,6 +19,3 @@ def test_edge_cases():
     assert calc_average([0, 0, 0]) == 0.0
     assert calc_average([1e6, 1e6, 1e6]) == 1e6
     assert calc_average([0.0001, 0.0002, 0.0003]) == 0.0002
-
-
-pytest.main()
